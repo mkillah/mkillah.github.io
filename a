@@ -1,0 +1,277 @@
+[33mcommit 20d6cd48f288bbe6964fb3899b59201473ce430e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: mkillah <marko.antolcic@gmail.com>
+Date:   Tue Feb 13 13:44:43 2024 +0000
+
+    skin change
+
+[33mcommit 8a67ce8e41ec850f2d7c373aa47739b2abfee6f1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: iBug <git@ibugone.com>
+Date:   Fri Jul 8 23:38:44 2022 +0800
+
+    Improve PR close auto-comment message (#3713)
+    
+    * Improve auto-comment message
+    
+    * Lock these PRs after closing
+
+[33mcommit 18e89666a6ce34e393d82812664fa42bbb9752c7[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Mon May 30 12:18:57 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 5946bd4ea06571cbdacdb668a4f43ff2064c85d9[m
+Author: iBug <git@ibugone.com>
+Date:   Tue May 31 00:13:22 2022 +0800
+
+    Fix #3668 breaking "disable per-page when globally enabled" (#3669)
+    
+    * Fix #3668 breaking "disable per-page when globally enabled"
+    
+    * `default:` filter doesn't fit here
+    
+    https://shopify.github.io/liquid/filters/default/
+
+[33mcommit 3d65710bf70e66cdba0b6f31cf22dc32919bf506[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Sun May 29 14:35:04 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit c940a73b509673b5ae15890d71fadbbd02abb2a5[m
+Author: iBug <git@ibugone.com>
+Date:   Mon May 30 02:34:11 2022 +0800
+
+    Remove IE9 upgrade notice (#3666)
+
+[33mcommit e44403e276ee6d42186f9d9307bd5d81db6ae9e8[m
+Author: iBug <git@ibugone.com>
+Date:   Mon May 30 02:33:50 2022 +0800
+
+    Fix #3096 enabling breadcrumb on all pages (#3668)
+
+[33mcommit 6f0ba5e3634c9d51de7ae17c58792d8216ea7a1a[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 14:08:00 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 955a19b955a84a66166f96fc957caf0bc173a7bb[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 14:07:03 2022 -0400
+
+    Replace with public YouTube video embeds
+
+[33mcommit de1e2b73a691026dcc2e982699e5979389d354e3[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 14:04:06 2022 -0400
+
+    Replace with public YouTube video
+    
+    Close #3649
+
+[33mcommit 1433887f67ce265542731e91b2eae5cc2ab6c18d[m
+Merge: 2f5af905 03a26a10
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 12:25:22 2022 -0400
+
+    Merge branch 'master' of https://github.com/mmistakes/minimal-mistakes
+
+[33mcommit 2f5af9050b19a516d9be9c553f1976d6ebc4b769[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 12:25:20 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 03a26a105d98b9059757f7ab4fc4eecb7c5e430d[m
+Author: FavorMylikes <FavorMylikes@users.noreply.github.com>
+Date:   Sat May 28 00:22:43 2022 +0800
+
+    Update algolia-search-scripts.html (#3102)
+    
+    Fix issue https://github.com/mmistakes/minimal-mistakes/issues/3101
+
+[33mcommit 65237df377bf224fdfe3ebac05105e14791e49f8[m
+Author: Lars Olesen <lars@intraface.dk>
+Date:   Fri May 27 18:04:56 2022 +0200
+
+    Make it possible to enable breadcrumbs per page (#3096)
+    
+    * Make it possible to disable breadcrumbs per page
+    
+    * Update single.html
+    
+    * Update single.html
+
+[33mcommit f92670442f04c65a38917a3bfb96d9ee9f4425f4[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 12:03:17 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit cee4c86ee375fa6fb240f0a1c24ca4ec17c03e0f[m
+Author: iBug <git@ibugone.com>
+Date:   Sat May 28 00:02:21 2022 +0800
+
+    Update link to Font Awesome gallery (#3599)
+
+[33mcommit 58d1ba829315c1060da8d82cef5801cfd7ccb54d[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 12:01:06 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 8dc2997d1ff0c698ffe289e7354c6916196a0b2e[m
+Author: Benson Muite <bkmgit@users.noreply.github.com>
+Date:   Fri May 27 19:00:08 2022 +0300
+
+    Update attribution link (#3553)
+
+[33mcommit daf51177f8301dd1f0c9c50f02beeb2c3062bd55[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 11:59:38 2022 -0400
+
+    Update
+
+[33mcommit 416933d98a6177fca22b5dfd3a968c330594243f[m
+Author: Benson Muite <bkmgit@users.noreply.github.com>
+Date:   Fri May 27 18:58:09 2022 +0300
+
+    Add Kiswahili translation (#3489)
+    
+    * Add Kiswahili translation
+    
+    * Add Kiswahli to README
+    
+    * Add Kiswahili to documentation
+
+[33mcommit 55f6e8fae509d81fd311893504101111d8281b81[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 11:48:46 2022 -0400
+
+    Exclude `main.scss` from Lunr search index
+
+[33mcommit bcb15f80e7a640870f7cbc807a766f91f70ff211[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 11:41:13 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 00b86b1ff89aaa6f652b6acee1abe1e0ba976bd5[m
+Author: Nicholas Perry <ape.inago@gmail.com>
+Date:   Fri May 27 11:39:47 2022 -0400
+
+    add optinal lunr searching of pages (#3352)
+
+[33mcommit a66bf7e3177ed3052b4ef7f0368d53eeb9ab44b6[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 10:38:07 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 3f36d171bb6fc6eda9149c07898e65ceb5b8cd0e[m
+Author: Nicholas Perry <ape.inago@gmail.com>
+Date:   Fri May 27 10:34:47 2022 -0400
+
+    fix typo about loading javascript in footer (#3350)
+
+[33mcommit 4ef57be787802e57a036a9eac3d60d59b4b8908b[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 10:18:51 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit df97788050ff510d807a659bdf489df675dbd04d[m
+Author: Lars Olesen <lars@intraface.dk>
+Date:   Fri May 27 16:12:25 2022 +0200
+
+    Update to Jquery 3.6.0 (#3254)
+
+[33mcommit a499b0dcaeb05e2dc767fad8a519cea6c94a858c[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 10:07:45 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 3051fcd3c9e3a3ca726c61bd8bec0de199b075e3[m
+Author: iBug <git@ibugone.com>
+Date:   Fri May 27 22:06:37 2022 +0800
+
+    Fix inline code style not applied to stylized text (#3253)
+    
+    * bug: inline code style not applied to stylized text
+    
+    * Use double colons for pseudoelements
+
+[33mcommit 4e19f46d68e83e092932dfc15c52c502635f6a2d[m
+Merge: 7aa8c7b5 23e7ad29
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 10:03:05 2022 -0400
+
+    Merge branch 'master' of https://github.com/mmistakes/minimal-mistakes
+
+[33mcommit 7aa8c7b5dc241bc12ae729467acef66e397a51c4[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 10:03:02 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 23e7ad2903874a1d22295b5883dd6cff9a07dfa9[m
+Author: iBug <git@ibugone.com>
+Date:   Fri May 27 21:59:38 2022 +0800
+
+    Use <a> color for blockquote.notice border (#3140)
+    
+    Close #3068
+
+[33mcommit a19dbdbf78021e729fc25514772a4346b1b8002e[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Fri May 27 09:50:20 2022 -0400
+
+    Update CHANGELOG and history
+
+[33mcommit 8b67db3ff484b4898e607a98c8563bbb78d1dc2d[m
+Author: Lars Olesen <lars@intraface.dk>
+Date:   Fri May 27 15:49:00 2022 +0200
+
+    Added sameAs (#3087)
+
+[33mcommit 2632ff650a6efb0d856a37d675be5f1b63692181[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Mon Jan 10 07:59:54 2022 -0500
+
+    Update CHANGELOG and history
+
+[33mcommit ad1e06633c1fe5dd0c8772f630abff8d361aeafe[m
+Author: iBug <git@ibugone.com>
+Date:   Mon Jan 10 20:59:04 2022 +0800
+
+    Automatically close invalid PRs using GitHub Actions (#3313)
+    
+    * Try auto-closing bad PRs
+    
+    * Include empty PR body as well
+    
+    * Add "Type: Invalid" label as well
+
+[33mcommit 9539e3bd84f04d08cdce3471de07feb6cb17d127[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Wed Jan 5 10:34:32 2022 -0500
+
+    Update CHANGELOG and history
+
+[33mcommit d6c84c9508902b3c1b6f0bd0fd61967d87a0f996[m
+Author: Yuchen <yzhong52@users.noreply.github.com>
+Date:   Wed Jan 5 10:33:50 2022 -0500
+
+    Add missing comma (#3318)
+    
+    Co-authored-by: Yuchen Zhong <yuchen21@fb.com>
+
+[33mcommit 5ef199a3eb76f1f7f15b117c20d9ade6e6756c88[m
+Author: Michael Rose <est.michael@gmail.com>
+Date:   Wed Jan 5 10:33:27 2022 -0500
+
+    Update CHANGELOG and history
+
+[33mcommit d639c605c8aebe51317928a1c1b72
