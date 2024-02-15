@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Marko Antolčić"
   avatar           : "/assets/images/mojaMalenkost.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am a cognitive scientist."
+  bio              : "A cognitive scientist on a mission to explore the human mind using data analytics technology."
   location         : "Cork, Ireland"
   email            : "marko.antolcic@gmail.com"
   links:
