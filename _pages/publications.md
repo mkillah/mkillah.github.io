@@ -6,8 +6,10 @@ author_profile: true
 ---
 
 Check out my [ResearchGate profile](https://www.researchgate.net/profile/Marko-Antolcic) for full access to my publications.
-Focus of my research is on experimental study of expertise and cognitive science about hybrid (symbolic-connectionist) 
-systems of the human mind.
+Focus of Marko's research is on experimental study of expertise and cognitive science about hybrid (symbolic-connectionist) 
+systems of the human mind with a keen interest in an embedded theory of cognition, problem-solving, attention, 
+reasoning, and decision making. He is currently working on a project about natural language processing and expertise 
+(in chess), investigating perceptual and conceptual processes in problem-solving and human expertise in general.
 
 ## Academic publications
 
