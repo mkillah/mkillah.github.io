@@ -3,6 +3,6 @@ title: Projects
 layout: posts
 permalink: /projects/
 
-author_profile: false
+author_profile: true
 ---
 
