@@ -1,5 +1,9 @@
 ---
-author_profile: false
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 title:  "RatingRealities: Unveiling Bias in Movie Ratings"
 date:   2024-02-15
 categories:

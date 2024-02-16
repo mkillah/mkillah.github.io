@@ -1,9 +1,13 @@
 ---
-author_profile: false
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 title:  "Human Resource Analytics: Enhancing Organizational Effectiveness through HR Analytics"
 date:   2024-02-15
 categories:
-  - HR Analytics
+- HR Analytics
 ---
 
 This HR Analytics project is designed to provide a holistic understanding of the organization by focusing on key areas.

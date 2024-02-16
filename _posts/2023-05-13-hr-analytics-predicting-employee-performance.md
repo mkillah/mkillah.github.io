@@ -1,5 +1,9 @@
 ---
-author_profile: false
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 title:  "Human Resource Analytics: Predicting Employee Performance"
 date:   2024-02-15
 categories:
