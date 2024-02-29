@@ -4,7 +4,7 @@ toc_label: "My Table of Contents"
 toc_icon: "cog"
 
 layout: collection
-title: "Capacity of a expert's chess memory"
+title: "Capacity of a chess expert's memory"
 excerpt: "Foo Bar design system including logo mark, website design, and branding applications."
 header:
   image: /assets/images/foo-bar-identity.jpg
@@ -84,6 +84,7 @@ Masters’ numbers of chunks increase from 2.9, at 1 s, to 4.2 at 4 s, and then 
 with 4.5 chunks at 10 s, and then decrease to 2.9 at 60 s. Class A players increase the
 number of chunks from 2.2 at 1 s to 5.4 at 60 s. N
 
+![png](/assets/images/chessMemory/chunksize.png)
 
 chrest
 During the presentation of a position to be recalled, the program fixates squares
@@ -97,6 +98,10 @@ node by a novel path or create a new node (and a branch leading to it) in the di
 net; this discrimination process takes 8 s. Second, it can add information to an already
 existing chunk; this familiarization process takes 2 s. Third, it can fill in a template slot;
 this process takes 250 ms.
+
+
+![png](/assets/images/chessMemory/recallchess.png)
+
 
 # Analysis
 
@@ -130,7 +135,7 @@ totalExHours = 4*365*10 # 4 hours in 10 years
 
 Experts spend 14600 hours in total, in 10 years for 39866483.41701415 positions, i.e. 463563.7606629553 games
 
-![png](/assets/images/eloprocessedpositions.png)
+![png](/assets/images/chessMemory/eloprocessedpositions.png)
 
 
 # References
