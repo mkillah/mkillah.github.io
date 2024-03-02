@@ -32,24 +32,38 @@ Analyzing data spanning from 2015 to 2024, I tracked the progress of chess playe
 using data found on FIDE website. My focus honed in on individuals who began with ratings below 2000 in 2015 and rose 
 to the esteemed rank of Grandmaster by 2024. Through this thorough examination, I aimed to unveil the trajectory and 
 pace of advancement towards expertise in chess. By filtering out those with lower initial ratings, I aimed to discern 
-patterns and insights into the journey of becoming a Grandmaster within this timeframe.
-
-I used data available at [Fide](https://ratings.fide.com/download_lists.phtml)
+patterns and insights into the journey of becoming a Grandmaster within this timeframe. I used data available at 
+[Fide](https://ratings.fide.com/download_lists.phtml)
 
 ### Elo ratings over 10 years
 
-From total of X chess players, only 39 players began with ratings below 2000 in 2015 and rose 
+From total of 3284637 chess players, only 39 players began with ratings below 2000 in 2015 and rose 
 to the esteemed rank of Grandmaster by 2024. Only those players are taken into further analysis.
 
-The following graph present  rating trajectory of 39 chess players over 10 years period.
+The following graph present 39 chess players' rating progression over 10 years period.
 
 ![png](/assets/images/becomingchessexpert/ratingtrend.png)
-
 
 This observation suggests that the function follows a logarithmic pattern, characterized by rapid growth in elo rating 
 initially, followed by a stabilization phase once a certain threshold is reached. In this specific instance, 
 the elo rating exhibits accelerated progression initially and then levels off after approximately reaching 2400.
-This insight could be attributed to several factors:
+
+Typical progression onset when previous variability in function is averaged throughout every year, 
+the following pattern emerge:
+
+![png](/assets/images/becomingchessexpert/mean_rating_plot.png)
+
+Typical rating in first year would be 1780, with a significant variance, and it would progress each year for a certain 
+amount to 2550 at last year (after 10 years), but variance is progressively much smaller. 
+
+How much rating increases over years depends on the differences between consecutive years progress, which forms a shame 
+of negative potential function: 
+
+![png](/assets/images/becomingchessexpert/meanratingdifftrend.png)
+
+First couple of years, difference in elo rating is much bigger in respect to the later years of chess playing. 
+
+This insights could be attributed to several factors:
 
 **Diminishing Returns**: As a player improves in skill, it becomes increasingly challenging to make significant gains in elo
 rating. Initially, when a player is less skilled, there may be relatively easy improvements to make, resulting in rapid 
@@ -68,23 +82,20 @@ of elo ratings as players encounter challenges in further improving their skills
 most of the fundamental skills and strategies necessary for the game. At this stage, additional improvements may be 
 more incremental, resulting in the leveling off of elo ratings.
 
-![png](/assets/images/becomingchessexpert/mean_rating_plot.png)
+According to chess expertise theory, expertise is defined at least as 10 years of development and additionally 
+the analysis show converging results. The stable elo rating progression start to emerge 10 years after being 
+a nearly average player.
 
-
-![png](/assets/images/becomingchessexpert/meanratingdifftrend.png)
-
-
-
-
-Over two decades ago, researchers proposed that disparities in performance across domains such as music, sports, and 
-games largely stem from differences in the extent of deliberate practice, defined as engagement in structured activities
-tailored to enhance performance in a specific domain. This perspective has been a common theme in popular science 
-literature, but does it align with empirical evidence? To address this question, we conducted a meta-analysis 
-encompassing all major domains where deliberate practice has been studied. Our findings revealed that deliberate 
+Neverthless, a conducted meta-analysis (Macnamara, Hambrick and Oswald, 2014) revealed that deliberate 
 practice accounted for 26% of the variance in game performance, 21% in music, 18% in sports, 4% in education, and 
-less than 1% in professions. From these results, we conclude that while deliberate practice is indeed significant, 
-its importance may not be as pronounced as previously suggested (Macnamara, Hambrick and Oswald, 2014).
+less than 1% in professions. Other factors can influence the development, differences in problem-solving abilities and
+intelligence can play a major part if someone reach the point of expertise quite early. Especially if one reaches the 
+same point with less experience in general.
 
+![png](/assets/images/becomingchessexpert/oneplayertrend.png)
+
+This player in 2022 achieved Grandmaster title, in only 8 years, almost 1200 elo rating difference. One in many, but
+for sure an example of human abilites.
 
 ## References
 
