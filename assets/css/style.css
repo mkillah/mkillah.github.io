@@ -1,1 +1,1244 @@
-:root{--ink:#102638;--muted:#63768a;--line:#e0e5e8;--paper:#fcfbf8;--accent:#315d9c}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.65}.site-nav{border-bottom:1px solid var(--line);padding:13px 0;background:rgba(252,251,248,.95)}.navbar-brand{font:500 23px 'Playfair Display',serif;color:var(--ink)}.nav-link{color:var(--muted);margin-left:22px;position:relative}.nav-link:hover,.nav-link.active{color:var(--ink)}.nav-link.active:after{content:'';position:absolute;bottom:0;left:8px;right:8px;height:2px;background:var(--ink)}.hero{padding-top:76px;padding-bottom:76px}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:700;color:#75869a;margin-bottom:12px}.hero h1{font:500 clamp(46px,6vw,70px)/1.1 'Playfair Display',serif;letter-spacing:-2px;margin-bottom:20px}.hero .lead{font:500 clamp(21px,2.5vw,27px)/1.5 'Playfair Display',serif;color:var(--muted);max-width:700px}.intro-copy{color:var(--muted);max-width:620px;margin:16px 0 23px}.text-cta{font-weight:600;color:var(--accent);border-bottom:1px solid #a9bad2;padding-bottom:5px}.text-cta span{padding-left:8px}.wave-art svg{width:100%}.wave{fill:none;stroke-width:1.5;stroke-linecap:round}.wave.green{stroke:#5aa895}.wave.blue{stroke:#9db9ff}.wave.purple{stroke:#b4a8e9}.work-section{background:#fff;padding:40px 0 42px}.section-heading{margin-bottom:25px}.section-heading h2{font:500 29px 'Playfair Display',serif;margin:0}.category-card{height:100%;min-height:315px;border-radius:10px;padding:27px 29px 25px;display:flex;flex-direction:column}.research-card{background:linear-gradient(140deg,#f0f4fb,#f7f8fc)}.data-card{background:linear-gradient(140deg,#f0f5f2,#f8faf8)}.systems-card{background:linear-gradient(140deg,#f3f1fa,#faf9fc)}.card-symbol{font-size:31px;line-height:1.3;color:#315d9c;margin-bottom:16px}.data-card .card-symbol{color:#4a9d8a}.systems-card .card-symbol{color:#6154aa}.category-card h3{font:500 29px 'Playfair Display',serif;margin:0 0 8px}.category-card>p{color:var(--muted);max-width:280px}.category-links{margin-top:auto;border-top:1px solid #d9e0e6;padding-top:12px;display:grid;gap:4px}.category-links a{display:flex;justify-content:space-between;gap:12px;color:#526981;padding:3px 0}.category-links a:hover{color:var(--accent)}.category-links span{font-size:20px;line-height:1.2}.site-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;color:#71839a;font-size:12px;padding-top:22px;padding-bottom:22px}.site-footer div{display:flex;gap:13px;align-items:center}.site-footer a:hover{color:var(--ink)}.page-hero{padding:70px 0 36px}.page-hero h1{font:500 clamp(42px,5vw,60px)/1.15 'Playfair Display',serif;letter-spacing:-1px;margin:0 0 14px}.page-hero>p:last-child{max-width:700px;color:var(--muted);font-size:18px}.topic-list{padding:8px 0 60px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.topic{height:100%;background:#fff;border:1px solid #e7ebee;border-radius:8px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;transition:transform .2s,border-color .2s}.topic:hover{transform:translateY(-2px);border-color:#bdcbd7}.topic h2{font:500 22px 'Playfair Display',serif;margin:0 0 5px}.topic p{font-size:14px;color:var(--muted);margin:0}.topic .arrow{font-size:22px;color:#7387a0}.placeholder{border-top:1px solid var(--line);padding-top:24px;margin:15px 0 65px;color:var(--muted)}.back-link{display:inline-block;color:var(--accent);margin-top:10px}@media(max-width:767px){.hero{padding-top:50px;padding-bottom:52px}.category-card{min-height:0}.category-links{margin-top:12px}.topic-list{grid-template-columns:1fr}.site-footer{align-items:flex-start;flex-direction:column}.site-footer div{flex-wrap:wrap}.nav-link{margin-left:0}.nav-link.active:after{display:none}}
+/* =========================================================
+   1. VARIABLES AND RESET
+   ========================================================= */
+
+:root {
+  --color-green: #034620;
+  --color-green-light: #eaf1eb;
+  --color-blue: #527f9d;
+  --color-purple: #8173a5;
+
+  --color-text: #252822;
+  --color-muted: #70736d;
+  --color-background: #ffffff;
+  --color-surface: #f7f8f5;
+  --color-border: #e4e6df;
+
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  --container-width: 1140px;
+  --radius-card: 8px;
+  --transition: 180ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Normal browser scrolling; no automatic smooth scrolling. */
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-green);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   2. NAVIGATION
+   ========================================================= */
+
+.site-nav {
+  padding: 1.1rem 0;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav .navbar-brand {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.site-nav .navbar-brand:hover {
+  color: var(--color-green);
+}
+
+.site-nav .navbar-nav {
+  gap: 0.8rem;
+}
+
+.site-nav .nav-link {
+  padding: 0.45rem 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: var(--color-green);
+}
+
+.site-nav .navbar-toggler {
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+.site-nav .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   3. HERO SECTION
+   ========================================================= */
+
+.hero {
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: 1.4rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.lead {
+  max-width: 760px;
+  margin-bottom: 1.25rem;
+  color: #41453e;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.intro-copy {
+  max-width: 720px;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.hero .text-cta {
+  margin-top: 1rem;
+}
+
+
+/* =========================================================
+   4. TEXT LINKS AND CALLS TO ACTION
+   ========================================================= */
+
+.text-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-green);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.text-cta span {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.text-cta:hover {
+  color: #08652f;
+}
+
+.text-cta:hover span {
+  transform: translate(3px, -2px);
+}
+
+
+/* =========================================================
+   5. DECORATIVE WAVE ART
+   ========================================================= */
+
+.wave-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.wave-art svg {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  overflow: visible;
+}
+
+.wave {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.wave.green {
+  stroke: var(--color-green);
+}
+
+.wave.blue {
+  stroke: var(--color-blue);
+}
+
+.wave.purple {
+  stroke: var(--color-purple);
+}
+
+
+/* =========================================================
+   6. GENERAL CONTENT SECTIONS
+   ========================================================= */
+
+.work-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  background: var(--color-surface);
+}
+
+.work-section + .work-section {
+  border-top: 1px solid var(--color-border);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.section-heading > p:not(.eyebrow) {
+  color: var(--color-muted);
+}
+
+
+/* =========================================================
+   7. HOMEPAGE CATEGORY CARDS
+   ========================================================= */
+
+.category-card {
+  height: 100%;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-background);
+}
+
+.card-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-green-light);
+  color: var(--color-green);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.category-card h3 {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.category-card > p {
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.category-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.category-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.category-links a:hover {
+  color: var(--color-green);
+}
+
+.category-links a span {
+  flex-shrink: 0;
+}
+
+
+/* Whole card opens its section; inner links stay clickable on top */
+
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: #d2d9d0;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+}
+
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+}
+
+.card-link:focus-visible {
+  outline: none;
+}
+
+.card-link:focus-visible::after {
+  outline: 2px solid var(--color-green);
+  outline-offset: 4px;
+}
+
+.card-link-arrow {
+  display: inline-block;
+  color: var(--color-green);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.category-card:hover .card-link-arrow,
+.card-link:focus-visible .card-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.category-card:hover h3 {
+  color: var(--color-green);
+}
+
+.category-links a {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   8. COGNITIVE SCIENCE PAGE
+   ========================================================= */
+
+.cognition-hero {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.cognition-hero h1 {
+  max-width: 780px;
+}
+
+.cognition-intro {
+  max-width: 720px;
+  line-height: 1.85;
+}
+
+
+/* Research card grid */
+
+.research-grid {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.research-tile {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-background);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.research-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  background: #f0f0eb;
+}
+
+.research-tile-content {
+  padding: 1.6rem;
+}
+
+.research-number {
+  margin-bottom: 0.8rem;
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.research-tile h2 {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.research-tile p:not(.research-number) {
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.research-tags {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+
+/* Illustrated card header without a photo */
+
+.research-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-green-light), #efedf5);
+}
+
+.research-art svg {
+  width: 100%;
+  height: 100%;
+}
+
+.art-glyph {
+  font-family: var(--font-heading);
+  font-size: 64px;
+}
+
+.art-glyph.green {
+  fill: var(--color-green);
+}
+
+.art-glyph.purple {
+  fill: var(--color-purple);
+}
+
+.art-dot {
+  fill: var(--color-blue);
+}
+
+
+/* Whole research card is clickable */
+
+.research-card-link {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-card);
+  color: inherit;
+  text-decoration: none;
+}
+
+.research-card-link:hover {
+  color: inherit;
+}
+
+.research-card-link .research-tile {
+  height: 100%;
+}
+
+.research-card-link:hover .research-tile {
+  transform: translateY(-4px);
+  border-color: #d2d9d0;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+.research-card-link:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 4px;
+}
+
+.card-arrow {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: var(--color-green);
+  transition: transform var(--transition);
+}
+
+.research-card-link:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+
+/* Back link */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: var(--color-green);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   9. PUBLICATIONS AND RESEARCH PROJECTS
+   ========================================================= */
+
+.markdown-content {
+  max-width: 850px;
+  color: var(--color-text);
+  line-height: 1.85;
+}
+
+.markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-content h2 {
+  margin-top: 2.8rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.markdown-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content a {
+  color: var(--color-green);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.markdown-content hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.research-project {
+  padding: 1.5rem 0;
+}
+
+.research-project h3 {
+  margin-bottom: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.research-project p {
+  line-height: 1.8;
+}
+
+.project-meta {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.research-divider {
+  margin: 1rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.research-more {
+  margin-top: 2.5rem;
+}
+
+
+/* =========================================================
+   10. RESEARCH APPROACH AND INTEREST LISTS
+   ========================================================= */
+
+.approach-item {
+  height: 100%;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.approach-item h3 {
+  margin-bottom: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.approach-item p {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.interest-list {
+  margin: 1.5rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.interest-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.interest-row span {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.interest-row p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.site-footer a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.site-footer a:hover {
+  color: var(--color-green);
+}
+
+
+/* =========================================================
+   12. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .site-nav .navbar-nav {
+    gap: 0.2rem;
+    padding-top: 0.8rem;
+  }
+
+  .category-card {
+    padding: 1.6rem;
+  }
+
+  .work-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .research-image {
+    height: 220px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .cognition-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .work-section {
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .category-card {
+    padding: 1.35rem;
+  }
+
+  .research-image {
+    height: 200px;
+  }
+
+  .research-tile-content {
+    padding: 1.25rem;
+  }
+
+  .interest-row {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   14. RESEARCH LANDING PAGE
+   ========================================================= */
+
+.area-card {
+  --area-accent: var(--color-green);
+  --area-accent-light: var(--color-green-light);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.25rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-background);
+  color: var(--color-text);
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.area-card-blue {
+  --area-accent: var(--color-blue);
+  --area-accent-light: #e8eff4;
+}
+
+.area-card-purple {
+  --area-accent: var(--color-purple);
+  --area-accent-light: #efedf5;
+}
+
+/* Thin accent line that grows on hover */
+.area-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 3px;
+  background: var(--area-accent);
+  transition: width 300ms ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  border-color: #d2d9d0;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  color: var(--color-text);
+}
+
+.area-card:hover::before {
+  width: 100%;
+}
+
+.area-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.area-card .card-symbol {
+  margin-bottom: 0;
+  background: var(--area-accent-light);
+  color: var(--area-accent);
+}
+
+.area-number {
+  color: var(--color-border);
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.area-card:hover .area-number {
+  color: var(--area-accent-light);
+}
+
+.area-card h3 {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.area-card > p {
+  max-width: 440px;
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.area-tags li {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.area-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--area-accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.area-cta span {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.area-card:hover .area-cta span {
+  transform: translateX(4px);
+}
+
+.questions-section {
+  background: var(--color-background);
+}
+
+.questions-section .interest-list {
+  margin-top: 0;
+}
+
+.questions-section .section-heading {
+  margin-bottom: 0;
+}
+
+.questions-section .interest-row p {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 575.98px) {
+  .area-card {
+    padding: 1.5rem;
+  }
+
+  .area-number {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* =========================================================
+   13. REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   15. RESEARCH SUBPAGE MARKDOWN
+   Styles plain Markdown output: # title, *tagline*, ## sections,
+   ### subsections, lists, **Label.** paragraphs and > notes.
+   ========================================================= */
+
+#project-content {
+  --accent: var(--color-green);
+  --accent-light: var(--color-green-light);
+
+  max-width: 800px;
+  margin-top: 0.5rem;
+  counter-reset: section;
+}
+
+.accent-blue #project-content {
+  --accent: var(--color-blue);
+  --accent-light: #e8eff4;
+}
+
+.accent-purple #project-content {
+  --accent: var(--color-purple);
+  --accent-light: #efedf5;
+}
+
+.accent-blue .back-link,
+.accent-blue .eyebrow {
+  color: var(--color-blue);
+}
+
+.accent-purple .back-link,
+.accent-purple .eyebrow {
+  color: var(--color-purple);
+}
+
+
+/* # Title */
+
+#project-content h1 {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+/* *Tagline* directly under the title */
+#project-content h1 + p {
+  display: inline-block;
+  margin-bottom: 3.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+#project-content h1 + p em {
+  font-style: normal;
+}
+
+
+/* ## Sections, numbered automatically */
+
+#project-content h2 {
+  counter-increment: section;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 4rem 0 1.75rem;
+  padding: 3rem 0 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+#project-content h2::before {
+  content: counter(section, decimal-leading-zero);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+#project-content h1 + p + h2 {
+  margin-top: 0;
+}
+
+
+/* ### Subsections */
+
+#project-content h3 {
+  position: relative;
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+#project-content h3::before {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  bottom: 0.3em;
+  left: 0;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+#project-content h2 + h3 {
+  margin-top: 0;
+}
+
+
+/* Text */
+
+#project-content p,
+#project-content li {
+  color: #41453e;
+  line-height: 1.85;
+}
+
+#project-content a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+#project-content strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+
+/* Lists become soft cards with accent dots */
+
+#project-content ul {
+  margin: 1.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+#project-content li {
+  position: relative;
+  margin-bottom: 0.85rem;
+  padding: 1rem 1.25rem 1rem 2.5rem;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+#project-content li::before {
+  content: "";
+  position: absolute;
+  top: 1.7rem;
+  left: 1.15rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Summary paragraph after a list reads as a pull quote */
+#project-content ul + p {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+
+/* Bold key terms inside sentences get a soft highlight */
+
+#project-content p > strong {
+  padding: 0 0.15em;
+  background: linear-gradient(transparent 60%, var(--accent-light) 60%);
+}
+
+
+/* #### Heading + the paragraph under it form one card (e.g. Methods) */
+
+#project-content h4 {
+  margin: 1rem 0 0;
+  padding: 1.25rem 1.4rem 0.35rem;
+  border: 1px solid var(--color-border);
+  border-bottom: 0;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  background: var(--color-background);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#project-content h4 + p {
+  margin: 0 0 1rem;
+  padding: 0 1.4rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-top: 0;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+  background: var(--color-background);
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+
+/* > Blockquotes are notes still to be filled in */
+
+#project-content blockquote {
+  margin: 1.75rem 0;
+  padding: 0.9rem 1.15rem;
+  border: 1px dashed #cfd3c9;
+  border-radius: var(--radius-card);
+}
+
+#project-content blockquote::before {
+  content: "Draft note";
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#project-content blockquote p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 575.98px) {
+  #project-content h1 + p {
+    margin-bottom: 2.5rem;
+  }
+
+  #project-content h2 {
+    margin-top: 3rem;
+    padding-top: 2.25rem;
+  }
+
+  #project-content li {
+    padding: 0.9rem 1rem 0.9rem 2.2rem;
+  }
+
+  #project-content li::before {
+    left: 1rem;
+  }
+}
