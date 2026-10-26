@@ -1,53 +1,93 @@
 # Psychology
 
-*Expertise · Problem solving · Flexible thinking*
+*Perception · Knowledge · Decision making · Expertise*
 
-## Theoretical interest
+## What I have been researching
 
-### What I have been researching
+My research asks a general question: **how does experience change the way people perceive, represent knowledge, and make decisions?** I study it in chess, a model domain with explicit rules, a vast space of recognisable patterns, and an objective measure of individual skill in the form of player ratings. This makes it possible to compare, precisely, how people with different levels of expertise approach the same problem.
 
-My research asks how expertise shapes the way people solve problems, and in particular when experience helps and when it gets in the way.
+### Research themes
 
-I use chess as a model domain. It has explicit rules, a huge space of recognisable patterns, and an objective measure of skill in the form of player ratings. This makes it possible to compare how people of different skill levels approach the same problem.
+- **Pattern recognition and visual perception.** How people recognise meaningful configurations at a glance, and how the way information is presented changes what they see.
+- **Knowledge representation.** How expert knowledge is organised in memory, and how it is retrieved when a problem calls for it.
+- **Problem solving.** How people search for solutions, and why a familiar solution can block a better one.
+- **Decision making and heuristics.** When people rely on intuition and mental shortcuts, and when they switch to deliberate reasoning.
+- **Expertise and individual differences.** What separates experts from novices, and how far a specialised skill carries over to other domains.
 
-A central theme in my work is the **Einstellung effect**: the tendency for a familiar solution to come to mind first and block a better one. Experts know more patterns, so they might be expected to be more vulnerable to this kind of mental rigidity. My studies test that idea directly.
+### Studies and contributions
 
-- **Perspective and flexible thinking (2019).** I tested whether reversing the perspective of a chess position helps players break out of a familiar but suboptimal solution. Reversing the perspective did not reduce the Einstellung effect, but higher-rated players were more likely to find the optimal solution.
-- **Heuristics inside and outside chess (2022).** I compared how players use intuitive and heuristic strategies on chess problems and on tasks outside chess. Chess expertise was linked to greater efficiency on chess problems but did not carry over to other domains, and better performance on chess problems was associated with lower accuracy on general reasoning tasks.
-- **Distraction and problem solving.** In a further experiment with 48 rated players, I examined how distraction affects the ability of stronger and weaker players to find the best move.
+A central theme of my work is the **Einstellung effect**: the tendency for a familiar solution to come to mind first and block a better one. Because experts know more patterns, they might be expected to be more vulnerable to this kind of mental rigidity.
 
-Together, these studies point to expertise as highly domain-specific: it makes people faster and more accurate inside their domain, but it does not simply make them better thinkers in general.
+- **Perspective and flexible thinking (2019).** Tested whether reversing the visual perspective of a chess position helps players overcome a familiar but suboptimal solution. Published in *Suvremena Psihologija*.
+- **Heuristics inside and outside the domain (2022).** Compared how players use intuitive and heuristic strategies on chess problems and on general reasoning tasks. Presented at the *Empirical Studies in Psychology* conference, University of Belgrade.
+- **Distraction and problem solving.** An experiment with 48 rated players on how distraction affects the ability of stronger and weaker players to find the best solution.
 
-### Where I am heading
+## Where I am heading
 
-My next step is to explain *why* expertise behaves this way, by connecting these behavioural findings to models of how experts store and retrieve knowledge. This links my psychology work to my interest in computational models of cognition (see [Artificial intelligence](artificial-intelligence.html)).
+The directions below are my research interests within **psychology**. My interests in artificial intelligence and linguistics have their own focus, but a cognitive science approach unites them all in one goal: **investigating the human mind by bringing together skills and knowledge from different fields.**
 
-> Add the specific questions or studies you are planning next.
+Within psychology, my next step is to move from *describing* human cognition to **explaining it with explicit theories and models**, and to **applying that understanding** to the technologies people use. Chess remains a useful testbed, but the questions are general.
+
+### Theory-driven models of cognition
+
+I want to formalise psychological theories as computational models that make testable predictions about human behaviour, including its limits and typical errors. My current work uses the cognitive architecture **CHREST**, which explains expert perception and memory through chunks of knowledge learned from experience, and explores how it can be combined with explicit, symbolic representations of concepts (see [Artificial intelligence](artificial-intelligence.html)).
+
+### Human and machine reasoning
+
+AI systems, from chess engines to language models, increasingly make judgements that people rely on. I am interested in using the methods of cognitive psychology to compare human and machine reasoning: where an AI system interprets and decides like a person, where it diverges, and how well it represents its own uncertainty. My [current project](ai.html) compares a human-like neural chess model with human players who share the same rating and experience.
+
+### Cognition in interactive systems
+
+Theories of perception, memory, and decision making can help us understand and predict when technology is genuinely useful and usable, rather than distracting or deskilling. I want to understand better how people actually use technology, for example how they work with chat interfaces to large language models, so that we can shape both how people use it and how the technology itself is designed. This ranges from interface design to training tools such as those I built for [NeuralGambit](web-applications.html), and to emerging technologies such as extended reality.
+
+### Individual differences
+
+Expertise is one source of variation in how people perceive and decide. I am interested in the broader question of why individuals differ in perceptual and cognitive abilities, such as recognition, memory, and reasoning, and in studying this in larger and more diverse samples.
+
+Working with expert populations has proven to be a strong research method: experts offer a measurable, naturally occurring range of skill, which makes differences in cognition visible and comparable. I see it as a useful tool for my future research.
 
 ## Methods
 
+### Methods I have used
+
 #### Experimental design
 
-Controlled experiments with registered chess players, grouped by rating (for example, a cut-off of 1900 Elo with equal groups of stronger and weaker players), with manipulations such as reversing the board perspective or adding distraction.
+Controlled experiments comparing groups that differ in expertise (for example, chess players above and below 1900 Elo), with manipulations of how information is presented, such as perspective or distraction.
 
-#### Problem-solving tasks
+#### Eye tracking
 
-Chess problems, including mate-in-two positions and Einstellung positions where a familiar solution competes with a shorter, optimal one. Materials were selected from larger sets of positions and reviewed by chess experts. In one study, chess problems were paired with general reasoning tasks to test transfer outside the domain.
+Recording where and for how long people look, to study visual perception and pattern recognition directly rather than inferring them from answers alone.
 
 #### Behavioural measures
 
-Accuracy, whether the optimal solution was found, response times, and error types, analysed for differences between rating groups and experimental conditions.
+Accuracy, solution quality, response times, and error types, compared across groups and experimental conditions.
 
-#### Tools
+#### Experiment software
 
 PsychoPy 3 for building and running experiments.
 
-> Add the statistical methods and software you used for analysis.
+#### Statistical analysis
 
-## Publications
+SPSS, R, and Python for data preparation, statistical analysis, and visualisation.
 
-Antolčić, M. (2019). The effect of reverse perspective and player's rating on flexible thinking in chess. *Suvremena Psihologija, 22*(1), 53–65. [doi.org/10.21465/2019-SP-221-04 ↗](https://doi.org/10.21465/2019-SP-221-04)
+### Methods I want to develop
 
-Antolčić, M. (2022). Do higher-level chess players rely on heuristics in general as well as in chess problem solving? In *Proceedings of the XXVIII Scientific Conference Empirical Studies in Psychology*. University of Belgrade.
+#### Bayesian statistics
 
-[All publications →](publications.html)
+Quantifying evidence for and against hypotheses, including the absence of an effect, and building cumulatively on prior research.
+
+#### Neuroimaging
+
+Using specialised equipment such as EEG or fMRI to connect perception and decision making to their neural basis.
+
+#### Virtual and extended reality
+
+Creating controlled yet realistic environments to study perception and decision making, and to test how people interact with immersive technology.
+
+#### Language models as research tools
+
+Using large language models and NLP both as objects of study, comparing their reasoning with human reasoning, and as tools for analysing text and developing theory.
+
+#### Large-scale data
+
+Studying individual differences in larger, more representative samples, combining experimental tasks with questionnaire and population data.

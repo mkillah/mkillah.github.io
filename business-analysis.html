@@ -1,1 +1,738 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Business analysis | Marko Antolcic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="navbar navbar-expand-lg site-nav"><div class="container"><a class="navbar-brand" href="index.html">Marko Antolcic</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse justify-content-end" id="mainNav"><div class="navbar-nav"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="research.html">Research</a><a class="nav-link " href="data.html">Data</a><a class="nav-link active" href="systems.html">Systems</a></div></div></div></nav><main class="container"><section class="page-hero"><p class="eyebrow">SYSTEMS</p><h1>Business analysis</h1><p>Requirements analysis, process modeling, user stories, and stakeholder alignment.</p><a class="back-link" href="systems.html">← Back to Systems</a></section><div class="placeholder">Add selected projects here. For each project, include the question or problem, your approach, data or methods, key results, and links to code, publications, or a live demo.</div></main><footer class="container site-footer"><span>© <span id="year"></span> Marko Antolcic</span><div><a href="https://github.com/mkillah">GitHub</a><span>·</span><a href="https://www.researchgate.net/">ResearchGate</a><span>·</span><a href="https://www.linkedin.com/">LinkedIn</a></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Business analysis case study by Marko Antolcic: how I take a system from problem statement to a working MVP, with every deliverable and what it produced.">
+
+  <title>Business Analysis | Marko Antolcic</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDFLJV05J1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDFLJV05J1');
+</script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg site-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Marko Antolcic</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="research.html">Research</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link active" href="systems.html">Systems</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="ba-page">
+
+    <!-- Introduction -->
+    <section class="hero container ba-hero">
+      <p class="eyebrow">SYSTEMS / BUSINESS ANALYSIS</p>
+
+      <a class="back-link" href="systems.html">
+        <span aria-hidden="true">←</span> Back to Systems
+      </a>
+
+      <h1>From a messy process to working software in 10 weeks.</h1>
+
+      <p class="lead">
+        I find it more useful to show how I work than to list skills. This
+        case study walks through a complete business analysis engagement,
+        from the first problem statement to an MVP running in production,
+        with every deliverable and what it concretely produced.
+      </p>
+
+      <div class="case-note">
+        <strong>About this case study.</strong>
+        NordFreight A/S is a fictional Danish freight company. The engagement
+        is a realistic example of the work I have done in previous roles: the
+        process, artefacts, decisions, and numbers reflect how I operate.
+      </div>
+
+      <dl class="ba-facts">
+        <div><dt>Client</dt><dd>NordFreight A/S</dd></div>
+        <div><dt>My role</dt><dd>IT consultant</dd></div>
+        <div><dt>Team</dt><dd>2 developers · 1 BA · 1 QA</dd></div>
+        <div><dt>Duration</dt><dd>10 weeks</dd></div>
+        <div><dt>Outcome</dt><dd>MVP live at Depot 1</dd></div>
+      </dl>
+    </section>
+
+
+    <!-- The brief -->
+    <section class="work-section ba-brief">
+      <div class="container">
+        <div class="row gx-lg-5 gy-4">
+          <div class="col-lg-4">
+            <div class="section-heading">
+              <p class="eyebrow">THE BRIEF</p>
+              <h2>Order management digitalisation.</h2>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="brief-grid">
+              <div><span>Client</span><p>Danish freight &amp; logistics company, ~180 employees</p></div>
+              <div><span>Problem</span><p>200+ daily orders run through Excel and email, with no single source of truth</p></div>
+              <div class="brief-cost"><span>Cost</span><p>~€18,000 per month in order errors and re-routing fees</p></div>
+              <div><span>Ask</span><p>A web-based order management platform with ERP integration</p></div>
+              <div><span>Constraints</span><p>No operational downtime · GDPR · €220K budget</p></div>
+              <div class="brief-delivered"><span>Delivered</span><p>MVP live in 10 weeks · 0 scope changes after sign-off</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Results -->
+    <section class="work-section ba-results">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">RESULTS</p>
+          <h2>What the analysis delivered.</h2>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-tile">
+            <span class="result-value">−62%</span>
+            <span class="result-label">Order errors</span>
+            <p>within 3 weeks of go-live</p>
+          </div>
+          <div class="result-tile">
+            <span class="result-value">−83%</span>
+            <span class="result-label">Time per order</span>
+            <p>from 23 minutes to 4 minutes</p>
+          </div>
+          <div class="result-tile">
+            <span class="result-value">0</span>
+            <span class="result-label">Scope changes after sign-off</span>
+            <p>across 3 sprints</p>
+          </div>
+          <div class="result-tile">
+            <span class="result-value">10 wk</span>
+            <span class="result-label">Time to Sprint 1 live</span>
+            <p>the client had estimated 6 months</p>
+          </div>
+          <div class="result-tile">
+            <span class="result-value">€18K</span>
+            <span class="result-label">Saved per month</span>
+            <p>ROI payback in 12 months</p>
+          </div>
+          <div class="result-tile">
+            <span class="result-value">+40%</span>
+            <span class="result-label">Developer velocity</span>
+            <p>from Sprint 1 to Sprint 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Method overview -->
+    <section class="work-section ba-method">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">HOW I WORK</p>
+          <h2>Understand first, then build.</h2>
+          <p>
+            Two phases, plus team management running throughout. Every step
+            has a named deliverable and a concrete effect on the project.
+            Select a step to jump to it.
+          </p>
+        </div>
+
+        <div class="method-map">
+          <div class="method-phase phase-1">
+            <div class="method-phase-head">
+              <span>Phase 1 · Weeks 1–4</span>
+              <h3>Discovery &amp; alignment</h3>
+              <p>Understand the problem before touching the solution.</p>
+            </div>
+            <ol>
+              <li><a href="#problem-statement">Problem statement</a></li>
+              <li><a href="#business-case">Business case</a></li>
+              <li><a href="#interviews">Stakeholder interviews</a></li>
+              <li><a href="#glossary">Domain glossary</a></li>
+              <li><a href="#personas">User personas</a></li>
+              <li><a href="#journeys">User journey mapping</a></li>
+              <li><a href="#as-is-to-be">As-is / to-be analysis</a></li>
+              <li><a href="#wireframes">Wireframes</a></li>
+              <li><a href="#data-model">Conceptual data model</a></li>
+              <li><a href="#assumptions">Assumptions &amp; constraints</a></li>
+              <li><a href="#nfrs">Non-functional requirements</a></li>
+            </ol>
+          </div>
+
+          <div class="method-phase phase-2">
+            <div class="method-phase-head">
+              <span>Phase 2 · Weeks 5–10</span>
+              <h3>Proof of concept</h3>
+              <p>Translate understanding into requirements and software.</p>
+            </div>
+            <ol>
+              <li><a href="#prototype">Prototype &amp; usability</a></li>
+              <li><a href="#backlog">Backlog &amp; prioritisation</a></li>
+              <li><a href="#requirements">Requirements &amp; Definition of Done</a></li>
+            </ol>
+          </div>
+
+          <div class="method-phase phase-c">
+            <div class="method-phase-head">
+              <span>Continuous</span>
+              <h3>Team management</h3>
+              <p>Governance that keeps scope and people aligned.</p>
+            </div>
+            <ol>
+              <li><a href="#team">Steering &amp; RACI</a></li>
+              <li><a href="#team">Change control</a></li>
+              <li><a href="#timeline">Delivery timeline</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Phase 1 -->
+    <section class="work-section ba-phase" id="phase-1">
+      <div class="container">
+
+        <div class="phase-banner phase-1">
+          <span class="phase-chip">Phase 1</span>
+          <h2>Discovery &amp; alignment</h2>
+          <p>Understand the problem before touching the solution.</p>
+        </div>
+
+        <div class="deliverables">
+
+          <article class="deliverable" id="problem-statement">
+            <div class="deliverable-meta"><span class="d-num">01</span><span class="d-week">Week 1</span></div>
+            <div class="deliverable-body">
+              <h3>Problem statement</h3>
+              <p>A one-page brief defining who is affected, what the problem is, and why it matters.</p>
+              <blockquote class="ba-quote">
+                “NordFreight loses €18K/month because depot staff work from 4
+                disconnected sources, creating order conflicts with no single
+                source of truth.”
+              </blockquote>
+              <p class="outcome"><strong>Outcome</strong> Approved by the CFO and CTO in Week 1, and used as the scope north star for the whole engagement.</p>
+            </div>
+          </article>
+
+          <article class="deliverable" id="business-case">
+            <div class="deliverable-meta"><span class="d-num">02</span><span class="d-week">Week 1</span></div>
+            <div class="deliverable-body">
+              <h3>Business case</h3>
+              <div class="equation">
+                <div><span>Build cost</span><strong>€220K</strong></div>
+                <i aria-hidden="true">vs</i>
+                <div><span>Error savings</span><strong>€216K / year</strong></div>
+                <i aria-hidden="true">=</i>
+                <div class="equation-result"><span>Payback</span><strong>12 months</strong></div>
+              </div>
+              <p class="outcome"><strong>Outcome</strong> Presented in a single slide and approved the same day. No further budget discussion for the rest of the engagement.</p>
+            </div>
+          </article>
+
+          <article class="deliverable" id="interviews">
+            <div class="deliverable-meta"><span class="d-num">03</span><span class="d-week">Weeks 1–2</span></div>
+            <div class="deliverable-body">
+              <h3>Stakeholder interviews</h3>
+              <p>Six interviews, some of them iterative, across operations, IT, finance, and customer service.</p>
+              <ul class="tag-row">
+                <li>Depot manager</li><li>2 order clerks</li><li>IT lead</li><li>Finance</li><li>Customer service</li>
+              </ul>
+              <p class="outcome"><strong>Key find</strong> Customer service revealed that customers called every day for shipment status. This was not in the original brief, and became the Customer Portal feature.</p>
+            </div>
+          </article>
+
+          <article class="deliverable" id="glossary">
+            <div class="deliverable-meta"><span class="d-num">04</span><span class="d-week">Week 2</span></div>
+            <div class="deliverable-body">
+              <h3>Domain glossary</h3>
+              <p>28 terms defined and agreed across departments.</p>
+              <div class="glossary-demo" aria-label="The word order meant three different things">
+                <span class="glossary-term">“order”</span>
+                <div>
+                  <span><b>IT</b> a database record</span>
+                  <span><b>Finance</b> an invoiceable unit</span>
+                  <span><b>Operations</b> a physical shipment</span>
+                </div>
+              </div>
+              <p class="outcome"><strong>Critical find</strong> “Order” meant three different things to IT, Finance, and Operations. Resolving it before the first wireframe prevented about 3 weeks of back-and-forth in development.</p>
+              <p class="page-draft-note">The three meanings of “order” shown above are examples. Replace them with the definitions from your glossary.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="personas">
+            <div class="deliverable-meta"><span class="d-num">05</span><span class="d-week">Week 2</span></div>
+            <div class="deliverable-body">
+              <h3>User personas</h3>
+              <p>Three personas with day-in-the-life scenarios.</p>
+              <div class="persona-grid">
+                <div class="persona">
+                  <span class="persona-avatar" aria-hidden="true">OC</span>
+                  <h4>Order clerk</h4>
+                  <p><span>Goal</span>Process orders fast</p>
+                  <p><span>Frustration</span>Switching between 4 systems per order</p>
+                </div>
+                <div class="persona">
+                  <span class="persona-avatar" aria-hidden="true">DM</span>
+                  <h4>Depot manager</h4>
+                  <p><span>Goal</span>Real-time order visibility</p>
+                  <p><span>Frustration</span>No dashboard, everything is in email</p>
+                </div>
+                <div class="persona">
+                  <span class="persona-avatar" aria-hidden="true">CC</span>
+                  <h4>Corporate customer</h4>
+                  <p><span>Goal</span>Know shipment status</p>
+                  <p><span>Frustration</span>Calling to chase updates</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="journeys">
+            <div class="deliverable-meta"><span class="d-num">06</span><span class="d-week">Week 3</span></div>
+            <div class="deliverable-body">
+              <h3>User journey mapping</h3>
+              <p>Journeys mapped for all three personas.</p>
+              <p class="outcome"><strong>Key find</strong> Two touchpoints had no digital equivalent. A Driver Mobile View and the Customer Portal were added to scope before wireframing began.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="as-is-to-be">
+            <div class="deliverable-meta"><span class="d-num">07</span><span class="d-week">Week 3</span></div>
+            <div class="deliverable-body">
+              <h3>As-is / to-be analysis</h3>
+              <p>The current order process was mapped step by step, then redesigned.</p>
+
+              <div class="compare-table">
+                <div class="ct-head"><span></span><span>As-is</span><span>To-be</span></div>
+                <div><span>Steps per order</span><b class="bad">11</b><b class="good">3</b></div>
+                <div><span>Manual handoffs</span><b class="bad">4</b><b class="good">1</b></div>
+                <div><span>Time per order</span><b class="bad">23 min</b><b class="good">4 min</b></div>
+                <div><span>Data sources</span><b class="bad">4</b><b class="good">1</b></div>
+              </div>
+
+              <a class="ba-figure" href="assets/img/business-analysis/process_asis_tobe.png" target="_blank" rel="noopener">
+                <img src="assets/img/business-analysis/process_asis_tobe.png" width="1920" height="1400" loading="lazy"
+                     alt="As-is process with 11 manual steps taking 23 minutes per order, compared with a to-be process of 3 steps taking 4 minutes">
+                <span class="figure-zoom">View full size ↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="wireframes">
+            <div class="deliverable-meta"><span class="d-num">08</span><span class="d-week">Week 3</span></div>
+            <div class="deliverable-body">
+              <h3>Wireframes &amp; walkthrough</h3>
+              <p>8 screen flows built in Figma over 3 days, then validated in a 90-minute stakeholder walkthrough.</p>
+
+              <div class="wf-viewer" id="wf-viewer">
+                <div class="wf-tabs" role="tablist" aria-label="Wireframes">
+                  <button type="button" role="tab" id="wf-tab-1" aria-controls="wf-panel-1" aria-selected="true">Dashboard</button>
+                  <button type="button" role="tab" id="wf-tab-2" aria-controls="wf-panel-2" aria-selected="false" tabindex="-1">New order form</button>
+                  <button type="button" role="tab" id="wf-tab-3" aria-controls="wf-panel-3" aria-selected="false" tabindex="-1">Routing assignment</button>
+                </div>
+
+                <div class="wf-panel" role="tabpanel" id="wf-panel-1" aria-labelledby="wf-tab-1">
+                  <img src="assets/img/business-analysis/wf_dashboard.png" width="1920" height="1120" loading="lazy"
+                       alt="Dashboard wireframe for the depot manager, with active orders, shipments in transit, exceptions, and a recent orders table">
+                  <p>Depot manager persona · real-time overview of orders, transit, exceptions, and unassigned orders.</p>
+                </div>
+                <div class="wf-panel" role="tabpanel" id="wf-panel-2" aria-labelledby="wf-tab-2" hidden>
+                  <img src="assets/img/business-analysis/wf_neworder.png" width="1920" height="1120" loading="lazy"
+                       alt="New order form wireframe showing a business rule violation when the weight exceeds 90 percent of the vehicle payload">
+                  <p>Order clerk persona · business rules enforced live, such as blocking a weight above 90% of vehicle payload.</p>
+                </div>
+                <div class="wf-panel" role="tabpanel" id="wf-panel-3" aria-labelledby="wf-tab-3" hidden>
+                  <img src="assets/img/business-analysis/wf_routing.png" width="1920" height="1120" loading="lazy"
+                       alt="Routing assignment wireframe with the Danish depot network and vehicle fleet load percentages">
+                  <p>Depot manager persona · vehicle assignment across the depot network, with capacity enforcement.</p>
+                </div>
+              </div>
+
+              <p class="outcome"><strong>Outcome</strong> 2 minor label changes and zero functional changes in the walkthrough. Scope locked.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="data-model">
+            <div class="deliverable-meta"><span class="d-num">09</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-body">
+              <h3>Conceptual data model</h3>
+              <ul class="stat-row">
+                <li><b>6</b> entities</li>
+                <li><b>19</b> business rules</li>
+                <li><b>1</b> duplication resolved</li>
+              </ul>
+              <a class="ba-figure" href="assets/img/business-analysis/data_model.png" target="_blank" rel="noopener">
+                <img src="assets/img/business-analysis/data_model.png" width="1920" height="1280" loading="lazy"
+                     alt="Conceptual data model with six entities: Order, Shipment, Customer, Depot, Vehicle, and Driver, and their relationships">
+                <span class="figure-zoom">View full size ↗</span>
+              </a>
+              <p class="outcome"><strong>Outcome</strong> The “Customer” entity was duplicated between the ERP and CRM. It was resolved into one canonical customer before the database schema was created, and the business rules prevented 3 architecture debates.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="assumptions">
+            <div class="deliverable-meta"><span class="d-num">10</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-body">
+              <h3>Assumptions &amp; constraints</h3>
+              <p>11 assumptions and constraints documented and tracked.</p>
+              <p class="outcome"><strong>Most impactful</strong> The ERP API is rate-limited to 100 calls per minute. This shaped the entire sync architecture (a 15-minute asynchronous queue), and was caught here rather than in Sprint 3.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="nfrs">
+            <div class="deliverable-meta"><span class="d-num">11</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-body">
+              <h3>Non-functional requirements</h3>
+              <p>18 requirements covering how the system must behave, not just what it does.</p>
+              <div class="nfr-grid">
+                <div><span>Performance</span><p>&lt;2s page load · &lt;500ms API · 50 concurrent users</p></div>
+                <div><span>Availability</span><p>99.5% SLA · graceful degradation when the ERP is offline</p></div>
+                <div><span>Security</span><p>Role-based access (4 levels) · encryption at rest and in transit · full audit log</p></div>
+                <div><span>Compliance</span><p>GDPR · Danish data residency · PII fields flagged in the data model</p></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Phase 2 -->
+    <section class="work-section ba-phase ba-phase-2" id="phase-2">
+      <div class="container">
+
+        <div class="phase-banner phase-2">
+          <span class="phase-chip">Phase 2</span>
+          <h2>Proof of concept</h2>
+          <p>Translate understanding into requirements and working software.</p>
+        </div>
+
+        <div class="deliverables">
+
+          <article class="deliverable deliverable-wide" id="prototype">
+            <div class="deliverable-meta"><span class="d-num">12</span><span class="d-week">Weeks 5–6</span></div>
+            <div class="deliverable-body">
+              <h3>Prototype &amp; usability sessions</h3>
+              <ul class="stat-row">
+                <li><b>9</b> pages, each traceable to a user goal</li>
+                <li><b>41</b> user actions written as dev specs</li>
+                <li><b>5</b> usability sessions with real clerks</li>
+              </ul>
+              <p>Each user action was specified as <em>trigger → decision → outcome</em>, so developers could build directly from it.</p>
+              <p class="outcome"><strong>Key find</strong> Bulk import from Excel was critical for clerks but missing from scope. It was added as a Must-Have and approved within 24 hours.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="backlog">
+            <div class="deliverable-meta"><span class="d-num">13</span><span class="d-week">Weeks 6–7</span></div>
+            <div class="deliverable-body">
+              <h3>Backlog &amp; prioritisation</h3>
+              <p>5 epics and 54 user stories. The proof of concept covered core functionality only.</p>
+
+              <div class="moscow" aria-label="MoSCoW prioritisation: 14 Must, 8 Should, 5 Could, 3 Won't">
+                <div class="moscow-bar">
+                  <span class="m-must" style="flex: 14">14 Must</span>
+                  <span class="m-should" style="flex: 8">8 Should</span>
+                  <span class="m-could" style="flex: 5">5 Could</span>
+                  <span class="m-wont" style="flex: 3">3</span>
+                </div>
+                <p class="moscow-legend">MoSCoW · Must · Should · Could · Won't</p>
+              </div>
+
+              <div class="row g-3 backlog-facts">
+                <div class="col-md-6">
+                  <div class="fact-box">
+                    <span>Ambiguity per story</span>
+                    <strong>3.2 → 0.4</strong>
+                    <p>questions per story after weekly refinement, with velocity up 40%</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="fact-box">
+                    <span>Deferred to Should-Have</span>
+                    <strong>3 weeks saved</strong>
+                    <p>by moving routing auto-assignment out of the MVP</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sprint-goal">
+                <span>Sprint 1 goal</span>
+                <p>“A clerk at Depot 1 can create and submit a freight order digitally, without touching Excel.”</p>
+              </div>
+
+              <div class="table-wrap">
+                <table class="ba-table">
+                  <caption>Proof-of-concept scope</caption>
+                  <thead><tr><th>Epic</th><th>PoC feature</th><th>User story</th></tr></thead>
+                  <tbody>
+                    <tr><td>Order intake</td><td>New order · Validation</td><td>Create a single order · Block an order exceeding the payload limit</td></tr>
+                    <tr><td>Routing engine</td><td>Manual assign</td><td>Assign a vehicle to an order</td></tr>
+                    <tr><td>Exception management</td><td>Flag</td><td>View all flagged orders in one place</td></tr>
+                    <tr><td>Integrations</td><td>ERP sync</td><td>Sync confirmed orders to the ERP</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="requirements">
+            <div class="deliverable-meta"><span class="d-num">14</span><span class="d-week">Weeks 7–8</span></div>
+            <div class="deliverable-body">
+              <h3>Requirements &amp; Definition of Done</h3>
+
+              <div class="row g-4">
+                <div class="col-lg-7">
+                  <div class="story-card">
+                    <span class="story-label">User story</span>
+                    <p class="story-text">As an <b>order clerk</b>, I want to <b>bulk-import from Excel</b> so I can <b>process the morning manifest in under 2 minutes</b>.</p>
+
+                    <span class="story-label">Acceptance criteria</span>
+                    <dl class="gwt">
+                      <div><dt>Given</dt><dd>a file with more than 500 rows</dd></div>
+                      <div><dt>When</dt><dd>it is uploaded</dd></div>
+                      <div><dt>Then</dt><dd>valid rows are queued and invalid rows are flagged inline, so the clerk is not blocked by errors</dd></div>
+                    </dl>
+                  </div>
+
+                  <p class="outcome"><strong>Edge cases</strong> 38 documented. The most impactful: if the ERP times out, orders wait in a 15-minute local queue with the sync status shown, and no clerk action is needed.</p>
+                </div>
+
+                <div class="col-lg-5">
+                  <div class="dod">
+                    <span class="story-label">Definition of Done</span>
+                    <p class="dod-sub">Ratified by development, QA, and the business</p>
+                    <ul>
+                      <li>Code reviewed and merged</li>
+                      <li>Unit tests passing</li>
+                      <li>All acceptance criteria verified by QA</li>
+                      <li>GDPR reviewed for stories touching personal data</li>
+                      <li>Performance tested at 50 concurrent users</li>
+                      <li>Product owner sign-off in staging</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <p class="outcome"><strong>Sign-off</strong> Stakeholders signed off in Week 7, followed by zero scope changes in Sprints 1–3.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Team management -->
+    <section class="work-section ba-team" id="team">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">CONTINUOUS · TEAM MANAGEMENT</p>
+          <h2>Governance without the overhead.</h2>
+        </div>
+
+        <div class="team-grid">
+          <div>
+            <h3>Weekly steering</h3>
+            <p>A 30-minute RAG status for the CFO and CTO. 4 change requests logged: 2 approved, 2 deferred.</p>
+          </div>
+          <div>
+            <h3>RACI matrix</h3>
+            <p>Making Finance <em>Consulted</em> rather than <em>Accountable</em> on the data model eliminated a 3-week back-and-forth.</p>
+          </div>
+          <div>
+            <h3>Change control</h3>
+            <p>Bulk import: a 2-day impact assessed and approved within 24 hours, with zero sprint disruption.</p>
+          </div>
+          <div class="team-highlight">
+            <h3>Meeting cadence</h3>
+            <p>Steering, refinement, stand-up, and sprint review in just</p>
+            <strong>2 h 45 min / week</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Timeline -->
+    <section class="work-section ba-timeline-section" id="timeline">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">DELIVERY TIMELINE</p>
+          <h2>10 weeks, against a 6-month estimate.</h2>
+        </div>
+
+        <ol class="ba-timeline">
+          <li class="tl-1">
+            <span class="tl-week">W1</span>
+            <div><h3>Problem statement + business case</h3><p>NPV model approved by CFO and CTO · 3 stakeholder interviews completed</p></div>
+          </li>
+          <li class="tl-1">
+            <span class="tl-week">W2</span>
+            <div><h3>User personas + domain glossary</h3><p>3 remaining interviews · 3 personas finalised · 28-term glossary, “order” ambiguity resolved</p></div>
+          </li>
+          <li class="tl-1">
+            <span class="tl-week">W3</span>
+            <div><h3>Process modelling + wireframes</h3><p>As-is / to-be mapped (11 → 3 steps) · 3 journey maps · 8 screen flows in Figma</p></div>
+          </li>
+          <li class="tl-1">
+            <span class="tl-week">W4</span>
+            <div><h3>Data model + NFRs + scope lock</h3><p>6 entities · 19 business rules · 18 NFRs · stakeholder walkthrough, scope baselined</p></div>
+            <span class="tl-badge">Scope locked</span>
+          </li>
+          <li class="tl-2">
+            <span class="tl-week">W5–6</span>
+            <div><h3>Prototype + usability sessions</h3><p>9 pages · 41 user actions · 5 usability sessions · bulk import added as Must-Have</p></div>
+          </li>
+          <li class="tl-2">
+            <span class="tl-week">W6–7</span>
+            <div><h3>Backlog + stakeholder sign-off</h3><p>5 epics · MoSCoW applied · 54 user stories · sign-off at the end of Week 7</p></div>
+            <span class="tl-badge">Signed off</span>
+          </li>
+          <li class="tl-2">
+            <span class="tl-week">W7–8</span>
+            <div><h3>Full requirements + Definition of Done</h3><p>All acceptance criteria in Given/When/Then · 38 edge cases · 6-point DoD ratified</p></div>
+          </li>
+          <li class="tl-3">
+            <span class="tl-week">W8–10</span>
+            <div><h3>Sprint 1 live at Depot 1</h3><p>Order intake live in production · Sprints 2–4 planned · 0 scope changes after sign-off</p></div>
+            <span class="tl-badge">Live in production</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- Skills reference -->
+    <section class="work-section ba-skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">SKILLS REFERENCE</p>
+          <h2>21 skills, each with evidence.</h2>
+        </div>
+
+        <div class="skills-columns">
+          <div class="skill-group phase-1">
+            <h3>Discovery &amp; alignment</h3>
+            <ul>
+              <li><b>Problem statement</b><span>1-page brief, C-suite approved in Week 1</span></li>
+              <li><b>Business case</b><span>NPV model, 12-month payback</span></li>
+              <li><b>Stakeholder interviews</b><span>6 interviews, hidden need surfaced</span></li>
+              <li><b>User personas</b><span>3 personas, day-in-life scenarios</span></li>
+              <li><b>Domain glossary</b><span>28 terms, “order” ambiguity resolved</span></li>
+              <li><b>Assumptions &amp; constraints</b><span>11 items, API limit shaped architecture</span></li>
+              <li><b>As-is / to-be</b><span>11 → 3 steps, 83% time reduction</span></li>
+              <li><b>User journey mapping</b><span>2 missing touchpoints found</span></li>
+              <li><b>Wireframes &amp; walkthrough</b><span>8 screens, scope locked in 90 min</span></li>
+              <li><b>Conceptual data model</b><span>6 entities, duplication resolved</span></li>
+              <li><b>Business rules</b><span>19 rules, 3 architecture debates prevented</span></li>
+              <li><b>Non-functional requirements</b><span>18 requirements: GDPR, SLA, RBAC</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-group phase-2">
+            <h3>Proof of concept</h3>
+            <ul>
+              <li><b>Pages &amp; user actions</b><span>9 pages, 41 actions as dev specs</span></li>
+              <li><b>Usability feedback</b><span>5 sessions, critical gap found pre-build</span></li>
+              <li><b>Epics &amp; prioritisation</b><span>MoSCoW, 3 sprint weeks saved</span></li>
+              <li><b>Backlog refinement</b><span>Ambiguity 3.2 → 0.4 per story</span></li>
+              <li><b>Sprint planning</b><span>Outcome-based goals, not task lists</span></li>
+              <li><b>User stories &amp; AC</b><span>54 stories, QA tests written from AC</span></li>
+              <li><b>Edge cases &amp; DoD</b><span>38 cases, 6-point DoD ratified</span></li>
+              <li><b>Stakeholder sign-off</b><span>Week 7, 0 scope changes in 3 sprints</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-group phase-c">
+            <h3>Continuous</h3>
+            <ul>
+              <li><b>Team management</b><span>RACI, status updates, change log, cadence</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Full scope + AI note -->
+    <section class="work-section ba-scope">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">BEYOND THE PROOF OF CONCEPT</p>
+          <h2>The full product scope.</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table class="ba-table">
+            <thead><tr><th>Epic</th><th>Key features</th><th>User stories</th></tr></thead>
+            <tbody>
+              <tr><td>Order intake</td><td>New order · Bulk import · Validation</td><td>Create a single order · Import the morning manifest from Excel · Block an order exceeding the payload limit</td></tr>
+              <tr><td>Routing engine</td><td>Manual assign · Auto-suggest · Override</td><td>Assign a vehicle to an order · Get a best-vehicle suggestion · Override an auto-assignment</td></tr>
+              <tr><td>Exception management</td><td>Flag · Resolve · Escalate</td><td>View all flagged orders in one place · Mark an exception as resolved · Escalate an unresolved exception</td></tr>
+              <tr><td>Customer portal</td><td>Shipment tracking · Notifications</td><td>Track a shipment in real time · Receive a delay notification automatically</td></tr>
+              <tr><td>Integrations</td><td>ERP sync · Driver API · Email</td><td>Sync confirmed orders to the ERP · Receive route details on mobile · Get an email confirmation on submission</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="ai-note">
+          <h3>On AI usage</h3>
+          <p>
+            This case study was drafted with Claude, which I prompted, directed,
+            and supervised. Every number, decision, and artefact was reviewed
+            and kept only because it accurately reflects my approach. The
+            methodology is mine; AI was the drafting instrument. That is how I
+            use AI on engagements: to accelerate output, not to replace
+            judgment.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container site-footer">
+    <span>© <span id="year"></span> Marko Antolcic</span>
+
+    <div>
+      <a href="https://github.com/mkillah" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="https://www.researchgate.net/profile/Marko-Antolcic" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/marko-antolcic-9b47b619b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/business-analysis.js"></script>
+
+</body>
+</html>

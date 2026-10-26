@@ -1,0 +1,110 @@
+{
+  "categories": {
+    "academic": {
+      "label": "Academic",
+      "description": "Research projects from psychology and cognitive science: experiments, surveys, and behavioural data."
+    },
+    "professional": {
+      "label": "Professional",
+      "description": "Analyses that answer business questions: people, performance, and organizational health."
+    }
+  },
+
+  "methodGroups": [
+    {
+      "label": "Descriptive statistics",
+      "methods": [
+        { "id": "descriptive", "name": "Descriptive statistics", "detail": "Central tendency, dispersion, and distributions" },
+        { "id": "eda", "name": "Exploratory data analysis", "detail": "Patterns, outliers, and data quality checks" }
+      ]
+    },
+    {
+      "label": "Inferential statistics",
+      "methods": [
+        { "id": "t-test", "name": "t-tests", "detail": "Independent and paired samples" },
+        { "id": "anova", "name": "ANOVA", "detail": "Comparing three or more groups" },
+        { "id": "chi-square", "name": "Chi-square tests", "detail": "Associations between categorical variables" },
+        { "id": "correlation", "name": "Correlation", "detail": "Pearson and Spearman" },
+        { "id": "nonparametric", "name": "Non-parametric tests", "detail": "Mann–Whitney, Wilcoxon, Kruskal–Wallis" }
+      ]
+    },
+    {
+      "label": "Modelling",
+      "methods": [
+        { "id": "linear-regression", "name": "Linear regression", "detail": "Predicting continuous outcomes" },
+        { "id": "logistic-regression", "name": "Logistic regression", "detail": "Predicting binary outcomes" },
+        { "id": "model-evaluation", "name": "Model evaluation", "detail": "Confusion matrix, ROC, and precision-recall" }
+      ]
+    },
+    {
+      "label": "Data work",
+      "methods": [
+        { "id": "web-scraping", "name": "Web scraping", "detail": "Collecting data from websites" },
+        { "id": "data-cleaning", "name": "Data cleaning", "detail": "Preparing raw data for analysis" },
+        { "id": "visualization", "name": "Data visualization", "detail": "Charts that communicate findings" }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "chess-distraction",
+      "title": "Background distraction in chess problem-solving",
+      "category": "academic",
+      "year": 2021,
+      "summary": "Do irrelevant background pieces make chess problems harder, and are stronger players less affected? Based on my master's thesis.",
+      "methods": ["descriptive", "anova", "linear-regression", "visualization"],
+      "tools": ["Python", "pandas", "statsmodels", "Seaborn"],
+      "details": { "label": "Read the thesis", "url": "https://urn.nsk.hr/urn:nbn:hr:162:140286" }
+    },
+    {
+      "id": "schizophrenia-homicide-offenders",
+      "title": "Schizophrenic and non-schizophrenic homicide offenders",
+      "category": "academic",
+      "year": 2024,
+      "summary": "Do homicide offenders with schizophrenia differ from those without it in background, the crime, and forensic-psychiatric profile?",
+      "methods": ["descriptive", "nonparametric", "chi-square"],
+      "tools": ["Python", "pandas", "SciPy"],
+      "repo": "https://github.com/mkillah/Portfolio/blob/main/Academic_Projects/schizophrenia-homicide-offenders.ipynb"
+    },
+    {
+      "id": "predicting-employee-performance",
+      "title": "Predicting employee performance",
+      "category": "professional",
+      "year": 2026,
+      "summary": "Which employee traits predict hitting performance targets, and can HR flag likely performers ahead of time?",
+      "methods": ["data-cleaning", "eda", "correlation", "logistic-regression", "model-evaluation", "visualization"],
+      "tools": ["Python", "pandas", "scikit-learn", "Seaborn"],
+      "repo": "https://github.com/mkillah/Portfolio/blob/main/HR_Analytics_Projects/hr-analytics-predicting-employee-performance.ipynb"
+    },
+    {
+      "id": "organizational-effectiveness",
+      "title": "Organizational effectiveness through HR analytics",
+      "category": "professional",
+      "year": 2026,
+      "summary": "Where are the risks to performance, satisfaction, and workplace behavior concentrated across departments?",
+      "methods": ["eda", "descriptive", "visualization"],
+      "tools": ["Python", "pandas", "Seaborn"],
+      "repo": "https://github.com/mkillah/Portfolio/blob/main/HR_Analytics_Projects/hr-analytics-organization-evaluation-interface.ipynb"
+    },
+    {
+      "id": "movie-ratings-bias",
+      "title": "Unveiling bias in movie ratings",
+      "category": "professional",
+      "year": 2026,
+      "summary": "Did Fandango show inflated ratings to sell more tickets? Comparing its stars with Rotten Tomatoes, Metacritic, and IMDb.",
+      "methods": ["data-cleaning", "descriptive", "eda", "correlation", "t-test", "visualization"],
+      "tools": ["Python", "pandas", "Seaborn", "SciPy"],
+      "repo": "https://github.com/mkillah/Portfolio/blob/main/ML_Projects/RatingRealities_Unveiling%20Bias%20in%20Movie%20Ratings.ipynb"
+    },
+    {
+      "id": "funeral-market-croatia",
+      "title": "Funeral services market in Croatia",
+      "category": "professional",
+      "year": 2024,
+      "summary": "How big is the funeral market, where is demand concentrated, and who are the competitors? Built on scraped data.",
+      "methods": ["web-scraping", "data-cleaning", "descriptive", "visualization"],
+      "tools": ["Python", "pandas", "Matplotlib", "Google Maps API"]
+    }
+  ]
+}

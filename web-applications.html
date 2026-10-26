@@ -1,1 +1,368 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Web applications | Marko Antolcic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="navbar navbar-expand-lg site-nav"><div class="container"><a class="navbar-brand" href="index.html">Marko Antolcic</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse justify-content-end" id="mainNav"><div class="navbar-nav"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="research.html">Research</a><a class="nav-link " href="data.html">Data</a><a class="nav-link active" href="systems.html">Systems</a></div></div></div></nav><main class="container"><section class="page-hero"><p class="eyebrow">SYSTEMS</p><h1>Web applications</h1><p>Web-based tools, prototypes, and interactive research applications.</p><a class="back-link" href="systems.html">← Back to Systems</a></section><div class="placeholder">Add selected projects here. For each project, include the question or problem, your approach, data or methods, key results, and links to code, publications, or a live demo.</div></main><footer class="container site-footer"><span>© <span id="year"></span> Marko Antolcic</span><div><a href="https://github.com/mkillah">GitHub</a><span>·</span><a href="https://www.researchgate.net/">ResearchGate</a><span>·</span><a href="https://www.linkedin.com/">LinkedIn</a></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web applications by Marko Antolcic, including NeuralGambit, a chess psychology platform with training tools, a rating predictor, and pattern recognition.">
+
+  <title>Web Applications | Marko Antolcic</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDFLJV05J1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDFLJV05J1');
+</script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg site-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Marko Antolcic</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="research.html">Research</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link active" href="systems.html">Systems</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="webapp-page">
+
+    <!-- Featured project -->
+    <section class="hero container webapp-hero">
+      <p class="eyebrow">SYSTEMS / WEB APPLICATIONS</p>
+
+      <a class="back-link" href="systems.html">
+        <span aria-hidden="true">←</span> Back to Systems
+      </a>
+
+      <div class="row align-items-center gx-lg-5 gy-5">
+        <div class="col-lg-5">
+          <div class="webapp-status">
+            <span class="live-dot" aria-hidden="true"></span> Live
+          </div>
+
+          <h1>NeuralGambit</h1>
+
+          <p class="lead">
+            A portal to chess psychology: research, training, and data tools
+            that look at chess through the lens of cognitive science.
+          </p>
+
+          <p class="intro-copy">
+            NeuralGambit turns my research on chess expertise into something
+            players can use. It explains how strong players think, and gives
+            them tools to test their own perception, memory, and problem
+            solving.
+          </p>
+
+          <div class="webapp-actions">
+            <a class="btn-primary-pill" href="https://www.neuralgambit.com/" target="_blank" rel="noopener noreferrer">
+              Visit neuralgambit.com <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-cta" href="#features">Explore features <span>↓</span></a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <!-- Simplified preview of the NeuralGambit home page -->
+          <a class="browser-frame" href="https://www.neuralgambit.com/" target="_blank" rel="noopener noreferrer"
+             aria-label="Open NeuralGambit in a new tab">
+            <div class="browser-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <div class="browser-url">neuralgambit.com</div>
+            </div>
+
+            <div class="browser-screen" aria-hidden="true">
+              <div class="mock-nav">
+                <strong>NeuralGambit</strong>
+                <em>Blog · Stats · Exercises · Perception</em>
+              </div>
+
+              <div class="mock-hero">
+                <span class="mock-title">Portal to Chess Psychology</span>
+                <span class="mock-text"></span>
+                <span class="mock-text short"></span>
+                <div class="mock-buttons"><i></i><i></i></div>
+                <span class="mock-knight">♞</span>
+              </div>
+
+              <div class="mock-tiles">
+                <div class="tile-blue"><b>Blog</b></div>
+                <div class="tile-teal"><b>Exercises</b></div>
+                <div class="tile-purple"><b>Elo Predictor</b></div>
+                <div class="tile-gold"><b>Perception</b></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <dl class="webapp-facts">
+        <div><dt>Type</dt><dd>Full-stack web application</dd></div>
+        <div><dt>Domain</dt><dd>Chess psychology</dd></div>
+        <div><dt>Data</dt><dd>500,000+ FIDE players</dd></div>
+        <div><dt>Languages</dt><dd>English · Croatian</dd></div>
+      </dl>
+    </section>
+
+
+    <!-- The idea -->
+    <section class="work-section webapp-idea">
+      <div class="container">
+        <div class="row gx-lg-5 gy-4">
+
+          <div class="col-lg-4">
+            <div class="section-heading">
+              <p class="eyebrow">THE IDEA</p>
+              <h2>Research players can use.</h2>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <blockquote class="webapp-quote">
+              “Chess is the Drosophila of the human mind.”
+            </blockquote>
+
+            <p class="webapp-text">
+              Psychologists have studied chess for decades because it makes
+              expertise visible and measurable. My own
+              <a href="psychology.html">research</a> looks at how strong players
+              recognise patterns, and why that same skill can sometimes lead
+              them astray.
+            </p>
+
+            <p class="webapp-text">
+              NeuralGambit brings these findings out of journals and into
+              practice. Its mission is to investigate the human mind using chess
+              as a method, and to give players training grounded in cognitive
+              science rather than guesswork.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Features -->
+    <section class="work-section webapp-features" id="features">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">FEATURES</p>
+          <h2>Four ways into the expert mind.</h2>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <article class="feature-card feature-blue">
+              <div class="feature-head">
+                <span class="feature-icon" aria-hidden="true">✎</span>
+                <span class="feature-kicker">Research &amp; analysis</span>
+              </div>
+              <h3>Research blog</h3>
+              <p>
+                In-depth articles on the psychology of chess, such as the hidden
+                architecture of chess thinking and why strong players make
+                mistakes, written for players rather than academics.
+              </p>
+              <ul class="feature-points">
+                <li>Explains studies on perception, memory, and intuition</li>
+                <li>Newsletter for new insights</li>
+              </ul>
+              <a class="feature-link" href="https://www.neuralgambit.com/blog" target="_blank" rel="noopener noreferrer">Read the blog <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="feature-card feature-teal">
+              <div class="feature-head">
+                <span class="feature-icon" aria-hidden="true">♟</span>
+                <span class="feature-kicker">Training</span>
+              </div>
+              <h3>Chess exercises</h3>
+              <p>
+                Training modes designed by a psychologist to show how your mind
+                solves problems, not just whether you found the move.
+              </p>
+              <ul class="feature-points">
+                <li><strong>Chess Puzzler:</strong> puzzles filtered by tags, with optional time limits</li>
+                <li><strong>Memory Reconstruction:</strong> study a position for 30–90 seconds, then rebuild it from memory</li>
+              </ul>
+              <a class="feature-link" href="https://www.neuralgambit.com/exerciseLandingPage" target="_blank" rel="noopener noreferrer">Start training <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="feature-card feature-purple">
+              <div class="feature-head">
+                <span class="feature-icon" aria-hidden="true">↗</span>
+                <span class="feature-kicker">Data &amp; statistics</span>
+              </div>
+              <h3>Rating predictor</h3>
+              <p>
+                Enter your rating, age, title, and years active to see a
+                projected improvement path, modelled on data from more than
+                500,000 FIDE-rated players.
+              </p>
+              <ul class="feature-points">
+                <li>15-year rating trajectory with an 80% prediction interval</li>
+                <li>Plateau probability and rating ceiling analysis</li>
+                <li>Likelihood of being a fast improver</li>
+              </ul>
+              <a class="feature-link" href="https://www.neuralgambit.com/stats" target="_blank" rel="noopener noreferrer">Predict a rating <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="feature-card feature-gold">
+              <div class="feature-head">
+                <span class="feature-icon" aria-hidden="true">◎</span>
+                <span class="feature-kicker">Pattern recognition</span>
+              </div>
+              <h3>Perception</h3>
+              <p>
+                Paste a position and a logic engine finds the checkmate patterns
+                and positional motifs in it, such as the bishop pair, discovered
+                attacks, or a bad bishop.
+              </p>
+              <ul class="feature-points">
+                <li>Imports any position in FEN notation</li>
+                <li>Highlights each motif on the board with an explanation</li>
+              </ul>
+              <a class="feature-link" href="https://www.neuralgambit.com/patterner" target="_blank" rel="noopener noreferrer">Train your eye <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Under the hood -->
+    <section class="work-section webapp-tech">
+      <div class="container">
+        <div class="row gx-lg-5 gy-4">
+
+          <div class="col-lg-4">
+            <div class="section-heading">
+              <p class="eyebrow">UNDER THE HOOD</p>
+              <h2>How it is built.</h2>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="tech-grid">
+              <div class="tech-item">
+                <h3>Back end</h3>
+                <p>Python server with API endpoints for the rating model and pattern detection.</p>
+                <ul class="area-tags"><li>Python</li><li>REST endpoints</li></ul>
+              </div>
+
+              <div class="tech-item">
+                <h3>Front end</h3>
+                <p>Responsive interface with interactive chess boards and move validation.</p>
+                <ul class="area-tags"><li>JavaScript</li><li>chess.js</li><li>Bootstrap</li><li>Tailwind CSS</li></ul>
+              </div>
+
+              <div class="tech-item">
+                <h3>Data &amp; modelling</h3>
+                <p>Rating predictions from a dataset of 500,000+ FIDE players, with interactive charts.</p>
+                <ul class="area-tags"><li>Statistical modelling</li><li>Chart.js</li></ul>
+              </div>
+
+              <div class="tech-item">
+                <h3>Deployment</h3>
+                <p>Hosted in the cloud with a custom domain, available in English and Croatian.</p>
+                <ul class="area-tags"><li>Heroku</li><li>Internationalisation</li></ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- My role -->
+    <section class="work-section webapp-role">
+      <div class="container">
+        <div class="row gx-lg-5 gy-4">
+
+          <div class="col-lg-4">
+            <div class="section-heading">
+              <p class="eyebrow">MY ROLE</p>
+              <h2>From research to product.</h2>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="interest-list">
+              <div class="interest-row">
+                <span>01</span>
+                <p><strong>Concept and content.</strong> Defined the idea and wrote the research articles, drawing on my background in chess psychology.</p>
+              </div>
+              <div class="interest-row">
+                <span>02</span>
+                <p><strong>Training design.</strong> Designed the exercises around how experts perceive, remember, and solve problems.</p>
+              </div>
+              <div class="interest-row">
+                <span>03</span>
+                <p><strong>Data and modelling.</strong> Built the rating predictor on a large dataset of FIDE players.</p>
+              </div>
+              <div class="interest-row">
+                <span>04</span>
+                <p><strong>Development and deployment.</strong> Built the front end and back end and deployed the application.</p>
+              </div>
+            </div>
+
+            <p class="page-draft-note">
+              Confirm these points match what you did, and name your back-end framework and data sources if you want to show them.
+            </p>
+
+            <a class="btn-primary-pill" href="https://www.neuralgambit.com/" target="_blank" rel="noopener noreferrer">
+              Visit neuralgambit.com <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container site-footer">
+    <span>© <span id="year"></span> Marko Antolcic</span>
+
+    <div>
+      <a href="https://github.com/mkillah" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="https://www.researchgate.net/profile/Marko-Antolcic" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/marko-antolcic-9b47b619b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

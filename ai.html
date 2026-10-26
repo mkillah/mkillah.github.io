@@ -1,1 +1,515 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Artificial intelligence | Marko Antolcic</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head><body><nav class="navbar navbar-expand-lg site-nav"><div class="container"><a class="navbar-brand" href="index.html">Marko Antolcic</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse justify-content-end" id="mainNav"><div class="navbar-nav"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="research.html">Research</a><a class="nav-link " href="data.html">Data</a><a class="nav-link active" href="systems.html">Systems</a></div></div></div></nav><main class="container"><section class="page-hero"><p class="eyebrow">SYSTEMS</p><h1>Artificial intelligence</h1><p>Inductive machine learning, knowledge representation, symbolic reasoning, and neurosymbolic systems.</p><a class="back-link" href="systems.html">← Back to Systems</a></section><div class="placeholder">Add selected projects here. For each project, include the question or problem, your approach, data or methods, key results, and links to code, publications, or a live demo.</div></main><footer class="container site-footer"><span>© <span id="year"></span> Marko Antolcic</span><div><a href="https://github.com/mkillah">GitHub</a><span>·</span><a href="https://www.researchgate.net/">ResearchGate</a><span>·</span><a href="https://www.linkedin.com/">LinkedIn</a></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Artificial intelligence projects by Marko Antolcic: a symbolic logic engine for chess motifs, inductive logic programming, the CHREST cognitive architecture, and human-like chess models with MAIA.">
+
+  <title>Artificial Intelligence | Marko Antolcic</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDFLJV05J1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HDFLJV05J1');
+</script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg site-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Marko Antolcic</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="research.html">Research</a>
+          <a class="nav-link" href="data.html">Data</a>
+          <a class="nav-link active" href="systems.html">Systems</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="ai-page">
+
+    <!-- Introduction and project overview -->
+    <section class="hero container ai-hero">
+      <p class="eyebrow">SYSTEMS / ARTIFICIAL INTELLIGENCE</p>
+
+      <a class="back-link" href="systems.html">
+        <span aria-hidden="true">←</span> Back to Systems
+      </a>
+
+      <h1>Three ways to model a chess mind.</h1>
+
+      <p class="lead">
+        I build AI systems that think about chess the way people do: with
+        explicit rules, with chunks of remembered experience, and with
+        learned intuition. Each project tests a different idea about how
+        human expertise works.
+      </p>
+
+      <div class="row g-4 ai-overview">
+        <div class="col-lg-4">
+          <a class="overview-card" href="#logic-engine">
+            <span class="status status-live">Live · In development</span>
+            <span class="overview-number">01</span>
+            <h2>Logic engine &amp; inductive logic programming</h2>
+            <p>Rules that find chess motifs, and a learner that invents its own rules.</p>
+            <span class="overview-tag">Symbolic AI</span>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a class="overview-card" href="#chrest">
+            <span class="status status-explore">Exploring</span>
+            <span class="overview-number">02</span>
+            <h2>CHREST cognitive architecture</h2>
+            <p>A model of how experts perceive and remember positions through chunks.</p>
+            <span class="overview-tag">Cognitive modelling</span>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a class="overview-card" href="#maia">
+            <span class="status status-wip">Work in progress</span>
+            <span class="overview-number">03</span>
+            <h2>Human vs. machine with MAIA</h2>
+            <p>A neural model and a human with the same experience, facing the same positions.</p>
+            <span class="overview-tag">Neural networks</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 01: Logic engine -->
+    <section class="work-section ai-project" id="logic-engine">
+      <div class="container">
+
+        <div class="project-intro">
+          <p class="eyebrow">01 · SYMBOLIC AI</p>
+          <h2>A logic engine that sees chess motifs.</h2>
+          <p class="lead">
+            Strong players recognise patterns such as a bishop pair, a pin, or a
+            bad bishop at a glance. My logic engine makes that knowledge
+            explicit: each motif is defined as a logical rule over pieces,
+            squares, and the relations between them.
+          </p>
+        </div>
+
+        <div class="row gx-lg-5 gy-5 align-items-start">
+          <div class="col-lg-6">
+            <h3 class="ai-subhead">How it works</h3>
+
+            <ol class="ai-steps">
+              <li>
+                <strong>Facts.</strong> A position is translated into facts:
+                which piece stands on which square, what each piece attacks
+                and defends, and how mobile it is.
+              </li>
+              <li>
+                <strong>Rules.</strong> Each motif is a rule that combines
+                these facts. If the conditions of a rule hold, the motif is
+                present.
+              </li>
+              <li>
+                <strong>Explanation.</strong> Because the rules are explicit,
+                the engine can show exactly which squares form the motif and
+                why it matters, unlike a black-box evaluation.
+              </li>
+            </ol>
+
+            <p class="page-draft-note page-draft-note-howto">
+              Each rule is a simple checklist. If every item on the list is
+              true, the engine has found that pattern on the board.
+              <code>:-</code> means "if" and a comma means "and". The grey text
+              explains each line.
+            </p>
+
+            <figure class="rule-figure">
+              <figcaption>Example rules</figcaption>
+<pre class="rule-block"><code><span class="c">% A side keeps both of its bishops</span>
+<span class="h">bishop_pair</span>(Side) :-                       <span class="c">% Side has the bishop pair if...</span>
+    bishop(B1, Side), light_square(B1),   <span class="c">% it has a bishop on a light square</span>
+    bishop(B2, Side), dark_square(B2).    <span class="c">% and another bishop on a dark square</span>
+
+<span class="c">% A bishop hemmed in by its own pieces</span>
+<span class="h">bad_bishop</span>(B) :-                           <span class="c">% Bishop B is a bad bishop if...</span>
+    bishop(B, Side),                      <span class="c">% B is a bishop belonging to Side</span>
+    defends_own(B, N), N &gt; 1,             <span class="c">% it defends more than one of its own pieces</span>
+    mobility(B, M), M &lt; 5.                <span class="c">% and it has fewer than 5 legal moves</span></code></pre>
+            </figure>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Real output from the live engine for one position -->
+            <div class="demo-panel" id="motif-demo">
+              <div class="demo-head">
+                <span class="demo-label">Engine output</span>
+                <span class="demo-caption">Italian Game · White to move</span>
+              </div>
+
+              <div class="chess-board" id="motif-board" aria-label="Chess board showing the analysed position"></div>
+
+              <p class="demo-hint">Select a detected motif to highlight its squares.</p>
+              <div class="motif-list" id="motif-list" role="group" aria-label="Detected motifs"></div>
+              <p class="motif-description" id="motif-description" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live engine, loaded on request -->
+        <div class="live-engine" id="live-engine">
+          <div>
+            <h3>Try the live engine</h3>
+            <p>Paste any position in FEN notation and see which motifs the engine finds.</p>
+          </div>
+          <div class="live-engine-actions">
+            <button type="button" class="btn-primary-pill" id="load-live-engine">Load it here</button>
+            <a class="text-cta" href="https://www.neuralgambit.com/patterner" target="_blank" rel="noopener noreferrer">
+              Open on NeuralGambit <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Inductive logic programming -->
+        <div class="ilp-block">
+          <div class="project-intro">
+            <p class="eyebrow">IN DEVELOPMENT · INDUCTIVE LOGIC PROGRAMMING</p>
+            <h2>From writing rules to learning them.</h2>
+            <p class="lead">
+              Hand-written rules only capture what I already know. With
+              inductive logic programming (ILP), the program compares chess
+              positions and learns the rules itself, including new concepts
+              that nobody gave it.
+            </p>
+          </div>
+
+          <div class="ilp-flow">
+            <div class="ilp-step">
+              <span class="ilp-step-number">1</span>
+              <h3>Examples</h3>
+              <p>Positions that contain a motif, and positions that do not.</p>
+              <div class="ilp-examples" aria-hidden="true">
+                <span class="ex-pos">+</span><span class="ex-pos">+</span><span class="ex-pos">+</span>
+                <span class="ex-neg">−</span><span class="ex-neg">−</span>
+              </div>
+            </div>
+
+            <div class="ilp-arrow" aria-hidden="true">→</div>
+
+            <div class="ilp-step">
+              <span class="ilp-step-number">2</span>
+              <h3>Background knowledge</h3>
+              <p>Basic facts the learner can build on.</p>
+              <ul class="ilp-facts">
+                <li>piece/3</li><li>attacks/2</li><li>defends/2</li><li>same_colour/2</li>
+              </ul>
+            </div>
+
+            <div class="ilp-arrow" aria-hidden="true">→</div>
+
+            <div class="ilp-step ilp-step-result">
+              <span class="ilp-step-number">3</span>
+              <h3>Learned rule</h3>
+              <p>A rule that covers the positive examples and none of the negative ones.</p>
+<pre class="rule-block rule-block-small"><code><span class="h">motif</span>(B) :-
+    bishop(B, S),
+    <span class="inv">inv_1</span>(B, P),
+    pawn(P, S).
+
+<span class="inv">inv_1</span>(B, P) :-
+    on_diagonal(B, P),
+    blocks(P, B).</code></pre>
+            </div>
+          </div>
+
+          <div class="row gx-lg-5 gy-4 ilp-notes">
+            <div class="col-md-6">
+              <h3 class="ai-subhead">Predicate invention</h3>
+              <p>
+                The most interesting part is <strong>predicate invention</strong>:
+                the learner can create helper concepts, such as
+                <code class="inline-code">inv_1</code> above, that do not exist in its
+                background knowledge. Here it has invented something like
+                "a pawn blocking the bishop's diagonal", which a human would
+                call a key idea behind a bad bishop.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <h3 class="ai-subhead">Why it matters</h3>
+              <p>
+                If a program can invent the same concepts that chess players
+                use, it suggests how such concepts might be learned from
+                experience. If it invents different ones, it may reveal
+                patterns that players have never named.
+              </p>
+            </div>
+          </div>
+
+          <p class="page-draft-note">
+            The learned rule above is an illustration. Add the ILP system you use (for example Popper, Aleph, or your own) and a real learned rule when you have one.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 02: CHREST -->
+    <section class="work-section ai-project ai-project-alt" id="chrest">
+      <div class="container">
+
+        <div class="project-intro">
+          <p class="eyebrow">02 · COGNITIVE ARCHITECTURE</p>
+          <h2>CHREST: how experts remember positions.</h2>
+          <p class="lead">
+            CHREST (Chunk Hierarchy and REtrieval STructures), developed by
+            Fernand Gobet and colleagues, is a computational model of human
+            perception, learning, and memory. It explains one of the best-known
+            findings in expertise research: masters can reproduce a game
+            position after a few seconds, but not a random one.
+          </p>
+        </div>
+
+        <div class="chrest-concepts">
+          <div>
+            <h3>Chunks</h3>
+            <p>Familiar groups of pieces, such as a castled king with its pawns, learned through experience.</p>
+          </div>
+          <div>
+            <h3>Long-term memory</h3>
+            <p>A discrimination network that grows as the model sees more positions. Experts hold many large chunks.</p>
+          </div>
+          <div>
+            <h3>Short-term memory</h3>
+            <p>Holds only about four chunks. Bigger chunks mean more pieces remembered in the same space.</p>
+          </div>
+          <div>
+            <h3>Templates</h3>
+            <p>Frequently seen chunks become templates with slots, which let experts encode positions even faster.</p>
+          </div>
+        </div>
+
+        <!-- Interactive simulation -->
+        <div class="demo-panel chrest-demo" id="chrest-demo">
+          <div class="demo-head">
+            <span class="demo-label">Interactive · CHREST in miniature</span>
+            <span class="demo-caption">A simplified illustration of how CHREST works</span>
+          </div>
+
+          <div class="chrest-controls">
+            <div class="control-group">
+              <span class="control-label">Model</span>
+              <div class="segmented" role="group" aria-label="Model expertise">
+                <button type="button" data-player="novice" aria-pressed="false">Novice</button>
+                <button type="button" data-player="expert" aria-pressed="true">Expert</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <span class="control-label">Position</span>
+              <div class="segmented" role="group" aria-label="Position type">
+                <button type="button" data-position="game" aria-pressed="true">Game</button>
+                <button type="button" data-position="random" aria-pressed="false">Random</button>
+              </div>
+            </div>
+            <button type="button" class="btn-primary-pill" id="chrest-run">▶ Glance at position</button>
+          </div>
+
+          <div class="row gx-lg-4 gy-4 align-items-start">
+            <div class="col-md-6">
+              <p class="board-title" id="chrest-board-title">Position shown</p>
+              <div class="chess-board" id="chrest-board"></div>
+            </div>
+            <div class="col-md-6">
+              <p class="board-title">Short-term memory <span class="stm-capacity">(4 slots)</span></p>
+              <ol class="stm-slots" id="stm-slots"></ol>
+
+              <div class="recall-result" id="recall-result" aria-live="polite">
+                <span class="recall-label">Pieces recalled</span>
+                <span class="recall-value" id="recall-value">–</span>
+                <div class="recall-bar"><span id="recall-bar"></span></div>
+              </div>
+
+              <table class="recall-table" id="recall-table">
+                <caption>Your runs</caption>
+                <thead><tr><th></th><th>Game</th><th>Random</th></tr></thead>
+                <tbody>
+                  <tr><th>Novice</th><td data-cell="novice-game">–</td><td data-cell="novice-random">–</td></tr>
+                  <tr><th>Expert</th><td data-cell="expert-game">–</td><td data-cell="expert-random">–</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p class="demo-footnote">
+            The expert's advantage comes from recognising large, familiar chunks.
+            In a random position there is nothing familiar to recognise, so the
+            expert does no better than the novice. This mirrors the results of
+            Chase and Simon (1973) that CHREST was built to explain. This demo
+            was written for this page and is not the CHREST software itself.
+          </p>
+        </div>
+
+        <div class="row gx-lg-5 gy-4 chrest-plan">
+          <div class="col-lg-6">
+            <h3 class="ai-subhead">What I am working on</h3>
+            <p>
+              I use CHREST to model how chess players perceive and memorise
+              positions, and to compare its behaviour with data from my
+              experiments on expertise and the Einstellung effect.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="ai-subhead">The open question</h3>
+            <p>
+              CHREST learns <em>which</em> groups of pieces belong together,
+              but not what they mean. My logic engine knows what motifs mean,
+              but not how they are learned. I am exploring how to combine the
+              two, so that perceptual chunks can be linked to explicit,
+              explainable concepts.
+            </p>
+          </div>
+        </div>
+
+        <p class="page-draft-note">
+          Add which CHREST implementation you use, what you have simulated so far, and any results or screenshots of your model.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 03: MAIA -->
+    <section class="work-section ai-project" id="maia">
+      <div class="container">
+
+        <div class="project-intro">
+          <p class="eyebrow">03 · WORK IN PROGRESS · NEURAL NETWORKS</p>
+          <h2>Same experience, same rating: human or machine?</h2>
+          <p class="lead">
+            MAIA is a neural chess engine trained to play like humans of a
+            specific rating, rather than to play perfectly. I am using it to
+            ask a sharper question: if a model and a human share the same
+            rating and the same chess experience, do they think alike?
+          </p>
+        </div>
+
+        <div class="maia-compare">
+          <div class="maia-side">
+            <span class="maia-icon" aria-hidden="true">☺</span>
+            <h3>Human player</h3>
+            <p>A player with a given Elo rating, and the games and positions they have learned from.</p>
+          </div>
+
+          <div class="maia-middle">
+            <span class="maia-shared">Same Elo</span>
+            <span class="maia-shared">Same training data</span>
+            <span class="maia-shared">Same test positions</span>
+          </div>
+
+          <div class="maia-side">
+            <span class="maia-icon" aria-hidden="true">⌬</span>
+            <h3>MAIA model</h3>
+            <p>A model trained on data that represents what that player has seen, so both share the "same" memory.</p>
+          </div>
+        </div>
+
+        <ol class="maia-steps">
+          <li>
+            <span>01</span>
+            <h3>Build the data</h3>
+            <p>Collect games that represent a player of a certain rating and their chess experience.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Train MAIA</h3>
+            <p>Train or fine-tune the model on that data, so it reflects the same knowledge.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Test both</h3>
+            <p>Give the human and the model the same positions, including problems designed to trigger typical errors.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Compare</h3>
+            <p>Compare move choices, mistakes, and patterns of thinking between human and machine.</p>
+          </li>
+        </ol>
+
+        <p class="page-draft-note">
+          Add your current progress, the data you are using, and which comparisons you plan to report.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- How the projects connect -->
+    <section class="work-section ai-synthesis">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">THE BIG PICTURE</p>
+          <h2>Three models, one question.</h2>
+          <p>
+            Each project captures a different side of chess expertise.
+            Together they ask what kind of knowledge makes an expert, and
+            whether a machine can acquire it the way people do.
+          </p>
+        </div>
+
+        <div class="synthesis-grid">
+          <div>
+            <span>Explicit knowledge</span>
+            <h3>Logic engine &amp; ILP</h3>
+            <p>Concepts as rules that can be read, explained, and learned.</p>
+          </div>
+          <div>
+            <span>Perception &amp; memory</span>
+            <h3>CHREST</h3>
+            <p>Expertise as a large store of chunks built from experience.</p>
+          </div>
+          <div>
+            <span>Learned intuition</span>
+            <h3>MAIA</h3>
+            <p>Human-like move choice learned from data by a neural network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container site-footer">
+    <span>© <span id="year"></span> Marko Antolcic</span>
+
+    <div>
+      <a href="https://github.com/mkillah" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="https://www.researchgate.net/profile/Marko-Antolcic" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/marko-antolcic-9b47b619b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ai-demos.js"></script>
+
+</body>
+</html>

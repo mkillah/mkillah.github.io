@@ -1,0 +1,43 @@
+{
+  "categories": {
+    "academic": {
+      "label": "Research & personal",
+      "description": "Independent projects that explore how language can be turned into structured, usable information."
+    },
+    "professional": {
+      "label": "Professional",
+      "description": "Language processing applied to real-world text: documents, tickets, and customer feedback."
+    }
+  },
+
+  "methodGroups": [
+    {
+      "label": "Text processing",
+      "methods": [
+        { "id": "tokenization", "name": "Tokenization & tagging", "detail": "Splitting text into words and labelling parts of speech" },
+        { "id": "dependency-parsing", "name": "Dependency parsing", "detail": "Finding how the words in a sentence relate to each other" },
+        { "id": "noun-chunking", "name": "Noun phrase chunking", "detail": "Grouping words into meaningful phrases" }
+      ]
+    },
+    {
+      "label": "Information extraction",
+      "methods": [
+        { "id": "relation-extraction", "name": "Relation extraction", "detail": "Pulling who-did-what facts out of sentences" },
+        { "id": "rule-based-nlp", "name": "Rule-based NLP", "detail": "Linguistic rules built on top of a parsed sentence" }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "fact-extraction",
+      "title": "Extracting facts from text",
+      "category": "academic",
+      "year": 2026,
+      "summary": "Can we automatically turn plain sentences into simple facts of the form who, does what, to what?",
+      "methods": ["tokenization", "dependency-parsing", "noun-chunking", "relation-extraction", "rule-based-nlp"],
+      "tools": ["Python", "spaCy"],
+      "repo": "https://github.com/mkillah/Portfolio/blob/main/NLP_Projects/project-factextraction.ipynb"
+    }
+  ]
+}
