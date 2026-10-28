@@ -1,0 +1,74 @@
+{
+  "categories": {
+    "human-vs-machine-2": {
+      "label": "Human vs. Machine · Round 2",
+      "description": "A multi-part project on how people and machines learn chess. It starts by building realistic 'chess personas' (game collections that mirror a player's experience at each rating level) and then trains models on them to play like humans of that strength."
+    },
+    "neural-gambit": {
+      "label": "NeuralGambit",
+      "description": "The models and statistics behind NeuralGambit, my chess training platform, built on real rating data."
+    }
+  },
+
+  "methodGroups": [
+    {
+      "label": "Supervised learning",
+      "methods": [
+        { "id": "classification", "name": "Classification", "detail": "Predicting categories, such as the move a player will choose" },
+        { "id": "regression", "name": "Regression", "detail": "Predicting continuous values" },
+        { "id": "tree-ensembles", "name": "Tree ensembles", "detail": "Random forests and gradient boosting" }
+      ]
+    },
+    {
+      "label": "Deep learning",
+      "methods": [
+        { "id": "neural-networks", "name": "Neural networks", "detail": "Multi-layer models trained with backpropagation" },
+        { "id": "cnn", "name": "Convolutional networks", "detail": "Learning patterns from board-like and image data" },
+        { "id": "imitation-learning", "name": "Imitation learning", "detail": "Learning behaviour from examples of human decisions" }
+      ]
+    },
+    {
+      "label": "Statistical modelling",
+      "methods": [
+        { "id": "cohort-analysis", "name": "Cohort analysis", "detail": "Following groups over time from a shared starting point" },
+        { "id": "survival-analysis", "name": "Survival analysis", "detail": "Modelling the time until an event, such as a rating plateau" }
+      ]
+    },
+    {
+      "label": "Training data",
+      "methods": [
+        { "id": "dataset-design", "name": "Dataset design", "detail": "Deciding what a model should learn from" },
+        { "id": "feature-engineering", "name": "Feature engineering", "detail": "Turning raw data into model inputs" }
+      ]
+    },
+    {
+      "label": "Evaluation",
+      "methods": [
+        { "id": "model-evaluation", "name": "Model evaluation", "detail": "Accuracy, confusion matrix, ROC, and precision-recall" },
+        { "id": "cross-validation", "name": "Cross-validation", "detail": "Checking that results hold on unseen data" }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "chess-personas",
+      "title": "Part 1: Chess personas",
+      "category": "human-vs-machine-2",
+      "year": 2026,
+      "summary": "How many games has a 1000, 2000, or 2800 player really seen, and at which levels? Building game collections that mirror a player's chess experience.",
+      "methods": [],
+      "tools": ["Python", "pandas", "python-chess", "Matplotlib"]
+    },
+    {
+      "id": "fide-rating-trajectories",
+      "title": "Predicting FIDE rating trajectories",
+      "category": "neural-gambit",
+      "year": 2026,
+      "summary": "How far can a player still improve, and when will they plateau? 25 years of FIDE ratings for 500,000 players, turned into NeuralGambit's rating predictor.",
+      "methods": ["cohort-analysis", "survival-analysis", "regression", "feature-engineering"],
+      "tools": ["Python", "pandas", "NumPy", "SciPy", "JavaScript", "Chart.js"],
+      "details": { "label": "Try the Rating Predictor", "url": "https://www.neuralgambit.com/stats" }
+    }
+  ]
+}

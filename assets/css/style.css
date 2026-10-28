@@ -78,6 +78,22 @@ button:focus-visible {
   color: var(--color-green);
 }
 
+.site-nav .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Logo drawn as a mask so it follows the brand text colour (and its hover) */
+.brand-logo {
+  flex: none;
+  width: 2.1rem;
+  height: 2.15rem;
+  background-color: currentColor;
+  -webkit-mask: url("../img/logo-bold.svg") center / contain no-repeat;
+  mask: url("../img/logo-bold.svg") center / contain no-repeat;
+}
+
 .site-nav .navbar-nav {
   gap: 0.8rem;
 }
@@ -184,7 +200,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   5. DECORATIVE WAVE ART
+   5. HERO LOGO ART
    ========================================================= */
 
 .wave-art {
@@ -197,27 +213,9 @@ button:focus-visible {
 .wave-art svg {
   display: block;
   width: 100%;
-  max-width: 340px;
+  max-width: 230px;
   height: auto;
-  overflow: visible;
-}
-
-.wave {
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-}
-
-.wave.green {
-  stroke: var(--color-green);
-}
-
-.wave.blue {
-  stroke: var(--color-blue);
-}
-
-.wave.purple {
-  stroke: var(--color-purple);
+  color: var(--color-text);
 }
 
 
@@ -3360,6 +3358,22 @@ button:focus-visible {
   max-width: 900px;
 }
 
+.ba-client {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.5rem 0 1.25rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ba-client img {
+  width: 56px;
+  height: auto;
+}
+
 .case-note {
   max-width: 760px;
   margin-top: 1.75rem;
@@ -4163,6 +4177,10 @@ button:focus-visible {
 .gwt dd {
   margin: 0;
   font-size: 0.92rem;
+}
+
+.gwt + .story-label {
+  margin-top: 1.25rem;
 }
 
 .dod {

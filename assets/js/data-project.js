@@ -79,7 +79,7 @@ async function initProjectPage() {
       <span class="project-year">${escapeHtml(project.year || "")}</span>
     </div>
     <dl class="project-facts">
-      <div><dt>Methods</dt><dd class="project-methods">${methodLinks}</dd></div>
+      ${methodLinks ? `<div><dt>Methods</dt><dd class="project-methods">${methodLinks}</dd></div>` : ""}
       <div><dt>Tools</dt><dd>${escapeHtml((project.tools || []).join(" · "))}</dd></div>
       ${codeLink}
       ${detailsLink}

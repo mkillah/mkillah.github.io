@@ -99,6 +99,8 @@ function renderMethodChips() {
   }
 
   document.getElementById("method-chips").innerHTML = chips.join("");
+  // Hide the filter when no project uses any method yet
+  document.querySelector(".method-filter").style.display = chips.length ? "" : "none";
 }
 
 function projectCard(project) {
@@ -121,7 +123,7 @@ function projectCard(project) {
         <h3>${escapeHtml(project.title)}</h3>
         <p>${escapeHtml(project.summary)}</p>
 
-        <ul class="project-methods">${methods}</ul>
+        ${methods ? `<ul class="project-methods">${methods}</ul>` : ""}
 
         <div class="project-card-foot">
           <span class="project-tools">${escapeHtml((project.tools || []).join(" · "))}</span>

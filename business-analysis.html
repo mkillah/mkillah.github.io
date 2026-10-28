@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Business analysis case study by Marko Antolcic: how I take a system from problem statement to a working MVP, with every deliverable and what it produced.">
+  <meta name="description" content="Business analysis case study by Marko Antolcic: a fintech transaction platform taken from problem statement to a working MVP in 10 weeks, with every deliverable and what it produced.">
 
   <title>Business Analysis | Marko Antolcic</title>
 
@@ -18,13 +18,14 @@
   gtag('js', new Date());
   gtag('config', 'G-HDFLJV05J1');
 </script>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg site-nav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Marko Antolcic</a>
+      <a class="navbar-brand" href="index.html"><span class="brand-logo" aria-hidden="true"></span>Marko Antolcic</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,28 +53,34 @@
         <span aria-hidden="true">←</span> Back to Systems
       </a>
 
+      <div class="ba-client">
+        <img src="assets/img/business-analysis/nordpay-logo.png" alt="NordPay A/S logo" width="56" height="57">
+        <span>NordPay A/S</span>
+      </div>
+
       <h1>From a messy process to working software in 10 weeks.</h1>
 
       <p class="lead">
         I find it more useful to show how I work than to list skills. This
         case study walks through a complete business analysis engagement,
-        from the first problem statement to an MVP running in production,
+        from a one-page problem statement to an MVP running in production,
         with every deliverable and what it concretely produced.
       </p>
 
       <div class="case-note">
         <strong>About this case study.</strong>
-        NordFreight A/S is a fictional Danish freight company. The engagement
-        is a realistic example of the work I have done in previous roles: the
-        process, artefacts, decisions, and numbers reflect how I operate.
+        NordPay A/S is a fictional Danish payments fintech based in Copenhagen.
+        The engagement is a realistic example of the work I have done in
+        previous roles: the process, artefacts, decisions, and numbers reflect
+        how I operate.
       </div>
 
       <dl class="ba-facts">
-        <div><dt>Client</dt><dd>NordFreight A/S</dd></div>
-        <div><dt>My role</dt><dd>IT consultant</dd></div>
-        <div><dt>Team</dt><dd>2 developers · 1 BA · 1 QA</dd></div>
+        <div><dt>Client</dt><dd>NordPay A/S</dd></div>
+        <div><dt>Industry</dt><dd>Fintech · payments</dd></div>
+        <div><dt>Location</dt><dd>Copenhagen</dd></div>
         <div><dt>Duration</dt><dd>10 weeks</dd></div>
-        <div><dt>Outcome</dt><dd>MVP live at Depot 1</dd></div>
+        <div><dt>Outcome</dt><dd>Working MVP in production</dd></div>
       </dl>
     </section>
 
@@ -85,17 +92,17 @@
           <div class="col-lg-4">
             <div class="section-heading">
               <p class="eyebrow">THE BRIEF</p>
-              <h2>Order management digitalisation.</h2>
+              <h2>Transaction management digitalisation.</h2>
             </div>
           </div>
 
           <div class="col-lg-8">
             <div class="brief-grid">
-              <div><span>Client</span><p>Danish freight &amp; logistics company, ~180 employees</p></div>
-              <div><span>Problem</span><p>200+ daily orders run through Excel and email, with no single source of truth</p></div>
-              <div class="brief-cost"><span>Cost</span><p>~€18,000 per month in order errors and re-routing fees</p></div>
-              <div><span>Ask</span><p>A web-based order management platform with ERP integration</p></div>
-              <div><span>Constraints</span><p>No operational downtime · GDPR · €220K budget</p></div>
+              <div><span>Client</span><p>Danish payments fintech, ~150 employees</p></div>
+              <div><span>Problem</span><p>300+ daily transactions reconciled through Excel and email, with no single source of truth</p></div>
+              <div class="brief-cost"><span>Cost</span><p>~€22,000 per month in reconciliation errors and chargeback fees</p></div>
+              <div><span>Ask</span><p>A web-based transaction management platform integrated with the core banking ledger</p></div>
+              <div><span>Constraints</span><p>No operational downtime · GDPR · €250K budget</p></div>
               <div class="brief-delivered"><span>Delivered</span><p>MVP live in 10 weeks · 0 scope changes after sign-off</p></div>
             </div>
           </div>
@@ -110,17 +117,18 @@
         <div class="section-heading">
           <p class="eyebrow">RESULTS</p>
           <h2>What the analysis delivered.</h2>
+          <p>Illustrative outcomes for this fictional engagement, calculated the same way I would report real ones.</p>
         </div>
 
         <div class="result-grid">
           <div class="result-tile">
-            <span class="result-value">−62%</span>
-            <span class="result-label">Order errors</span>
+            <span class="result-value">−61%</span>
+            <span class="result-label">Reconciliation errors</span>
             <p>within 3 weeks of go-live</p>
           </div>
           <div class="result-tile">
             <span class="result-value">−83%</span>
-            <span class="result-label">Time per order</span>
+            <span class="result-label">Time per transaction</span>
             <p>from 23 minutes to 4 minutes</p>
           </div>
           <div class="result-tile">
@@ -134,12 +142,12 @@
             <p>the client had estimated 6 months</p>
           </div>
           <div class="result-tile">
-            <span class="result-value">€18K</span>
+            <span class="result-value">€22K</span>
             <span class="result-label">Saved per month</span>
             <p>ROI payback in 12 months</p>
           </div>
           <div class="result-tile">
-            <span class="result-value">+40%</span>
+            <span class="result-value">+38%</span>
             <span class="result-label">Developer velocity</span>
             <p>from Sprint 1 to Sprint 3</p>
           </div>
@@ -177,8 +185,9 @@
               <li><a href="#journeys">User journey mapping</a></li>
               <li><a href="#as-is-to-be">As-is / to-be analysis</a></li>
               <li><a href="#wireframes">Wireframes</a></li>
-              <li><a href="#data-model">Conceptual data model</a></li>
               <li><a href="#assumptions">Assumptions &amp; constraints</a></li>
+              <li><a href="#business-rules">Business rules</a></li>
+              <li><a href="#data-model">Conceptual data model</a></li>
               <li><a href="#nfrs">Non-functional requirements</a></li>
             </ol>
           </div>
@@ -187,7 +196,7 @@
             <div class="method-phase-head">
               <span>Phase 2 · Weeks 5–10</span>
               <h3>Proof of concept</h3>
-              <p>Translate understanding into requirements and software.</p>
+              <p>Translate understanding into requirements and working software.</p>
             </div>
             <ol>
               <li><a href="#prototype">Prototype &amp; usability</a></li>
@@ -231,9 +240,9 @@
               <h3>Problem statement</h3>
               <p>A one-page brief defining who is affected, what the problem is, and why it matters.</p>
               <blockquote class="ba-quote">
-                “NordFreight loses €18K/month because depot staff work from 4
-                disconnected sources, creating order conflicts with no single
-                source of truth.”
+                “NordPay loses €22K/month because ops staff reconcile
+                transactions across 4 disconnected sources, creating settlement
+                conflicts with no single source of truth.”
               </blockquote>
               <p class="outcome"><strong>Outcome</strong> Approved by the CFO and CTO in Week 1, and used as the scope north star for the whole engagement.</p>
             </div>
@@ -243,14 +252,15 @@
             <div class="deliverable-meta"><span class="d-num">02</span><span class="d-week">Week 1</span></div>
             <div class="deliverable-body">
               <h3>Business case</h3>
+              <p>The cost of keeping the manual process, compared with the cost of replacing it.</p>
               <div class="equation">
-                <div><span>Build cost</span><strong>€220K</strong></div>
+                <div><span>Build cost</span><strong>€250K</strong></div>
                 <i aria-hidden="true">vs</i>
-                <div><span>Error savings</span><strong>€216K / year</strong></div>
+                <div><span>Errors avoided</span><strong>€264K / year</strong></div>
                 <i aria-hidden="true">=</i>
                 <div class="equation-result"><span>Payback</span><strong>12 months</strong></div>
               </div>
-              <p class="outcome"><strong>Outcome</strong> Presented in a single slide and approved the same day. No further budget discussion for the rest of the engagement.</p>
+              <p class="outcome"><strong>Outcome</strong> Approved the same day. The project went ahead with no further budget discussion.</p>
             </div>
           </article>
 
@@ -258,11 +268,11 @@
             <div class="deliverable-meta"><span class="d-num">03</span><span class="d-week">Weeks 1–2</span></div>
             <div class="deliverable-body">
               <h3>Stakeholder interviews</h3>
-              <p>Six interviews, some of them iterative, across operations, IT, finance, and customer service.</p>
+              <p>Six interviews, some of them iterative, to map each stakeholder's needs and influence on the project.</p>
               <ul class="tag-row">
-                <li>Depot manager</li><li>2 order clerks</li><li>IT lead</li><li>Finance</li><li>Customer service</li>
+                <li>Ops manager</li><li>2 reconciliation analysts</li><li>Risk &amp; Compliance lead</li><li>Finance</li><li>Merchant Support</li>
               </ul>
-              <p class="outcome"><strong>Key find</strong> Customer service revealed that customers called every day for shipment status. This was not in the original brief, and became the Customer Portal feature.</p>
+              <p class="outcome"><strong>Key find</strong> Merchant Support revealed that merchants called every day to ask about settlement status. This was not in the original brief, and became the Merchant Portal feature.</p>
             </div>
           </article>
 
@@ -270,17 +280,16 @@
             <div class="deliverable-meta"><span class="d-num">04</span><span class="d-week">Week 2</span></div>
             <div class="deliverable-body">
               <h3>Domain glossary</h3>
-              <p>28 terms defined and agreed across departments.</p>
-              <div class="glossary-demo" aria-label="The word order meant three different things">
-                <span class="glossary-term">“order”</span>
+              <p>26 terms defined and agreed across departments in Week 2.</p>
+              <div class="glossary-demo" aria-label="The word transaction meant three different things">
+                <span class="glossary-term">“transaction”</span>
                 <div>
-                  <span><b>IT</b> a database record</span>
-                  <span><b>Finance</b> an invoiceable unit</span>
-                  <span><b>Operations</b> a physical shipment</span>
+                  <span><b>Risk</b> an authorised event</span>
+                  <span><b>Finance</b> a settled ledger entry</span>
+                  <span><b>Operations</b> a reportable case</span>
                 </div>
               </div>
-              <p class="outcome"><strong>Critical find</strong> “Order” meant three different things to IT, Finance, and Operations. Resolving it before the first wireframe prevented about 3 weeks of back-and-forth in development.</p>
-              <p class="page-draft-note">The three meanings of “order” shown above are examples. Replace them with the definitions from your glossary.</p>
+              <p class="outcome"><strong>Critical find</strong> “Transaction” meant three different things to Risk, Finance, and Operations. Resolving it before the first wireframe prevented about 3 weeks of back-and-forth in development.</p>
             </div>
           </article>
 
@@ -288,25 +297,25 @@
             <div class="deliverable-meta"><span class="d-num">05</span><span class="d-week">Week 2</span></div>
             <div class="deliverable-body">
               <h3>User personas</h3>
-              <p>Three personas with day-in-the-life scenarios.</p>
+              <p>Three personas with day-in-the-life scenarios, describing each user's goals, behaviour, and frustrations.</p>
               <div class="persona-grid">
                 <div class="persona">
-                  <span class="persona-avatar" aria-hidden="true">OC</span>
-                  <h4>Order clerk</h4>
-                  <p><span>Goal</span>Process orders fast</p>
-                  <p><span>Frustration</span>Switching between 4 systems per order</p>
+                  <span class="persona-avatar" aria-hidden="true">RA</span>
+                  <h4>Reconciliation analyst</h4>
+                  <p><span>Goal</span>Process transactions fast</p>
+                  <p><span>Frustration</span>Switching between 4 systems per transaction</p>
                 </div>
                 <div class="persona">
-                  <span class="persona-avatar" aria-hidden="true">DM</span>
-                  <h4>Depot manager</h4>
-                  <p><span>Goal</span>Real-time order visibility</p>
+                  <span class="persona-avatar" aria-hidden="true">OM</span>
+                  <h4>Ops manager</h4>
+                  <p><span>Goal</span>Real-time settlement visibility</p>
                   <p><span>Frustration</span>No dashboard, everything is in email</p>
                 </div>
                 <div class="persona">
-                  <span class="persona-avatar" aria-hidden="true">CC</span>
-                  <h4>Corporate customer</h4>
-                  <p><span>Goal</span>Know shipment status</p>
-                  <p><span>Frustration</span>Calling to chase updates</p>
+                  <span class="persona-avatar" aria-hidden="true">ME</span>
+                  <h4>Merchant</h4>
+                  <p><span>Goal</span>Know settlement status</p>
+                  <p><span>Frustration</span>Calling to chase confirmations</p>
                 </div>
               </div>
             </div>
@@ -316,8 +325,8 @@
             <div class="deliverable-meta"><span class="d-num">06</span><span class="d-week">Week 3</span></div>
             <div class="deliverable-body">
               <h3>User journey mapping</h3>
-              <p>Journeys mapped for all three personas.</p>
-              <p class="outcome"><strong>Key find</strong> Two touchpoints had no digital equivalent. A Driver Mobile View and the Customer Portal were added to scope before wireframing began.</p>
+              <p>Journeys mapped for all three personas across the transaction lifecycle: workflows, touchpoints, pain points, and information needs.</p>
+              <p class="outcome"><strong>Key find</strong> Two touchpoints in the existing process had no digital equivalent. They became requirements for the Fraud Analyst Console and the Merchant Portal before wireframing began.</p>
             </div>
           </article>
 
@@ -325,19 +334,19 @@
             <div class="deliverable-meta"><span class="d-num">07</span><span class="d-week">Week 3</span></div>
             <div class="deliverable-body">
               <h3>As-is / to-be analysis</h3>
-              <p>The current order process was mapped step by step, then redesigned.</p>
+              <p>The current transaction process was mapped step by step to find unnecessary steps and manual dependencies, then redesigned and validated with stakeholders.</p>
 
               <div class="compare-table">
                 <div class="ct-head"><span></span><span>As-is</span><span>To-be</span></div>
-                <div><span>Steps per order</span><b class="bad">11</b><b class="good">3</b></div>
+                <div><span>Steps per transaction</span><b class="bad">11</b><b class="good">3</b></div>
                 <div><span>Manual handoffs</span><b class="bad">4</b><b class="good">1</b></div>
-                <div><span>Time per order</span><b class="bad">23 min</b><b class="good">4 min</b></div>
+                <div><span>Time per transaction</span><b class="bad">23 min</b><b class="good">4 min</b></div>
                 <div><span>Data sources</span><b class="bad">4</b><b class="good">1</b></div>
               </div>
 
               <a class="ba-figure" href="assets/img/business-analysis/process_asis_tobe.png" target="_blank" rel="noopener">
-                <img src="assets/img/business-analysis/process_asis_tobe.png" width="1920" height="1400" loading="lazy"
-                     alt="As-is process with 11 manual steps taking 23 minutes per order, compared with a to-be process of 3 steps taking 4 minutes">
+                <img src="assets/img/business-analysis/process_asis_tobe.png" width="2400" height="1679" loading="lazy"
+                     alt="As-is transaction process with 11 manual steps and 4 handoffs taking 23 minutes, compared with a to-be process of 3 steps taking 4 minutes">
                 <span class="figure-zoom">View full size ↗</span>
               </a>
             </div>
@@ -347,29 +356,29 @@
             <div class="deliverable-meta"><span class="d-num">08</span><span class="d-week">Week 3</span></div>
             <div class="deliverable-body">
               <h3>Wireframes &amp; walkthrough</h3>
-              <p>8 screen flows built in Figma over 3 days, then validated in a 90-minute stakeholder walkthrough.</p>
+              <p>8 screen flows built in Figma over 3 days, then validated in a 90-minute stakeholder walkthrough so everyone shared the same picture of the solution.</p>
 
               <div class="wf-viewer" id="wf-viewer">
                 <div class="wf-tabs" role="tablist" aria-label="Wireframes">
                   <button type="button" role="tab" id="wf-tab-1" aria-controls="wf-panel-1" aria-selected="true">Dashboard</button>
-                  <button type="button" role="tab" id="wf-tab-2" aria-controls="wf-panel-2" aria-selected="false" tabindex="-1">New order form</button>
-                  <button type="button" role="tab" id="wf-tab-3" aria-controls="wf-panel-3" aria-selected="false" tabindex="-1">Routing assignment</button>
+                  <button type="button" role="tab" id="wf-tab-2" aria-controls="wf-panel-2" aria-selected="false" tabindex="-1">New transaction</button>
+                  <button type="button" role="tab" id="wf-tab-3" aria-controls="wf-panel-3" aria-selected="false" tabindex="-1">Exceptions queue</button>
                 </div>
 
                 <div class="wf-panel" role="tabpanel" id="wf-panel-1" aria-labelledby="wf-tab-1">
-                  <img src="assets/img/business-analysis/wf_dashboard.png" width="1920" height="1120" loading="lazy"
-                       alt="Dashboard wireframe for the depot manager, with active orders, shipments in transit, exceptions, and a recent orders table">
-                  <p>Depot manager persona · real-time overview of orders, transit, exceptions, and unassigned orders.</p>
+                  <img src="assets/img/business-analysis/wf_dashboard.png" width="2400" height="1616" loading="lazy"
+                       alt="Dashboard for the ops manager with active, settling, held, and unassigned transactions, a recent transactions table, and ledger sync status">
+                  <p>Ops manager persona · real-time view of transactions, settlements, held items, and ledger sync.</p>
                 </div>
                 <div class="wf-panel" role="tabpanel" id="wf-panel-2" aria-labelledby="wf-tab-2" hidden>
-                  <img src="assets/img/business-analysis/wf_neworder.png" width="1920" height="1120" loading="lazy"
-                       alt="New order form wireframe showing a business rule violation when the weight exceeds 90 percent of the vehicle payload">
-                  <p>Order clerk persona · business rules enforced live, such as blocking a weight above 90% of vehicle payload.</p>
+                  <img src="assets/img/business-analysis/wf_newtransaction.png" width="2400" height="1616" loading="lazy"
+                       alt="New transaction form warning that a DKK 156,000 amount exceeds 90 percent of the merchant's fraud threshold and will be held for review">
+                  <p>Reconciliation analyst persona · business rules enforced live: an amount above 90% of the merchant's fraud threshold is held for review.</p>
                 </div>
                 <div class="wf-panel" role="tabpanel" id="wf-panel-3" aria-labelledby="wf-tab-3" hidden>
-                  <img src="assets/img/business-analysis/wf_routing.png" width="1920" height="1120" loading="lazy"
-                       alt="Routing assignment wireframe with the Danish depot network and vehicle fleet load percentages">
-                  <p>Depot manager persona · vehicle assignment across the depot network, with capacity enforcement.</p>
+                  <img src="assets/img/business-analysis/wf_exceptions.png" width="2400" height="1616" loading="lazy"
+                       alt="Fraud analyst exceptions queue listing held transactions with reason, severity, and age, and a detail panel to approve, reject, or escalate">
+                  <p>Fraud analyst · every held transaction in one place, with the reason it was held and a one-click decision.</p>
                 </div>
               </div>
 
@@ -377,43 +386,56 @@
             </div>
           </article>
 
-          <article class="deliverable deliverable-wide" id="data-model">
+          <article class="deliverable deliverable-wide" id="assumptions">
             <div class="deliverable-meta"><span class="d-num">09</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-body">
+              <h3>Assumptions &amp; constraints</h3>
+              <p>11 assumptions and constraints documented and tracked.</p>
+              <p class="outcome"><strong>Most impactful</strong> The core banking ledger API is rate-limited to 100 calls per minute. This shaped the entire sync architecture (a 15-minute asynchronous settlement queue), and was caught here rather than in Sprint 3.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="business-rules">
+            <div class="deliverable-meta"><span class="d-num">10</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-body">
+              <h3>Business rules</h3>
+              <p>17 rules captured before the schema was designed, not after something broke. Two examples:</p>
+              <div class="nfr-grid">
+                <div><span>Merchant identity</span><p>A merchant cannot exist twice under two internal IDs. Every reference points to one real merchant.</p></div>
+                <div><span>Fraud hold</span><p>A transaction above 90% of the merchant's fraud threshold, or with unusual activity, is held for a fraud analyst instead of being approved automatically.</p></div>
+              </div>
+              <p class="outcome"><strong>Outcome</strong> Agreeing the rules up front prevented 3 architecture debates later in development.</p>
+            </div>
+          </article>
+
+          <article class="deliverable deliverable-wide" id="data-model">
+            <div class="deliverable-meta"><span class="d-num">11</span><span class="d-week">Week 4</span></div>
             <div class="deliverable-body">
               <h3>Conceptual data model</h3>
               <ul class="stat-row">
                 <li><b>6</b> entities</li>
-                <li><b>19</b> business rules</li>
+                <li><b>17</b> business rules</li>
                 <li><b>1</b> duplication resolved</li>
               </ul>
               <a class="ba-figure" href="assets/img/business-analysis/data_model.png" target="_blank" rel="noopener">
-                <img src="assets/img/business-analysis/data_model.png" width="1920" height="1280" loading="lazy"
-                     alt="Conceptual data model with six entities: Order, Shipment, Customer, Depot, Vehicle, and Driver, and their relationships">
+                <img src="assets/img/business-analysis/data_model.png" width="2400" height="1614" loading="lazy"
+                     alt="Conceptual data model with six entities: Merchant, Transaction, Settlement, Fraud analyst, Flag, and Ledger entry, and their one-to-many relationships">
                 <span class="figure-zoom">View full size ↗</span>
               </a>
-              <p class="outcome"><strong>Outcome</strong> The “Customer” entity was duplicated between the ERP and CRM. It was resolved into one canonical customer before the database schema was created, and the business rules prevented 3 architecture debates.</p>
-            </div>
-          </article>
-
-          <article class="deliverable deliverable-wide" id="assumptions">
-            <div class="deliverable-meta"><span class="d-num">10</span><span class="d-week">Week 4</span></div>
-            <div class="deliverable-body">
-              <h3>Assumptions &amp; constraints</h3>
-              <p>11 assumptions and constraints documented and tracked.</p>
-              <p class="outcome"><strong>Most impactful</strong> The ERP API is rate-limited to 100 calls per minute. This shaped the entire sync architecture (a 15-minute asynchronous queue), and was caught here rather than in Sprint 3.</p>
+              <p class="outcome"><strong>Outcome</strong> The “Merchant” entity existed twice, in core banking and in the CRM. It was resolved into one canonical merchant before the database schema was created.</p>
             </div>
           </article>
 
           <article class="deliverable deliverable-wide" id="nfrs">
-            <div class="deliverable-meta"><span class="d-num">11</span><span class="d-week">Week 4</span></div>
+            <div class="deliverable-meta"><span class="d-num">12</span><span class="d-week">Week 4</span></div>
             <div class="deliverable-body">
               <h3>Non-functional requirements</h3>
-              <p>18 requirements covering how the system must behave, not just what it does.</p>
+              <p>19 requirements covering how the system must behave, not just what it does.</p>
               <div class="nfr-grid">
-                <div><span>Performance</span><p>&lt;2s page load · &lt;500ms API · 50 concurrent users</p></div>
-                <div><span>Availability</span><p>99.5% SLA · graceful degradation when the ERP is offline</p></div>
+                <div><span>Performance</span><p>&lt;2s page load · &lt;500ms API · 60 concurrent users</p></div>
+                <div><span>Availability</span><p>99.5% SLA · graceful degradation when the ledger is offline</p></div>
                 <div><span>Security</span><p>Role-based access (4 levels) · encryption at rest and in transit · full audit log</p></div>
-                <div><span>Compliance</span><p>GDPR · Danish data residency · PII fields flagged in the data model</p></div>
+                <div><span>Compliance</span><p>GDPR · PSD2 strong customer authentication · DORA operational resilience · Danish data residency · PII and PCI fields flagged in the data model</p></div>
               </div>
             </div>
           </article>
@@ -436,28 +458,29 @@
         <div class="deliverables">
 
           <article class="deliverable deliverable-wide" id="prototype">
-            <div class="deliverable-meta"><span class="d-num">12</span><span class="d-week">Weeks 5–6</span></div>
+            <div class="deliverable-meta"><span class="d-num">13</span><span class="d-week">Weeks 5–6</span></div>
             <div class="deliverable-body">
               <h3>Prototype &amp; usability sessions</h3>
+              <p>The wireframes became a working prototype that real analysts could click through, not just review.</p>
               <ul class="stat-row">
                 <li><b>9</b> pages, each traceable to a user goal</li>
-                <li><b>41</b> user actions written as dev specs</li>
-                <li><b>5</b> usability sessions with real clerks</li>
+                <li><b>38</b> user actions written as dev specs</li>
+                <li><b>5</b> usability sessions with real analysts</li>
               </ul>
               <p>Each user action was specified as <em>trigger → decision → outcome</em>, so developers could build directly from it.</p>
-              <p class="outcome"><strong>Key find</strong> Bulk import from Excel was critical for clerks but missing from scope. It was added as a Must-Have and approved within 24 hours.</p>
+              <p class="outcome"><strong>Key find</strong> Bulk settlement import was critical for analysts but missing from scope. It was added as a Must-Have and approved within 24 hours.</p>
             </div>
           </article>
 
           <article class="deliverable deliverable-wide" id="backlog">
-            <div class="deliverable-meta"><span class="d-num">13</span><span class="d-week">Weeks 6–7</span></div>
+            <div class="deliverable-meta"><span class="d-num">14</span><span class="d-week">Weeks 6–7</span></div>
             <div class="deliverable-body">
               <h3>Backlog &amp; prioritisation</h3>
-              <p>5 epics and 54 user stories. The proof of concept covered core functionality only.</p>
+              <p>The validated prototype pages became a prioritised, sprint-ready plan: 5 epics and 51 user stories. The proof of concept covered core functionality only.</p>
 
-              <div class="moscow" aria-label="MoSCoW prioritisation: 14 Must, 8 Should, 5 Could, 3 Won't">
+              <div class="moscow" aria-label="MoSCoW prioritisation: 13 Must, 8 Should, 5 Could, 3 Won't">
                 <div class="moscow-bar">
-                  <span class="m-must" style="flex: 14">14 Must</span>
+                  <span class="m-must" style="flex: 13">13 Must</span>
                   <span class="m-should" style="flex: 8">8 Should</span>
                   <span class="m-could" style="flex: 5">5 Could</span>
                   <span class="m-wont" style="flex: 3">3</span>
@@ -469,22 +492,22 @@
                 <div class="col-md-6">
                   <div class="fact-box">
                     <span>Ambiguity per story</span>
-                    <strong>3.2 → 0.4</strong>
-                    <p>questions per story after weekly refinement, with velocity up 40%</p>
+                    <strong>3.1 → 0.4</strong>
+                    <p>questions per story after weekly refinement, with velocity up 38%</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="fact-box">
-                    <span>Deferred to Should-Have</span>
+                    <span>MoSCoW prioritisation</span>
                     <strong>3 weeks saved</strong>
-                    <p>by moving routing auto-assignment out of the MVP</p>
+                    <p>by keeping Should and Could items out of the MVP</p>
                   </div>
                 </div>
               </div>
 
               <div class="sprint-goal">
                 <span>Sprint 1 goal</span>
-                <p>“A clerk at Depot 1 can create and submit a freight order digitally, without touching Excel.”</p>
+                <p>“An analyst at NordPay can create and submit a transaction digitally, without touching Excel.”</p>
               </div>
 
               <div class="table-wrap">
@@ -492,10 +515,9 @@
                   <caption>Proof-of-concept scope</caption>
                   <thead><tr><th>Epic</th><th>PoC feature</th><th>User story</th></tr></thead>
                   <tbody>
-                    <tr><td>Order intake</td><td>New order · Validation</td><td>Create a single order · Block an order exceeding the payload limit</td></tr>
-                    <tr><td>Routing engine</td><td>Manual assign</td><td>Assign a vehicle to an order</td></tr>
-                    <tr><td>Exception management</td><td>Flag</td><td>View all flagged orders in one place</td></tr>
-                    <tr><td>Integrations</td><td>ERP sync</td><td>Sync confirmed orders to the ERP</td></tr>
+                    <tr><td>Transaction intake</td><td>New transaction · Validation</td><td>Create a single transaction · Hold a transaction above the fraud threshold</td></tr>
+                    <tr><td>Exception management</td><td>Flag</td><td>View all flagged transactions in one place</td></tr>
+                    <tr><td>Integrations</td><td>Ledger sync</td><td>Sync confirmed transactions to the core banking ledger</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -503,25 +525,33 @@
           </article>
 
           <article class="deliverable deliverable-wide" id="requirements">
-            <div class="deliverable-meta"><span class="d-num">14</span><span class="d-week">Weeks 7–8</span></div>
+            <div class="deliverable-meta"><span class="d-num">15</span><span class="d-week">Weeks 7–8</span></div>
             <div class="deliverable-body">
               <h3>Requirements &amp; Definition of Done</h3>
+              <p>What “done” means for each story: testable, unambiguous, and agreed before development starts.</p>
 
               <div class="row g-4">
                 <div class="col-lg-7">
                   <div class="story-card">
                     <span class="story-label">User story</span>
-                    <p class="story-text">As an <b>order clerk</b>, I want to <b>bulk-import from Excel</b> so I can <b>process the morning manifest in under 2 minutes</b>.</p>
+                    <p class="story-text">As a <b>reconciliation analyst</b>, I want to <b>create a single transaction with automatic fraud-threshold validation</b>, so that <b>only risky transactions wait for review</b>.</p>
 
-                    <span class="story-label">Acceptance criteria</span>
+                    <span class="story-label">Acceptance criteria · within threshold</span>
                     <dl class="gwt">
-                      <div><dt>Given</dt><dd>a file with more than 500 rows</dd></div>
-                      <div><dt>When</dt><dd>it is uploaded</dd></div>
-                      <div><dt>Then</dt><dd>valid rows are queued and invalid rows are flagged inline, so the clerk is not blocked by errors</dd></div>
+                      <div><dt>Given</dt><dd>an analyst enters the transaction details</dd></div>
+                      <div><dt>When</dt><dd>the amount is within the merchant's fraud threshold</dd></div>
+                      <div><dt>Then</dt><dd>the transaction is created as authorised, with no manual review</dd></div>
+                    </dl>
+
+                    <span class="story-label">Acceptance criteria · above threshold</span>
+                    <dl class="gwt">
+                      <div><dt>Given</dt><dd>an analyst enters the transaction details</dd></div>
+                      <div><dt>When</dt><dd>the amount exceeds the merchant's fraud threshold</dd></div>
+                      <div><dt>Then</dt><dd>the transaction is held, a flag is created, and the analyst sees why it was not approved automatically</dd></div>
                     </dl>
                   </div>
 
-                  <p class="outcome"><strong>Edge cases</strong> 38 documented. The most impactful: if the ERP times out, orders wait in a 15-minute local queue with the sync status shown, and no clerk action is needed.</p>
+                  <p class="outcome"><strong>Edge cases</strong> 34 documented. The most impactful: if the ledger times out, transactions wait in a 15-minute local queue with the sync status shown, and no analyst action is needed.</p>
                 </div>
 
                 <div class="col-lg-5">
@@ -532,8 +562,8 @@
                       <li>Code reviewed and merged</li>
                       <li>Unit tests passing</li>
                       <li>All acceptance criteria verified by QA</li>
-                      <li>GDPR reviewed for stories touching personal data</li>
-                      <li>Performance tested at 50 concurrent users</li>
+                      <li>GDPR and PSD2 reviewed for stories touching PII or card data</li>
+                      <li>Performance tested at 60 concurrent users</li>
                       <li>Product owner sign-off in staging</li>
                     </ul>
                   </div>
@@ -568,7 +598,7 @@
           </div>
           <div>
             <h3>Change control</h3>
-            <p>Bulk import: a 2-day impact assessed and approved within 24 hours, with zero sprint disruption.</p>
+            <p>Bulk settlement import: a 2-day impact assessed and approved within 24 hours, with zero sprint disruption.</p>
           </div>
           <div class="team-highlight">
             <h3>Meeting cadence</h3>
@@ -595,7 +625,7 @@
           </li>
           <li class="tl-1">
             <span class="tl-week">W2</span>
-            <div><h3>User personas + domain glossary</h3><p>3 remaining interviews · 3 personas finalised · 28-term glossary, “order” ambiguity resolved</p></div>
+            <div><h3>User personas + domain glossary</h3><p>3 remaining interviews · 3 personas finalised · 26-term glossary, “transaction” ambiguity resolved</p></div>
           </li>
           <li class="tl-1">
             <span class="tl-week">W3</span>
@@ -603,25 +633,25 @@
           </li>
           <li class="tl-1">
             <span class="tl-week">W4</span>
-            <div><h3>Data model + NFRs + scope lock</h3><p>6 entities · 19 business rules · 18 NFRs · stakeholder walkthrough, scope baselined</p></div>
+            <div><h3>Data model + NFRs + scope lock</h3><p>6 entities · 17 business rules · 19 NFRs · stakeholder walkthrough, scope baselined</p></div>
             <span class="tl-badge">Scope locked</span>
           </li>
           <li class="tl-2">
             <span class="tl-week">W5–6</span>
-            <div><h3>Prototype + usability sessions</h3><p>9 pages · 41 user actions · 5 usability sessions · bulk import added as Must-Have</p></div>
+            <div><h3>Prototype + usability sessions</h3><p>9 pages · 38 user actions · 5 usability sessions · bulk settlement import added as Must-Have</p></div>
           </li>
           <li class="tl-2">
             <span class="tl-week">W6–7</span>
-            <div><h3>Backlog + stakeholder sign-off</h3><p>5 epics · MoSCoW applied · 54 user stories · sign-off at the end of Week 7</p></div>
+            <div><h3>Backlog + stakeholder sign-off</h3><p>5 epics · MoSCoW applied · 51 user stories · sign-off at the end of Week 7</p></div>
             <span class="tl-badge">Signed off</span>
           </li>
           <li class="tl-2">
             <span class="tl-week">W7–8</span>
-            <div><h3>Full requirements + Definition of Done</h3><p>All acceptance criteria in Given/When/Then · 38 edge cases · 6-point DoD ratified</p></div>
+            <div><h3>Full requirements + Definition of Done</h3><p>All acceptance criteria in Given/When/Then · 34 edge cases · 6-point DoD ratified by dev, QA, and compliance</p></div>
           </li>
           <li class="tl-3">
             <span class="tl-week">W8–10</span>
-            <div><h3>Sprint 1 live at Depot 1</h3><p>Order intake live in production · Sprints 2–4 planned · 0 scope changes after sign-off</p></div>
+            <div><h3>Sprint 1 live for the ops team</h3><p>Transaction intake live in production · Sprints 2–4 planned · 0 scope changes after sign-off</p></div>
             <span class="tl-badge">Live in production</span>
           </li>
         </ol>
@@ -645,27 +675,27 @@
               <li><b>Business case</b><span>NPV model, 12-month payback</span></li>
               <li><b>Stakeholder interviews</b><span>6 interviews, hidden need surfaced</span></li>
               <li><b>User personas</b><span>3 personas, day-in-life scenarios</span></li>
-              <li><b>Domain glossary</b><span>28 terms, “order” ambiguity resolved</span></li>
-              <li><b>Assumptions &amp; constraints</b><span>11 items, API limit shaped architecture</span></li>
+              <li><b>Domain glossary</b><span>26 terms, “transaction” ambiguity resolved</span></li>
+              <li><b>Assumptions &amp; constraints</b><span>11 items, ledger API limit shaped architecture</span></li>
               <li><b>As-is / to-be</b><span>11 → 3 steps, 83% time reduction</span></li>
               <li><b>User journey mapping</b><span>2 missing touchpoints found</span></li>
               <li><b>Wireframes &amp; walkthrough</b><span>8 screens, scope locked in 90 min</span></li>
               <li><b>Conceptual data model</b><span>6 entities, duplication resolved</span></li>
-              <li><b>Business rules</b><span>19 rules, 3 architecture debates prevented</span></li>
-              <li><b>Non-functional requirements</b><span>18 requirements: GDPR, SLA, RBAC</span></li>
+              <li><b>Business rules</b><span>17 rules, 3 architecture debates prevented</span></li>
+              <li><b>Non-functional requirements</b><span>19 requirements: GDPR, PSD2, DORA, RBAC</span></li>
             </ul>
           </div>
 
           <div class="skill-group phase-2">
             <h3>Proof of concept</h3>
             <ul>
-              <li><b>Pages &amp; user actions</b><span>9 pages, 41 actions as dev specs</span></li>
+              <li><b>Pages &amp; user actions</b><span>9 pages, 38 actions as dev specs</span></li>
               <li><b>Usability feedback</b><span>5 sessions, critical gap found pre-build</span></li>
               <li><b>Epics &amp; prioritisation</b><span>MoSCoW, 3 sprint weeks saved</span></li>
-              <li><b>Backlog refinement</b><span>Ambiguity 3.2 → 0.4 per story</span></li>
+              <li><b>Backlog refinement</b><span>Ambiguity 3.1 → 0.4 per story</span></li>
               <li><b>Sprint planning</b><span>Outcome-based goals, not task lists</span></li>
-              <li><b>User stories &amp; AC</b><span>54 stories, QA tests written from AC</span></li>
-              <li><b>Edge cases &amp; DoD</b><span>38 cases, 6-point DoD ratified</span></li>
+              <li><b>User stories &amp; AC</b><span>51 stories, QA tests written from AC</span></li>
+              <li><b>Edge cases &amp; DoD</b><span>34 cases, 6-point DoD ratified</span></li>
               <li><b>Stakeholder sign-off</b><span>Week 7, 0 scope changes in 3 sprints</span></li>
             </ul>
           </div>
@@ -693,11 +723,11 @@
           <table class="ba-table">
             <thead><tr><th>Epic</th><th>Key features</th><th>User stories</th></tr></thead>
             <tbody>
-              <tr><td>Order intake</td><td>New order · Bulk import · Validation</td><td>Create a single order · Import the morning manifest from Excel · Block an order exceeding the payload limit</td></tr>
-              <tr><td>Routing engine</td><td>Manual assign · Auto-suggest · Override</td><td>Assign a vehicle to an order · Get a best-vehicle suggestion · Override an auto-assignment</td></tr>
-              <tr><td>Exception management</td><td>Flag · Resolve · Escalate</td><td>View all flagged orders in one place · Mark an exception as resolved · Escalate an unresolved exception</td></tr>
-              <tr><td>Customer portal</td><td>Shipment tracking · Notifications</td><td>Track a shipment in real time · Receive a delay notification automatically</td></tr>
-              <tr><td>Integrations</td><td>ERP sync · Driver API · Email</td><td>Sync confirmed orders to the ERP · Receive route details on mobile · Get an email confirmation on submission</td></tr>
+              <tr><td>Transaction intake</td><td>New transaction · Bulk settlement import · Validation</td><td>Create a single transaction · Import a merchant settlement batch from Excel · Hold a transaction above the fraud threshold</td></tr>
+              <tr><td>Exception management</td><td>Flag · Resolve · Escalate</td><td>View all flagged transactions in one place · Approve or reject a held transaction · Escalate a case to Risk &amp; Compliance</td></tr>
+              <tr><td>Merchant portal</td><td>Settlement status · Notifications</td><td>Check settlement status without calling · Receive a settlement confirmation automatically</td></tr>
+              <tr><td>Reporting</td><td>Daily reconciliation · Audit export</td><td>Get the daily reconciliation report automatically · Export the audit log for a compliance review</td></tr>
+              <tr><td>Integrations</td><td>Ledger sync · Core banking KYC · Email</td><td>Sync confirmed transactions to the ledger · Check merchant KYC status automatically · Send email notifications</td></tr>
             </tbody>
           </table>
         </div>
@@ -708,9 +738,9 @@
             This case study was drafted with Claude, which I prompted, directed,
             and supervised. Every number, decision, and artefact was reviewed
             and kept only because it accurately reflects my approach. The
-            methodology is mine; AI was the drafting instrument. That is how I
-            use AI on engagements: to accelerate output, not to replace
-            judgment.
+            methodology comes from my professional experience; AI was the
+            drafting instrument. That is how I use AI on engagements: to
+            accelerate output, not to replace judgment.
           </p>
         </aside>
       </div>
