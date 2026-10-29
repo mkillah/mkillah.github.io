@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Business analysis case study by Marko Antolcic: a fintech transaction platform taken from problem statement to a working MVP in 10 weeks, with every deliverable and what it produced.">
+  <meta name="description" content="Business analysis case study by Marko Antolcic: a fintech transaction platform taken from problem statement to a working MVP in 10 weeks, with every deliverable and what it produced, plus an interactive Requirements Verifier that checks business rules for contradictions.">
 
   <title>Business Analysis | Marko Antolcic</title>
 
@@ -45,13 +45,48 @@
 
   <main class="ba-page">
 
-    <!-- Introduction -->
-    <section class="hero container ba-hero">
-      <p class="eyebrow">SYSTEMS / BUSINESS ANALYSIS</p>
-
+    <!-- Page views: the case study report and the interactive verifier -->
+    <section class="container ba-view-switch" aria-labelledby="ba-overview-title">
       <a class="back-link" href="systems.html">
         <span aria-hidden="true">←</span> Back to Systems
       </a>
+
+      <h2 class="ba-overview-title" id="ba-overview-title">A 10-week analysis engagement, and a tool that checks its business rules.</h2>
+      <p class="ba-overview-lead">
+        Both follow the method I use on every project, understand first and
+        then build: business rules are agreed and checked for conflicts before
+        anyone designs a schema or writes code.
+      </p>
+
+      <div class="ba-view-tabs" id="ba-views" role="tablist" aria-label="Choose what to view">
+        <button type="button" role="tab" id="view-tab-analysis" aria-controls="view-analysis" aria-selected="true">
+          <span class="ba-view-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+          </span>
+          <span class="ba-view-text">
+            <span class="ba-view-kicker">Case study</span>
+            <span class="ba-view-name">Analysis</span>
+            <span class="ba-view-desc">NordPay A/S: from a messy process to a working MVP in 10 weeks, with every deliverable and what it produced.</span>
+          </span>
+        </button>
+        <button type="button" role="tab" id="view-tab-verifier" aria-controls="view-verifier" aria-selected="false" tabindex="-1">
+          <span class="ba-view-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <span class="ba-view-text">
+            <span class="ba-view-kicker">Interactive tool</span>
+            <span class="ba-view-name">Requirements Verifier</span>
+            <span class="ba-view-desc">Write business rules in plain English and find contradictions and dead rules, each backed by a Lean&nbsp;4 proof.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <div id="view-analysis" role="tabpanel" aria-labelledby="view-tab-analysis">
+
+    <!-- Introduction -->
+    <section class="hero container ba-hero">
+      <p class="eyebrow">SYSTEMS / BUSINESS ANALYSIS</p>
 
       <div class="ba-client">
         <img src="assets/img/business-analysis/nordpay-logo.png" alt="NordPay A/S logo" width="56" height="57">
@@ -405,6 +440,11 @@
                 <div><span>Fraud hold</span><p>A transaction above 90% of the merchant's fraud threshold, or with unusual activity, is held for a fraud analyst instead of being approved automatically.</p></div>
               </div>
               <p class="outcome"><strong>Outcome</strong> Agreeing the rules up front prevented 3 architecture debates later in development.</p>
+
+              <a class="rv-cta" href="#verifier">
+                <span><strong>Try it yourself.</strong> Check rules like the fraud hold for contradictions in the Requirements Verifier.</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </article>
 
@@ -746,6 +786,66 @@
       </div>
     </section>
 
+    </div><!-- /view-analysis -->
+
+    <!-- Requirements Verifier -->
+    <div id="view-verifier" role="tabpanel" aria-labelledby="view-tab-verifier" hidden>
+      <section class="hero container ba-hero rv-hero">
+        <p class="eyebrow">SYSTEMS / BUSINESS ANALYSIS / REQUIREMENTS VERIFIER</p>
+
+        <h1>Catch contradictory requirements before they reach code.</h1>
+
+        <p class="lead">
+          Write business rules in plain English. The verifier turns them into a
+          formal model, checks every relevant case for contradictions and for
+          rules that can never apply, and writes a Lean&nbsp;4 proof for each finding.
+        </p>
+
+        <div class="case-note">
+          <strong>How it works.</strong>
+          Everything runs in your browser. Numbers only appear in threshold
+          comparisons, so checking the values around each threshold covers every
+          possible record: a finding is a guarantee, not a sample. The generated
+          Lean file can be checked in the Lean web editor. This is a prototype
+          that understands a fixed set of sentence patterns; a full version would
+          use an LLM to fill the same structured model.
+        </div>
+      </section>
+
+      <section class="work-section rv-tool">
+        <div class="container">
+          <div class="rv-grid" id="rv-app">
+            <div class="rv-input-card">
+              <label for="rv-example">Example</label>
+              <select id="rv-example" autocomplete="off"></select>
+
+              <label for="rv-input">Business requirements</label>
+              <textarea id="rv-input" spellcheck="false" rows="9"></textarea>
+
+              <button type="button" class="rv-run" id="rv-run">Analyse requirements</button>
+
+              <details class="rv-help">
+                <summary>Sentence patterns it understands</summary>
+                <ul id="rv-supported"></ul>
+                <p><em>Must / cannot / are always</em> become rules for every record. <em>Can / may</em> describe records that must be allowed to exist.</p>
+              </details>
+            </div>
+
+            <div class="rv-results">
+              <div class="wf-tabs rv-tabs" id="rv-tabs" role="tablist" aria-label="Verifier results">
+                <button type="button" role="tab" id="rv-tab-verify" aria-controls="rv-panel-verify" aria-selected="true">Verification</button>
+                <button type="button" role="tab" id="rv-tab-reqs" aria-controls="rv-panel-reqs" aria-selected="false" tabindex="-1">Requirements</button>
+                <button type="button" role="tab" id="rv-tab-lean" aria-controls="rv-panel-lean" aria-selected="false" tabindex="-1">Lean model</button>
+              </div>
+              <div role="tabpanel" id="rv-panel-verify" aria-labelledby="rv-tab-verify"></div>
+              <div role="tabpanel" id="rv-panel-reqs" aria-labelledby="rv-tab-reqs" hidden></div>
+              <div role="tabpanel" id="rv-panel-lean" aria-labelledby="rv-tab-lean" hidden></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- /view-verifier -->
+
   </main>
 
   <footer class="container site-footer">
@@ -763,6 +863,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/business-analysis.js"></script>
+  <script src="assets/js/req-verifier.js"></script>
 
 </body>
 </html>

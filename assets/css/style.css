@@ -4521,3 +4521,365 @@ button:focus-visible {
     font-size: 0.7rem;
   }
 }
+
+
+/* ================================================================
+   Business analysis: page views + Requirements Verifier
+   ================================================================ */
+
+.ba-view-switch {
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  scroll-margin-top: 1rem;
+}
+
+.ba-view-switch .back-link {
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+}
+
+.ba-overview-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 500;
+}
+
+.ba-overview-lead {
+  max-width: 680px;
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.ba-view-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 1.5rem;
+}
+
+.ba-view-tabs button {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-background);
+  color: var(--color-text);
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(15, 25, 20, 0.04);
+  transition: border-color var(--transition), background var(--transition),
+              box-shadow var(--transition), transform var(--transition);
+}
+
+.ba-view-tabs button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 22px rgba(15, 25, 20, 0.08);
+  transform: translateY(-1px);
+}
+
+.ba-view-tabs button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.ba-view-tabs button[aria-selected="true"] {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  box-shadow: none;
+  transform: none;
+}
+
+/* "Viewing" marker on the active card */
+.ba-view-tabs button[aria-selected="true"]::after {
+  content: "Viewing";
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ba-view-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--accent);
+}
+
+.ba-view-tabs button[aria-selected="true"] .ba-view-icon {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ba-view-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.ba-view-kicker {
+  padding-right: 5rem; /* room for the "Viewing" marker, which sits on this line */
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ba-view-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.ba-view-desc {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.ba-view-switch + #view-analysis .ba-hero,
+.rv-hero {
+  padding-top: 2.5rem;
+}
+
+.rv-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 0.9rem 1.15rem;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-card);
+  color: var(--color-text);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.rv-cta strong { color: var(--accent); }
+.rv-cta > span:last-child { color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+.rv-cta:hover { background: var(--accent-light); color: var(--color-text); }
+
+.rv-hero {
+  padding-bottom: 2rem;
+}
+
+.rv-tool {
+  padding-top: 0;
+}
+
+.rv-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.rv-input-card,
+.rv-results {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-background);
+}
+
+.rv-input-card label {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rv-input-card select,
+.rv-input-card textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.rv-input-card textarea {
+  min-height: 210px;
+  resize: vertical;
+  font: 0.86rem/1.6 ui-monospace, Consolas, monospace;
+}
+
+.rv-run {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition: opacity var(--transition);
+}
+
+.rv-run:hover { opacity: 0.9; }
+
+.rv-help {
+  margin-top: 1.1rem;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.rv-help summary { cursor: pointer; font-weight: 600; }
+.rv-help ul { margin: 0.5rem 0; padding-left: 1.1rem; }
+.rv-help p { margin: 0; }
+
+.rv-tabs {
+  --phase: var(--accent);
+  margin-top: 0;
+}
+
+.rv-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rv-badge {
+  padding: 0.15rem 0.6rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rv-badge.contradiction { color: #b42318; }
+.rv-badge.warning { color: #9a5b00; }
+.rv-badge.ok { color: var(--color-green); }
+
+.rv-card {
+  margin-bottom: 0.75rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-green);
+  border-radius: var(--radius-card);
+  font-size: 0.92rem;
+}
+
+.rv-card.contradiction { border-left-color: #b42318; background: #fdf0ee; }
+.rv-card.warning { border-left-color: #c98a12; background: #fbf1dc; }
+
+.rv-card h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.35rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.rv-card p { margin: 0.3rem 0; }
+.rv-card ul { margin: 0.3rem 0; padding-left: 1.1rem; }
+
+.rv-muted { color: var(--color-muted); font-size: 0.86rem; }
+.rv-proof { color: var(--color-muted); font-size: 0.8rem; }
+
+.rv-results code {
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.82rem;
+}
+
+.rv-table td code { white-space: nowrap; }
+.rv-attrs { margin-top: 0.9rem; line-height: 2; }
+
+.rv-note {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-card);
+  background: #fbf1dc;
+  font-size: 0.88rem;
+}
+
+.rv-note ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
+.rv-empty { padding: 2rem 0; color: var(--color-muted); text-align: center; }
+
+.rv-lean-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.rv-lean-bar > span:last-child { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.rv-ghost {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rv-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.rv-lean {
+  max-height: 560px;
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: var(--radius-card);
+  background: #1f2420;
+  color: #e6ebe4;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 991.98px) {
+  .rv-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767.98px) {
+  .ba-view-tabs { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+@media (max-width: 575.98px) {
+  .rv-input-card, .rv-results { padding: 1rem; }
+  .ba-view-tabs button { padding: 1rem; gap: 0.8rem; }
+  .ba-view-icon { width: 38px; height: 38px; }
+  .ba-view-name { font-size: 1.15rem; }
+  .rv-tabs button { padding: 0.4rem 0.7rem; font-size: 0.82rem; }
+}
