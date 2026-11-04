@@ -523,6 +523,253 @@ button:focus-visible {
 }
 
 
+/* Cognitive science cards: one illustration per field */
+
+/* Psychology: eye-tracking scanpath over a chess position */
+.research-image.art-psych {
+  background: linear-gradient(135deg, var(--color-green-light), #f7f8f5);
+}
+
+.art-psych .sq-light {
+  fill: #fbfcfa;
+}
+
+.art-psych .sq-dark {
+  fill: #cfdfd2;
+}
+
+.art-piece {
+  fill: var(--color-text);
+  font-size: 24px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.scanpath {
+  fill: none;
+  stroke: var(--color-green);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-dasharray: 340;
+  stroke-dashoffset: 0;
+  opacity: 0.75;
+}
+
+.fixation {
+  fill: rgba(3, 70, 32, 0.18);
+  stroke: var(--color-green);
+  stroke-width: 1.5;
+}
+
+/* Neuroscience: ventral "what" and dorsal "how" streams */
+.research-image.art-neuro {
+  background: linear-gradient(135deg, #fbf1dc, #f7f8f5);
+}
+
+.brain-outline {
+  fill: #fffdf8;
+  stroke: #a8720c;
+  stroke-width: 2;
+}
+
+.brain-cerebellum {
+  fill: #f3e2bd;
+  stroke: #a8720c;
+  stroke-width: 1.5;
+}
+
+.brain-stem {
+  fill: none;
+  stroke: #a8720c;
+  stroke-width: 7;
+  stroke-linecap: round;
+  opacity: 0.35;
+}
+
+.brain-sulcus {
+  fill: none;
+  stroke: #a8720c;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.3;
+}
+
+.brain-v1 {
+  fill: #a8720c;
+}
+
+.stream {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 6 5;
+}
+
+.stream-how {
+  stroke: var(--color-blue);
+}
+
+.stream-what {
+  stroke: #a8720c;
+}
+
+.arrow-how {
+  fill: var(--color-blue);
+}
+
+.arrow-what {
+  fill: #a8720c;
+}
+
+.stream-label {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  text-anchor: middle;
+}
+
+.stream-label.how {
+  fill: var(--color-blue);
+}
+
+.stream-label.what {
+  fill: #a8720c;
+}
+
+/* Artificial intelligence: discrimination net from pixels to chunks to a concept */
+.research-image.art-ai {
+  background: linear-gradient(135deg, #e8eff4, #f7f8f5);
+}
+
+.net-input rect {
+  fill: var(--color-blue);
+  opacity: 0.55;
+}
+
+.net-edge {
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+
+.net-link {
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+  opacity: 0.6;
+}
+
+.net-node {
+  fill: #fff;
+  stroke: var(--color-blue);
+  stroke-width: 2.5;
+}
+
+.net-node.strong {
+  fill: var(--color-blue);
+}
+
+.tile-light {
+  fill: #fff;
+}
+
+.tile-dark {
+  fill: #b9cddb;
+}
+
+.tile-frame {
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 1.5;
+}
+
+.net-concept {
+  fill: var(--color-blue);
+  transition: transform var(--transition);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.net-concept-label {
+  fill: #fff;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* Linguistics: syntax tree turned into a fact */
+.research-image.art-ling {
+  background: linear-gradient(135deg, #efedf5, #f7f8f5);
+}
+
+.tree-edge,
+.tree-rule {
+  fill: none;
+  stroke: var(--color-purple);
+  stroke-width: 1.5;
+  opacity: 0.6;
+}
+
+.tree-cat {
+  fill: var(--color-purple);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-anchor: middle;
+}
+
+.tree-word {
+  fill: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  text-anchor: middle;
+}
+
+.tree-triple {
+  fill: var(--color-purple);
+  font-size: 13px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* Small motion on hover */
+@media (prefers-reduced-motion: no-preference) {
+  .research-card-link:hover .scanpath {
+    animation: art-draw 1.4s ease-out;
+  }
+
+  .research-card-link:hover .stream {
+    animation: art-flow 0.8s linear infinite;
+  }
+
+  .research-card-link:hover .net-concept {
+    transform: scale(1.1);
+  }
+
+  .research-card-link:hover .tree-triple {
+    animation: art-fade 0.9s ease-out;
+  }
+}
+
+@keyframes art-draw {
+  from { stroke-dashoffset: 340; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes art-flow {
+  to { stroke-dashoffset: -11; }
+}
+
+@keyframes art-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
 /* Whole research card is clickable */
 
 .research-card-link {

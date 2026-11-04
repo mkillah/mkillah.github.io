@@ -12,7 +12,13 @@ So far I have studied the mind mainly at the **behavioural level**: how people w
 - **Perception and recognition.** How the brain turns visual input into meaningful patterns that can be recognised at a glance.
 - **Expertise and the brain.** How long-term practice in a domain changes the way information is processed.
 
-I researched these topics in both my bachelor's and master's theses.
+### Master's thesis literature
+
+For my master's thesis, [*The influence of perceptual and functional background distraction on solving tactical chess problems*](https://urn.nsk.hr/urn:nbn:hr:162:140286) (University of Zadar, 2021), I reviewed research on the neural basis of expert perception:
+
+- **Ventral and dorsal visual streams.** How the "what" and "how" pathways support perceptual and functional representations of a chess position.
+- **Expertise and the brain.** How practice specialises regions such as the fusiform area, occipito-temporal junction, and retrosplenial cortex for recognising chess patterns.
+- **Neuropsychology of recognition: agnosias.** What apperceptive and associative visual agnosia, and simultanagnosia in Bálint's syndrome, reveal about how recognition is organised in the brain.
 
 ## Where I am heading
 

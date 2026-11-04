@@ -20,6 +20,13 @@
       ]
     },
     {
+      "label": "Unsupervised learning",
+      "methods": [
+        { "id": "clustering", "name": "Clustering", "detail": "Finding groups without labels, and checking whether they are stable" },
+        { "id": "dimensionality-reduction", "name": "Dimensionality reduction", "detail": "Summarising many measurements with a few components, such as PCA" }
+      ]
+    },
+    {
       "label": "Deep learning",
       "methods": [
         { "id": "neural-networks", "name": "Neural networks", "detail": "Multi-layer models trained with backpropagation" },
@@ -31,7 +38,9 @@
       "label": "Statistical modelling",
       "methods": [
         { "id": "cohort-analysis", "name": "Cohort analysis", "detail": "Following groups over time from a shared starting point" },
-        { "id": "survival-analysis", "name": "Survival analysis", "detail": "Modelling the time until an event, such as a rating plateau" }
+        { "id": "survival-analysis", "name": "Survival analysis", "detail": "Modelling the time until an event, such as a rating plateau" },
+        { "id": "change-point-detection", "name": "Change-point detection", "detail": "Finding where a time series changes direction" },
+        { "id": "fixed-effects", "name": "Fixed-effects models", "detail": "Comparing each person with themselves over time" }
       ]
     },
     {
@@ -69,6 +78,28 @@
       "methods": ["cohort-analysis", "survival-analysis", "regression", "feature-engineering"],
       "tools": ["Python", "pandas", "NumPy", "SciPy", "JavaScript", "Chart.js"],
       "details": { "label": "Try the Rating Predictor", "url": "https://www.neuralgambit.com/stats" }
+    },
+    {
+      "id": "lichess-plateaus",
+      "title": "Rating plateaus on Lichess",
+      "category": "neural-gambit",
+      "year": 2026,
+      "summary": "Stuck, or about to break through? 386,000 blitz games from 581 Lichess players: detecting plateaus with change points, and predicting who escapes them.",
+      "methods": ["change-point-detection", "classification", "tree-ensembles", "fixed-effects", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "statsmodels", "python-chess", "Stockfish", "JavaScript", "Chart.js"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/lichess-plateaus.ipynb",
+      "details": { "label": "Try the Plateau Detector", "url": "https://www.neuralgambit.com/stats/plateau" }
+    },
+    {
+      "id": "lichess-learning-curves",
+      "title": "Learning curves on Lichess",
+      "category": "neural-gambit",
+      "year": 2026,
+      "summary": "Are there types of learners? The first 300 blitz games of 581 new Lichess players: grouping learning curves, and predicting a player's curve from their first 100 games.",
+      "methods": ["clustering", "dimensionality-reduction", "classification", "cohort-analysis", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "Stockfish", "JavaScript", "Chart.js"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/lichess-learning-curves.ipynb",
+      "details": { "label": "See your learning curve", "url": "https://www.neuralgambit.com/stats/learning-curve" }
     }
   ]
 }

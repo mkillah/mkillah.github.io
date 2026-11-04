@@ -10,7 +10,7 @@ Do irrelevant pieces in the background of a chess position make tactical problem
 
 ### At a glance
 
-- **Based on:** my master's thesis, [*The influence of perceptual and functional background distraction on solving tactical chess problems*](https://urn.nsk.hr/urn:nbn:hr:162:140286) (University of Zagreb, 2021).
+- **Based on:** my master's thesis, [*The influence of perceptual and functional background distraction on solving tactical chess problems*](https://urn.nsk.hr/urn:nbn:hr:162:140286) (University of Zadar, 2021).
 - **Design:** 48 rated players in two groups (weaker vs stronger), each solving "mate in two" problems in four versions.
 - **Main finding:** stronger players were more accurate and faster. A random background slowed everyone down, and an extra tempting move led to more mistakes.
 - **Showcase:** a notebook that rebuilds the study from its published results, and analyses it with ANOVA and linear regression.

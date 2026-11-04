@@ -193,11 +193,41 @@
             <a class="research-card-link" href="psychology.html"
                aria-label="Explore psychology research">
               <article class="research-tile">
-                <img
-                  class="research-image"
-                  src="https://images.openai.com/static-rsc-4/kxfAznQc5yxwX7EQ0e8CHrwcrj6CkW9YE_pOUG5Qc8vXsI9skZymZUghzkR5ZFGw5wBLAjCFEji277flu6shSzunj1E5RTPfjmM0tC4LfsCK_DW2qzkwS79caX666ystACAx-L0H5wHGgc66ZpMaoC5Jo9mRhgHq3b_PeXTWVYM?purpose=inline"
-                  alt="Chess position from the Byrne versus Fischer 1956 game"
-                  loading="lazy">
+                <div class="research-image research-art art-psych" aria-hidden="true">
+                  <svg viewBox="0 0 320 200">
+                    <rect x="80" y="36" width="32" height="32" class="sq-light"/>
+                    <rect x="112" y="36" width="32" height="32" class="sq-dark"/>
+                    <rect x="144" y="36" width="32" height="32" class="sq-light"/>
+                    <rect x="176" y="36" width="32" height="32" class="sq-dark"/>
+                    <rect x="208" y="36" width="32" height="32" class="sq-light"/>
+                    <rect x="80" y="68" width="32" height="32" class="sq-dark"/>
+                    <rect x="112" y="68" width="32" height="32" class="sq-light"/>
+                    <rect x="144" y="68" width="32" height="32" class="sq-dark"/>
+                    <rect x="176" y="68" width="32" height="32" class="sq-light"/>
+                    <rect x="208" y="68" width="32" height="32" class="sq-dark"/>
+                    <rect x="80" y="100" width="32" height="32" class="sq-light"/>
+                    <rect x="112" y="100" width="32" height="32" class="sq-dark"/>
+                    <rect x="144" y="100" width="32" height="32" class="sq-light"/>
+                    <rect x="176" y="100" width="32" height="32" class="sq-dark"/>
+                    <rect x="208" y="100" width="32" height="32" class="sq-light"/>
+                    <rect x="80" y="132" width="32" height="32" class="sq-dark"/>
+                    <rect x="112" y="132" width="32" height="32" class="sq-light"/>
+                    <rect x="144" y="132" width="32" height="32" class="sq-dark"/>
+                    <rect x="176" y="132" width="32" height="32" class="sq-light"/>
+                    <rect x="208" y="132" width="32" height="32" class="sq-dark"/>
+                    <text x="96" y="53" class="art-piece">♜</text>
+                    <text x="224" y="53" class="art-piece">♚</text>
+                    <text x="160" y="85" class="art-piece">♟</text>
+                    <text x="128" y="117" class="art-piece">♛</text>
+                    <text x="192" y="149" class="art-piece">♞</text>
+                    <path d="M176 100 L208 70 L150 134 L196 112 L112 82" class="scanpath"/>
+                    <circle cx="176" cy="100" r="11" class="fixation"/>
+                    <circle cx="208" cy="70" r="7" class="fixation"/>
+                    <circle cx="150" cy="134" r="13" class="fixation"/>
+                    <circle cx="196" cy="112" r="8" class="fixation"/>
+                    <circle cx="112" cy="82" r="9" class="fixation"/>
+                  </svg>
+                </div>
 
                 <div class="research-tile-content">
                   <p class="research-number">01 / Psychology</p>
@@ -220,15 +250,21 @@
             <a class="research-card-link" href="neuroscience.html"
                aria-label="Explore neuroscience research">
               <article class="research-tile">
-                <div class="research-image research-art research-art-neuro" aria-hidden="true">
+                <div class="research-image research-art art-neuro" aria-hidden="true">
                   <svg viewBox="0 0 320 200">
-                    <path d="M70 120 L130 70 L200 95 L255 55 M130 70 L150 145 L200 95 M150 145 L235 150 L255 55 M70 120 L150 145" class="neuro-link"/>
-                    <circle cx="70" cy="120" r="9" class="neuro-node"/>
-                    <circle cx="130" cy="70" r="12" class="neuro-node strong"/>
-                    <circle cx="200" cy="95" r="10" class="neuro-node"/>
-                    <circle cx="255" cy="55" r="8" class="neuro-node"/>
-                    <circle cx="150" cy="145" r="10" class="neuro-node strong"/>
-                    <circle cx="235" cy="150" r="7" class="neuro-node"/>
+                    <defs>
+                      <marker id="arrow-how" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" class="arrow-how"/></marker>
+                      <marker id="arrow-what" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" class="arrow-what"/></marker>
+                    </defs>
+                    <ellipse cx="226" cy="146" rx="24" ry="13" class="brain-cerebellum"/>
+                    <path d="M198 150 C202 164 205 176 207 188" class="brain-stem"/>
+                    <path d="M92 120 C70 112 62 86 76 66 C88 46 116 34 146 34 C176 30 210 38 232 56 C252 72 262 96 256 116 C252 132 238 140 222 140 C214 152 196 158 180 152 C164 160 140 158 128 148 C112 150 98 140 92 120 Z" class="brain-outline"/>
+                    <path d="M170 36 C162 60 174 80 162 102 M112 118 C140 104 170 106 196 114 M100 70 C112 80 108 96 120 100 M214 50 C206 70 222 84 214 100" class="brain-sulcus"/>
+                    <path d="M246 98 C236 66 204 50 158 60" class="stream stream-how" marker-end="url(#arrow-how)"/>
+                    <path d="M246 110 C228 136 188 140 136 130" class="stream stream-what" marker-end="url(#arrow-what)"/>
+                    <circle cx="250" cy="104" r="6" class="brain-v1"/>
+                    <text x="196" y="80" class="stream-label how">how</text>
+                    <text x="180" y="126" class="stream-label what">what</text>
                   </svg>
                 </div>
 
@@ -240,7 +276,7 @@
                     making.
                   </p>
                   <div class="research-tags">
-                    Brain · Visual attention
+                    Visual recognition · Neuropsychology
                     <span class="card-arrow" aria-hidden="true">→</span>
                   </div>
                 </div>
@@ -253,11 +289,26 @@
             <a class="research-card-link" href="artificial-intelligence.html"
                aria-label="Explore artificial intelligence research">
               <article class="research-tile">
-                <img
-                  class="research-image"
-                  src="https://images.openai.com/static-rsc-4/t0cv45Tr4SzMYsXYwPw-ba9ayPIyWx-R8q4Rf1ge7flyv5dWSi9ZfFho-sh-muMGmSymQdwymNrfuslX4ttfyzajOFdOzARc5dVZpZROlL4Up5Qb3cluiklXxEaEPpzeNvoFf9hg9jQ10SxXw4HhrQX_jAzDUhgaFQv3Uq84LW4?purpose=inline"
-                  alt="Illustration of a knowledge graph and connected concepts"
-                  loading="lazy">
+                <div class="research-image research-art art-ai" aria-hidden="true">
+                  <svg viewBox="0 0 320 200">
+                    <g class="net-input">
+                      <rect x="18" y="88" width="8" height="8"/><rect x="34" y="88" width="8" height="8"/>
+                      <rect x="26" y="96" width="8" height="8"/>
+                      <rect x="18" y="104" width="8" height="8"/><rect x="34" y="104" width="8" height="8"/>
+                    </g>
+                    <path d="M48 100 L64 100 M78 100 L126 62 M78 100 L126 138 M138 62 L189 40 M138 62 L189 80 M138 138 L189 120 M138 138 L189 160" class="net-edge"/>
+                    <path d="M211 40 C236 40 238 92 252 96 M211 80 C232 80 240 98 252 99 M211 120 C232 120 240 102 252 101 M211 160 C236 160 238 108 252 104" class="net-link"/>
+                    <circle cx="72" cy="100" r="8" class="net-node strong"/>
+                    <circle cx="132" cy="62" r="6" class="net-node"/>
+                    <circle cx="132" cy="138" r="6" class="net-node"/>
+                    <rect x="189" y="29" width="11" height="11" class="tile-dark"/><rect x="200" y="29" width="11" height="11" class="tile-light"/><rect x="189" y="40" width="11" height="11" class="tile-light"/><rect x="200" y="40" width="11" height="11" class="tile-dark"/><rect x="189" y="29" width="22" height="22" class="tile-frame"/>
+                    <rect x="189" y="69" width="11" height="11" class="tile-light"/><rect x="200" y="69" width="11" height="11" class="tile-dark"/><rect x="189" y="80" width="11" height="11" class="tile-light"/><rect x="200" y="80" width="11" height="11" class="tile-light"/><rect x="189" y="69" width="22" height="22" class="tile-frame"/>
+                    <rect x="189" y="109" width="11" height="11" class="tile-dark"/><rect x="200" y="109" width="11" height="11" class="tile-dark"/><rect x="189" y="120" width="11" height="11" class="tile-light"/><rect x="200" y="120" width="11" height="11" class="tile-light"/><rect x="189" y="109" width="22" height="22" class="tile-frame"/>
+                    <rect x="189" y="149" width="11" height="11" class="tile-light"/><rect x="200" y="149" width="11" height="11" class="tile-dark"/><rect x="189" y="160" width="11" height="11" class="tile-dark"/><rect x="200" y="160" width="11" height="11" class="tile-light"/><rect x="189" y="149" width="22" height="22" class="tile-frame"/>
+                    <circle cx="278" cy="100" r="25" class="net-concept"/>
+                    <text x="278" y="100" class="net-concept-label">fork</text>
+                  </svg>
+                </div>
 
                 <div class="research-tile-content">
                   <p class="research-number">03 / Artificial intelligence</p>
@@ -280,13 +331,19 @@
             <a class="research-card-link" href="linguistics.html"
                aria-label="Explore linguistics research">
               <article class="research-tile">
-                <div class="research-image research-art" aria-hidden="true">
+                <div class="research-image research-art art-ling" aria-hidden="true">
                   <svg viewBox="0 0 320 200">
-                    <text x="34" y="92" class="art-glyph green">Aa</text>
-                    <text x="150" y="150" class="art-glyph purple">“ ”</text>
-                    <path d="M40 160 C100 120 140 190 200 150 S270 100 290 70" class="wave blue"/>
-                    <circle cx="232" cy="64" r="5" class="art-dot"/>
-                    <circle cx="262" cy="92" r="3.5" class="art-dot"/>
+                    <path d="M160 40 L80 76 M160 40 L222 76 M222 88 L178 112 M222 88 L262 112 M80 88 L80 132 M178 124 L178 132 M262 124 L262 132" class="tree-edge"/>
+                    <text x="160" y="34" class="tree-cat">S</text>
+                    <text x="80" y="84" class="tree-cat">NP</text>
+                    <text x="222" y="84" class="tree-cat">VP</text>
+                    <text x="178" y="120" class="tree-cat">V</text>
+                    <text x="262" y="120" class="tree-cat">NP</text>
+                    <text x="80" y="150" class="tree-word">Experts</text>
+                    <text x="178" y="150" class="tree-word">see</text>
+                    <text x="262" y="150" class="tree-word">patterns</text>
+                    <line x1="60" y1="166" x2="280" y2="166" class="tree-rule"/>
+                    <text x="170" y="186" class="tree-triple">⟨ expert · see · pattern ⟩</text>
                   </svg>
                 </div>
 

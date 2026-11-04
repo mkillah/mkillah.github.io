@@ -5,8 +5,8 @@
     { "name": "site", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8123", "--bind", "127.0.0.1"], "port": 8123, "autoPort": false },
     {
       "name": "neuralgambit",
-      "runtimeExecutable": "C:\\Users\\marko\\PycharmProjects\\Chessmatics\\venv\\Scripts\\flask.exe",
-      "runtimeArgs": ["--app", "C:/Users/marko/PycharmProjects/Chessmatics/app.py", "run", "--port", "5050"],
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\marko\\PycharmProjects\\Chessmatics && venv\\Scripts\\flask.exe --app app run --port 5050"],
       "port": 5050
     },
     {

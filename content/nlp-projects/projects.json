@@ -6,7 +6,7 @@
     },
     "professional": {
       "label": "Professional",
-      "description": "Language processing applied to real-world text: documents, tickets, and customer feedback."
+      "description": "Language processing applied to real-world text: documents, tickets, customer feedback, and business requirements."
     }
   },
 
@@ -25,6 +25,23 @@
         { "id": "relation-extraction", "name": "Relation extraction", "detail": "Pulling who-did-what facts out of sentences" },
         { "id": "rule-based-nlp", "name": "Rule-based NLP", "detail": "Linguistic rules built on top of a parsed sentence" }
       ]
+    },
+    {
+      "label": "Meaning & logic",
+      "methods": [
+        { "id": "controlled-language", "name": "Controlled natural language", "detail": "A restricted English where every sentence has exactly one meaning" },
+        { "id": "semantic-parsing", "name": "Semantic parsing", "detail": "Turning sentences into logical formulas a program can reason with" },
+        { "id": "formal-verification", "name": "Formal verification", "detail": "Proving properties of the extracted logic, here with Lean 4" }
+      ]
+    },
+    {
+      "label": "Evaluating language models",
+      "methods": [
+        { "id": "benchmark-design", "name": "Benchmark design", "detail": "Building test items, distractors and controls that a model cannot game" },
+        { "id": "llm-evaluation", "name": "LLM evaluation", "detail": "Measuring what language models get right, and how they fail" },
+        { "id": "calibration", "name": "Uncertainty and calibration", "detail": "Checking whether a model's confidence matches how often it is right" },
+        { "id": "evidence-grounding", "name": "Evidence grounding", "detail": "Checking that an answer is supported by quotes from the source text" }
+      ]
     }
   ],
 
@@ -38,6 +55,25 @@
       "methods": ["tokenization", "dependency-parsing", "noun-chunking", "relation-extraction", "rule-based-nlp"],
       "tools": ["Python", "spaCy"],
       "repo": "https://github.com/mkillah/Portfolio/blob/main/NLP_Projects/project-factextraction.ipynb"
+    },
+    {
+      "id": "requirements-verifier",
+      "title": "Requirements Verifier",
+      "category": "professional",
+      "year": 2026,
+      "summary": "Can business rules written in plain English be checked for contradictions automatically, before anyone builds on them?",
+      "methods": ["controlled-language", "semantic-parsing", "rule-based-nlp", "formal-verification"],
+      "tools": ["JavaScript", "Python", "Lean 4"]
+    },
+    {
+      "id": "kettle-logic",
+      "title": "Kettle Logic: fallacy or irony?",
+      "category": "academic",
+      "year": 2026,
+      "summary": "Can language models tell contradictory reasoning from deliberate literary irony, back their answer with the text, and admit when none of the offered readings fits?",
+      "methods": ["benchmark-design", "llm-evaluation", "calibration", "evidence-grounding"],
+      "tools": ["Python", "Mistral API", "pandas", "JavaScript"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/kettle-logic.ipynb"
     }
   ]
 }
