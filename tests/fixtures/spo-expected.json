@@ -1,0 +1,185 @@
+[
+ {
+  "id": "chess",
+  "facts": [
+   {
+    "subject": "chess expert",
+    "predicate": "recognise quickly",
+    "objects": [
+     "familiar patterns"
+    ]
+   },
+   {
+    "subject": "they",
+    "predicate": "remember",
+    "objects": [
+     "positions",
+     "from real games"
+    ]
+   },
+   {
+    "subject": "they",
+    "predicate": "find",
+    "objects": [
+     "good moves",
+     "in seconds"
+    ]
+   },
+   {
+    "subject": "weak player",
+    "predicate": "search",
+    "objects": [
+     "through many more moves"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "memory",
+  "facts": [
+   {
+    "subject": "the hippocampus",
+    "predicate": "forms",
+    "objects": [
+     "new memories"
+    ]
+   },
+   {
+    "subject": "damage to the hippocampus",
+    "predicate": "does not erase",
+    "objects": [
+     "old memories"
+    ]
+   },
+   {
+    "subject": "patient with this damage",
+    "predicate": "can still learn",
+    "objects": [
+     "new motor skills"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "curie",
+  "facts": [
+   {
+    "subject": "marie curie",
+    "predicate": "discovered",
+    "objects": [
+     "polonium",
+     "radium"
+    ]
+   },
+   {
+    "subject": "she",
+    "predicate": "won",
+    "objects": [
+     "the Nobel Prize",
+     "in Physics",
+     "in 1903"
+    ]
+   },
+   {
+    "subject": "her research",
+    "predicate": "was continued",
+    "objects": [
+     "by her daughter"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "language",
+  "facts": [
+   {
+    "subject": "child",
+    "predicate": "acquire",
+    "objects": [
+     "their first language",
+     "without formal instruction"
+    ]
+   },
+   {
+    "subject": "linguist",
+    "predicate": "study",
+    "objects": []
+   },
+   {
+    "subject": "grammar",
+    "predicate": "how is represented",
+    "objects": [
+     "in the mind"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cogsci",
+  "facts": [
+   {
+    "subject": "cognitive science",
+    "predicate": "is the study",
+    "objects": [
+     "of the human mind",
+     "brain"
+    ]
+   },
+   {
+    "subject": "the mind",
+    "predicate": "how represents",
+    "objects": []
+   },
+   {
+    "subject": "the mind",
+    "predicate": "manipulates",
+    "objects": [
+     "knowledge"
+    ]
+   },
+   {
+    "subject": "the mind",
+    "predicate": "are realized",
+    "objects": [
+     "in the brain"
+    ]
+   },
+   {
+    "subject": "how mental representation and process",
+    "predicate": "are realized",
+    "objects": [
+     "in the brain"
+    ]
+   },
+   {
+    "subject": "cognitive scientist",
+    "predicate": "study",
+    "objects": [
+     "intelligence",
+     "behavior",
+     "with a focus",
+     "on represent process"
+    ]
+   },
+   {
+    "subject": "system",
+    "predicate": "represent",
+    "objects": [
+     "process"
+    ]
+   },
+   {
+    "subject": "system",
+    "predicate": "process",
+    "objects": []
+   },
+   {
+    "subject": "system",
+    "predicate": "transform",
+    "objects": [
+     "information"
+    ]
+   }
+  ]
+ }
+]

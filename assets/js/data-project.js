@@ -37,7 +37,7 @@ async function initProjectPage() {
   }
 
   const projects = manifest.projects;
-  const index = projects.findIndex((project) => project.id === id);
+  const index = projects.findIndex((project) => project.id === id || (project.aliases || []).includes(id));
 
   if (index === -1) {
     showMessage(`<h1>Project not found</h1><p>This project does not exist. <a href="${HUB_PAGE}">See all projects</a>.</p>`);
@@ -90,6 +90,8 @@ async function initProjectPage() {
     const response = await fetch(`${PROJECTS_DIR}${encodeURIComponent(project.id)}.md`, { cache: "no-cache" });
     if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
     showMessage(marked.parse(await response.text()));
+    // Lets interactive widgets inside a report (e.g. the requirements verifier) set themselves up.
+    document.dispatchEvent(new CustomEvent("report:rendered", { detail: { container: document.getElementById("project-content") } }));
   } catch (error) {
     console.error("Could not load report:", error);
     showMessage(`<h1>${escapeHtml(project.title)}</h1><p>The report for this project could not be loaded.</p>`);

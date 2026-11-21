@@ -52,6 +52,12 @@ Finally, it gathers what the verb refers to, including objects introduced by pre
 | cognitive scientists | study | intelligence · behavior |
 | cognitive scientists | transform | information |
 
+## Try it yourself
+
+Pick an example or type your own sentences. Each word is coloured by its role in the facts. Select a fact to see which words it comes from, or open the dependency parse to see the structure the rules work on.
+
+<div data-spo-widget></div>
+
 ## Results and next steps
 
 The extractor reliably captures the main facts in clear, well-formed sentences. Long sentences with nested clauses are harder: some objects get attached to the wrong verb, and words like *how* slip into the predicate.

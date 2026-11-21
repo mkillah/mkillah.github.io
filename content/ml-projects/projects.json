@@ -80,26 +80,52 @@
       "details": { "label": "Try the Rating Predictor", "url": "https://www.neuralgambit.com/stats" }
     },
     {
-      "id": "lichess-plateaus",
-      "title": "Rating plateaus on Lichess",
+      "id": "learning-curve-1-your-start",
+      "aliases": ["lichess-learning-curves"],
+      "title": "Learning Curve 1: Your start",
       "category": "neural-gambit",
       "year": 2026,
-      "summary": "Stuck, or about to break through? 386,000 blitz games from 581 Lichess players: detecting plateaus with change points, and predicting who escapes them.",
-      "methods": ["change-point-detection", "classification", "tree-ensembles", "fixed-effects", "feature-engineering", "cross-validation", "model-evaluation"],
-      "tools": ["Python", "pandas", "scikit-learn", "statsmodels", "python-chess", "Stockfish", "JavaScript", "Chart.js"],
-      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/lichess-plateaus.ipynb",
-      "details": { "label": "Try the Plateau Detector", "url": "https://www.neuralgambit.com/stats/plateau" }
+      "summary": "What kind of start did you have, and does it matter? The first 300 games of 581 new Lichess players, sorted into four simple types.",
+      "methods": ["clustering", "dimensionality-reduction", "classification", "cohort-analysis", "survival-analysis", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "Stockfish", "JavaScript", "Chart.js"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/learning-curve-1-your-start.ipynb",
+      "details": { "label": "See your learning curve", "url": "https://www.neuralgambit.com/stats/learning-curve" }
     },
     {
-      "id": "lichess-learning-curves",
-      "title": "Learning curves on Lichess",
+      "id": "learning-curve-2a-where-you-are-now",
+      "aliases": ["lichess-plateaus"],
+      "title": "Learning Curve 2a: Where you are now",
       "category": "neural-gambit",
       "year": 2026,
-      "summary": "Are there types of learners? The first 300 blitz games of 581 new Lichess players: grouping learning curves, and predicting a player's curve from their first 100 games.",
-      "methods": ["clustering", "dimensionality-reduction", "classification", "cohort-analysis", "feature-engineering", "cross-validation", "model-evaluation"],
-      "tools": ["Python", "pandas", "scikit-learn", "Stockfish", "JavaScript", "Chart.js"],
-      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/lichess-learning-curves.ipynb",
-      "details": { "label": "See your learning curve", "url": "https://www.neuralgambit.com/stats/learning-curve" }
+      "summary": "Climbing, stuck or sliding? 386,000 blitz games from 581 Lichess players show how long plateaus last and what tends to end them.",
+      "methods": ["change-point-detection", "classification", "tree-ensembles", "fixed-effects", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "statsmodels", "python-chess", "Stockfish", "JavaScript", "Chart.js"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/learning-curve-2a-where-you-are-now.ipynb",
+      "details": { "label": "Where is your rating heading?", "url": "https://www.neuralgambit.com/stats/learning-curve" }
+    },
+    {
+      "id": "learning-curve-2b-whats-next",
+      "aliases": ["lichess-next-100"],
+      "title": "Learning Curve 2b: What's next",
+      "category": "neural-gambit",
+      "year": 2026,
+      "summary": "Will your rating climb, hold or drop over your next 100 games? A simple forecast learned from 3.4 million blitz games by 1,554 players.",
+      "methods": ["classification", "tree-ensembles", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "JavaScript", "Chart.js"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/learning-curve-2b-whats-next.ipynb",
+      "details": { "label": "See your next 100 games", "url": "https://www.neuralgambit.com/stats/learning-curve" }
+    },
+    {
+      "id": "learning-curve-3-reaching-2000",
+      "aliases": ["lichess-reaching-2000"],
+      "title": "Learning Curve 3: Reaching 2000",
+      "category": "neural-gambit",
+      "year": 2026,
+      "summary": "Will you reach 2000, when, and what helps? 2.6 million blitz games from 1,117 players, followed for up to six years.",
+      "methods": ["classification", "survival-analysis", "cohort-analysis", "fixed-effects", "feature-engineering", "cross-validation", "model-evaluation"],
+      "tools": ["Python", "pandas", "scikit-learn", "lifelines", "statsmodels", "python-chess", "JavaScript"],
+      "repo": "https://github.com/mkillah/mkillah.github.io/blob/main/notebooks/learning-curve-3-reaching-2000.ipynb",
+      "details": { "label": "See your chance", "url": "https://www.neuralgambit.com/stats/learning-curve" }
     }
   ]
 }

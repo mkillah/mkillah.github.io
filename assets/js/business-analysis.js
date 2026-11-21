@@ -1,7 +1,7 @@
 // Business analysis page: tab groups (click or arrow keys).
 //   #ba-views   page view: Analysis report / Requirements Verifier (synced with #verifier in the URL)
 //   #wf-viewer  wireframe viewer
-//   #rv-tabs    verifier result tabs
+// (The verifier widget manages its own result tabs, see req-verifier.js.)
 
 function initTabs(container, onSelect) {
   if (!container) return null;
@@ -58,6 +58,5 @@ function initPageViews() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initTabs(document.getElementById("wf-viewer"));
-  initTabs(document.getElementById("rv-tabs"));
   initPageViews();
 });

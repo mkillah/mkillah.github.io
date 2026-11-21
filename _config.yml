@@ -1,0 +1,3 @@
+# Keep the notebooks README on GitHub only, not on the published site.
+exclude:
+  - notebooks/README.md
