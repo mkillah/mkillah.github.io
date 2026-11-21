@@ -1,0 +1,168 @@
+{
+  "name": "NordPay transaction rules",
+  "entity": "transaction",
+  "vocabulary": [
+    { "name": "thresholdUsage", "type": "num", "description": "Transaction amount as a percentage of the merchant's fraud threshold (100 = exactly at the threshold)" },
+    { "name": "unusualActivity", "type": "bool", "description": "The transaction shows unusual activity for this merchant" },
+    { "name": "merchantKycVerified", "type": "bool", "description": "The merchant has passed KYC (know your customer) checks" },
+    { "name": "held", "type": "bool", "description": "Held for review by a fraud analyst" },
+    { "name": "autoApproved", "type": "bool", "description": "Approved automatically by the system, without manual review" },
+    { "name": "analystApproved", "type": "bool", "description": "Approved by a fraud analyst after review" },
+    { "name": "approved", "type": "bool", "description": "Approved, either automatically or by a fraud analyst" },
+    { "name": "rejected", "type": "bool", "description": "Rejected and will not be processed" },
+    { "name": "settled", "type": "bool", "description": "Settled: the money has been paid out to the merchant" },
+    { "name": "ledgerSynced", "type": "bool", "description": "Synced to the core banking ledger" }
+  ],
+  "requirements": [
+    {
+      "id": "BR-01", "kind": "rule",
+      "text": "A transaction above 90% of the merchant's fraud threshold is held for review.",
+      "conditions": [{ "kind": "num", "attr": "thresholdUsage", "op": ">", "value": 90 }],
+      "consequences": [{ "kind": "bool", "attr": "held", "value": true }]
+    },
+    {
+      "id": "BR-02", "kind": "rule",
+      "text": "A transaction with unusual activity is held for review.",
+      "conditions": [{ "kind": "bool", "attr": "unusualActivity", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "held", "value": true }]
+    },
+    {
+      "id": "BR-03", "kind": "rule",
+      "text": "A held transaction cannot be approved automatically.",
+      "conditions": [{ "kind": "bool", "attr": "held", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "autoApproved", "value": false }]
+    },
+    {
+      "id": "BR-04", "kind": "rule",
+      "text": "A transaction from a KYC-verified merchant that is not held is approved automatically.",
+      "conditions": [
+        { "kind": "bool", "attr": "merchantKycVerified", "value": true },
+        { "kind": "bool", "attr": "held", "value": false }
+      ],
+      "consequences": [{ "kind": "bool", "attr": "autoApproved", "value": true }]
+    },
+    {
+      "id": "BR-05", "kind": "rule",
+      "text": "A transaction from a merchant without verified KYC is rejected.",
+      "conditions": [{ "kind": "bool", "attr": "merchantKycVerified", "value": false }],
+      "consequences": [{ "kind": "bool", "attr": "rejected", "value": true }]
+    },
+    {
+      "id": "BR-06", "kind": "rule",
+      "text": "A rejected transaction cannot be approved.",
+      "conditions": [{ "kind": "bool", "attr": "rejected", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "approved", "value": false }]
+    },
+    {
+      "id": "BR-07", "kind": "rule",
+      "text": "An automatically approved transaction counts as approved.",
+      "conditions": [{ "kind": "bool", "attr": "autoApproved", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "approved", "value": true }]
+    },
+    {
+      "id": "BR-08", "kind": "rule",
+      "text": "A transaction approved by a fraud analyst counts as approved.",
+      "conditions": [{ "kind": "bool", "attr": "analystApproved", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "approved", "value": true }]
+    },
+    {
+      "id": "BR-09", "kind": "rule",
+      "text": "Fraud analysts only approve transactions that were held for review.",
+      "conditions": [{ "kind": "bool", "attr": "analystApproved", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "held", "value": true }]
+    },
+    {
+      "id": "BR-10", "kind": "rule",
+      "text": "A transaction can only be settled once it is approved.",
+      "conditions": [{ "kind": "bool", "attr": "settled", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "approved", "value": true }]
+    },
+    {
+      "id": "BR-11", "kind": "rule",
+      "text": "Only settled transactions are synced to the core banking ledger.",
+      "conditions": [{ "kind": "bool", "attr": "ledgerSynced", "value": true }],
+      "consequences": [{ "kind": "bool", "attr": "settled", "value": true }]
+    },
+    {
+      "id": "P-01", "kind": "possibility",
+      "text": "A held transaction can be approved by a fraud analyst.",
+      "conditions": [
+        { "kind": "bool", "attr": "held", "value": true },
+        { "kind": "bool", "attr": "analystApproved", "value": true }
+      ]
+    },
+    {
+      "id": "P-02", "kind": "possibility",
+      "text": "A transaction with unusual activity can come from a KYC-verified merchant.",
+      "conditions": [
+        { "kind": "bool", "attr": "unusualActivity", "value": true },
+        { "kind": "bool", "attr": "merchantKycVerified", "value": true }
+      ]
+    },
+    {
+      "id": "P-03", "kind": "possibility",
+      "text": "A transaction above the merchant's fraud threshold can still be settled after review.",
+      "conditions": [
+        { "kind": "num", "attr": "thresholdUsage", "op": ">", "value": 100 },
+        { "kind": "bool", "attr": "settled", "value": true }
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "label": "Contradiction",
+      "expect": "contradiction",
+      "text": "Transactions above 95% of the fraud threshold are rejected automatically.",
+      "translation": {
+        "kind": "rule",
+        "conditions": [{ "attr": "thresholdUsage", "op": ">", "value": 95 }],
+        "consequences": [{ "attr": "rejected", "value": true }],
+        "newTerms": []
+      }
+    },
+    {
+      "label": "Dead rule",
+      "expect": "dead",
+      "text": "Automatically approved transactions with unusual activity are escalated to Risk & Compliance.",
+      "translation": {
+        "kind": "rule",
+        "conditions": [{ "attr": "autoApproved", "value": true }, { "attr": "unusualActivity", "value": true }],
+        "consequences": [{ "attr": "escalated", "value": true }],
+        "newTerms": [{ "name": "escalated", "type": "bool", "description": "Escalated to Risk & Compliance" }]
+      }
+    },
+    {
+      "label": "Redundant",
+      "expect": "redundant",
+      "text": "A transaction with unusual activity cannot be approved automatically.",
+      "translation": {
+        "kind": "rule",
+        "conditions": [{ "attr": "unusualActivity", "value": true }],
+        "consequences": [{ "attr": "autoApproved", "value": false }],
+        "newTerms": []
+      }
+    },
+    {
+      "label": "Side effect",
+      "expect": "side-effect",
+      "text": "Transactions with unusual activity are always rejected.",
+      "translation": {
+        "kind": "rule",
+        "conditions": [{ "attr": "unusualActivity", "value": true }],
+        "consequences": [{ "attr": "rejected", "value": true }],
+        "newTerms": []
+      }
+    },
+    {
+      "label": "Fits",
+      "expect": "fits",
+      "text": "Transactions above 75% of the fraud threshold are flagged for monitoring.",
+      "translation": {
+        "kind": "rule",
+        "conditions": [{ "attr": "thresholdUsage", "op": ">", "value": 75 }],
+        "consequences": [{ "attr": "flaggedForMonitoring", "value": true }],
+        "newTerms": [{ "name": "flaggedForMonitoring", "type": "bool", "description": "Flagged for monitoring, without blocking the transaction" }]
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+name = "req-verifier-proxy"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[vars]
+PROVIDER = "groq"                 # or "mistral"
+MODEL = "llama-3.3-70b-versatile" # check https://console.groq.com/docs/models for current models
+ALLOWED_ORIGINS = "https://mkillah.github.io,http://localhost:8123,http://localhost:8124,http://localhost:8125,http://127.0.0.1:8123"
+
+# Per-IP rate limit: 10 translations per minute.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 10
+  period = 60

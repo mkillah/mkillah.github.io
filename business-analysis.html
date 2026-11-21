@@ -76,7 +76,7 @@
           <span class="ba-view-text">
             <span class="ba-view-kicker">Interactive tool</span>
             <span class="ba-view-name">Requirements Verifier</span>
-            <span class="ba-view-desc">Write business rules in plain English and find contradictions and dead rules, each backed by a Lean&nbsp;4 proof.</span>
+            <span class="ba-view-desc">Propose a new rule in plain English and check it against NordPay's rule base, with a Lean&nbsp;4 proof for every finding.</span>
           </span>
         </button>
       </div>
@@ -796,52 +796,26 @@
         <h1>Catch contradictory requirements before they reach code.</h1>
 
         <p class="lead">
-          Write business rules in plain English. The verifier turns them into a
-          formal model, checks every relevant case for contradictions and for
-          rules that can never apply, and writes a Lean&nbsp;4 proof for each finding.
+          Below are NordPay's transaction rules, already agreed and checked.
+          Propose a new rule in plain English, and the verifier tells you whether
+          it fits: whether it contradicts the rule base, can never apply, is
+          already covered, or quietly rules out cases the business needs.
         </p>
 
         <div class="case-note">
           <strong>How it works.</strong>
-          Everything runs in your browser. Numbers only appear in threshold
-          comparisons, so checking the values around each threshold covers every
-          possible record: a finding is a guarantee, not a sample. The generated
-          Lean file can be checked in the Lean web editor. This is a prototype
-          that understands a fixed set of sentence patterns; a full version would
-          use an LLM to fill the same structured model.
+          An LLM translates your sentence into logic over the rule base's own
+          vocabulary, and the result is validated before it is used. The check
+          itself is not AI: it tests every relevant transaction, so a finding is a
+          guarantee, not a sample, and each finding is written as a Lean&nbsp;4
+          proof you can check independently.
         </div>
       </section>
 
       <section class="work-section rv-tool">
         <div class="container">
-          <div class="rv-grid" id="rv-app">
-            <div class="rv-input-card">
-              <label for="rv-example">Example</label>
-              <select id="rv-example" autocomplete="off"></select>
-
-              <label for="rv-input">Business requirements</label>
-              <textarea id="rv-input" spellcheck="false" rows="9"></textarea>
-
-              <button type="button" class="rv-run" id="rv-run">Analyse requirements</button>
-
-              <details class="rv-help">
-                <summary>Sentence patterns it understands</summary>
-                <ul id="rv-supported"></ul>
-                <p><em>Must / cannot / are always</em> become rules for every record. <em>Can / may</em> describe records that must be allowed to exist.</p>
-              </details>
-            </div>
-
-            <div class="rv-results">
-              <div class="wf-tabs rv-tabs" id="rv-tabs" role="tablist" aria-label="Verifier results">
-                <button type="button" role="tab" id="rv-tab-verify" aria-controls="rv-panel-verify" aria-selected="true">Verification</button>
-                <button type="button" role="tab" id="rv-tab-reqs" aria-controls="rv-panel-reqs" aria-selected="false" tabindex="-1">Requirements</button>
-                <button type="button" role="tab" id="rv-tab-lean" aria-controls="rv-panel-lean" aria-selected="false" tabindex="-1">Lean model</button>
-              </div>
-              <div role="tabpanel" id="rv-panel-verify" aria-labelledby="rv-tab-verify"></div>
-              <div role="tabpanel" id="rv-panel-reqs" aria-labelledby="rv-tab-reqs" hidden></div>
-              <div role="tabpanel" id="rv-panel-lean" aria-labelledby="rv-tab-lean" hidden></div>
-            </div>
-          </div>
+          <!-- Built by assets/js/req-verifier.js. Set data-rv-endpoint to the deployed proxy URL (req-verifier/proxy). -->
+          <div class="rv-widget" data-rv-widget data-rv-endpoint=""></div>
         </div>
       </section>
     </div><!-- /view-verifier -->
@@ -863,6 +837,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/business-analysis.js"></script>
+  <script src="assets/js/req-verifier-engine.js"></script>
   <script src="assets/js/req-verifier.js"></script>
 
 </body>
